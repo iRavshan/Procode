@@ -223,17 +223,17 @@
                     <ul class="team-socials">
                         <li>
                             <a href="javascript:void(0)">
-                                <i class="lni lni-facebook-filled"></i>
+                                <i class="fab fa-github"></i>
                             </a>
                         </li>
                         <li>
                             <a href="javascript:void(0)">
-                                <i class="lni lni-twitter-filled"></i>
+                                <i class="fab fa-telegram"></i>
                             </a>
                         </li>
                         <li>
                             <a href="javascript:void(0)">
-                                <i class="lni lni-instagram-filled"></i>
+                                <i class="fab fa-instagram"></i>
                             </a>
                         </li>
                     </ul>
@@ -354,72 +354,29 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6" data-wow-delay=".1s">
-                <div class="single-blog">
-                    <div class="blog-image">
-                        <a href="javascript:void(0)">
-                            <img src="/assets/images/thumbnail.png" alt="blog">
-                        </a>
-                        <span class="blog-tag"> Design </span>
+            @{
+                foreach (var content in Model.LastContents)
+                {
+                    <div class="col-lg-4 col-md-6" data-wow-delay=".1s">
+                        <div class="single-blog">
+                            <div class="blog-image">
+                                <a href="javascript:void(0)">
+                                    <img src="@($"https://ytimg.googleusercontent.com/vi/{content.YoutubeVideoId}/maxresdefault.jpg")" alt="blog">
+                                </a>
+                                <span class="blog-tag">@content.Tag</span>
+                            </div>
+                            <div class="blog-content">
+                                <h3>
+                                    <a asp-controller="home" asp-route="content" asp-route-Id="@content.Id">@content.Name</a>
+                                </h3>
+                                <p>@content.ShortDescription</p>
+                                <a asp-controller="home" asp-route="content" asp-route-Id="@content.Id" class="main-btn">Batafsil</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="blog-content">
-                        <h3>
-                            <a href="javascript:void(0)">
-                                How to earn more money as a wellness coach
-                            </a>
-                        </h3>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry.
-                        </p>
-                        <a href="content.html" class="main-btn">Batafsil</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6" data-wow-delay=".15s">
-                <div class="single-blog">
-                    <div class="blog-image">
-                        <a href="javascript:void(0)">
-                            <img src="assets/images/thumbnail.png" alt="blog">
-                        </a>
-                        <span class="blog-tag"> Development </span>
-                    </div>
-                    <div class="blog-content">
-                        <h3>
-                            <a href="javascript:void(0)">
-                                How to earn more money as a wellness coach
-                            </a>
-                        </h3>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry.
-                        </p>
-                        <a href="javascrit:void(0)" class="main-btn">Batafsil</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6" data-wow-delay=".2s">
-                <div class="single-blog">
-                    <div class="blog-image">
-                        <a href="javascript:void(0)">
-                            <img src="assets/images/thumbnail.png" alt="blog">
-                        </a>
-                        <span class="blog-tag"> Research </span>
-                    </div>
-                    <div class="blog-content">
-                        <h3>
-                            <a href="javascript:void(0)">
-                                How to earn more money as a wellness coach
-                            </a>
-                        </h3>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry.
-                        </p>
-                        <a href="javascrit:void(0)" class="main-btn">Batafsil</a>
-                    </div>
-                </div>
-            </div>
+                }
+            }
+
         </div>
     </div>
 </section>
