@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = Model.PageTitle;
 }
+
 <!-- ====== Hero Start ====== -->
 <section class="hero" id="home">
     <div class="hero-layer">
@@ -21,7 +22,7 @@
                         <span class="video-play-button">
                             <span></span>
                         </span>
-                        <img src="./assets/images/thumbnail.png"
+                        <img src="/assets/images/thumbnail.png"
                              alt="hero-image"
                              class="image" />
                     </div>
@@ -31,6 +32,7 @@
     </div>
 </section>
 <!-- ====== Hero End ====== -->
+
 <!-- ====== Features Start ====== -->
 <section id="features" class="features">
     <div class="container">
@@ -47,7 +49,7 @@
             <div class="col-xl-4 col-md-6 col-sm-9">
                 <div class="single-feature wow fadeInUp" data-wow-delay=".1s">
                     <div class="feature-icon">
-                        <i class="lni lni-hand"></i>
+                        <i class="fas fa-fire"></i>
                     </div>
                     <div class="feature-content">
                         <h3 class="feature-title">Professional ta'lim</h3>
@@ -60,7 +62,7 @@
             <div class="col-xl-4 col-md-6 col-sm-9">
                 <div class="single-feature wow fadeInUp" data-wow-delay=".15s">
                     <div class="feature-icon">
-                        <i class="lni lni-lock"></i>
+                        <i class="fas fa-podcast"></i>
                     </div>
                     <div class="feature-content">
                         <h3 class="feature-title">Jonli muloqotlar</h3>
@@ -73,7 +75,7 @@
             <div class="col-xl-4 col-md-6 col-sm-9">
                 <div class="single-feature wow fadeInUp" data-wow-delay=".2s">
                     <div class="feature-icon">
-                        <i class="lni lni-layout"></i>
+                        <i class="fas fa-gem"></i>
                     </div>
                     <div class="feature-content">
                         <h3 class="feature-title">Bepul xizmat</h3>
@@ -147,7 +149,7 @@
                         <p>Founder Lineicons</p>
                     </div>
                     <div class="testimonial-quote">
-                        <i class="lni lni-quotation"></i>
+                        <i class="fas fa-quote-right"></i>
                     </div>
                 </div>
             </div>
@@ -165,7 +167,7 @@
                         <p>Founder Ayroui</p>
                     </div>
                     <div class="testimonial-quote">
-                        <i class="lni lni-quotation"></i>
+                        <i class="fas fa-quote-right"></i>
                     </div>
                 </div>
             </div>
@@ -183,13 +185,14 @@
                         <p>Founder Pagebulb</p>
                     </div>
                     <div class="testimonial-quote">
-                        <i class="lni lni-quotation"></i>
+                        <i class="fas fa-quote-right"></i>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 <!-- ====== Team Start ====== -->
 <section id="team" class="team">
     <div class="container">
@@ -249,18 +252,18 @@
                     </div>
                     <ul class="team-socials">
                         <li>
-                            <a href="javascript:void(0)">
-                                <i class="lni lni-facebook-filled"></i>
+                            <a href="https://github.com/iRavshan">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://t.me/ravshan77">
+                                <i class="fab fa-telegram"></i>
                             </a>
                         </li>
                         <li>
                             <a href="javascript:void(0)">
-                                <i class="lni lni-twitter-filled"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="lni lni-instagram-filled"></i>
+                                <i class="fab fa-instagram"></i>
                             </a>
                         </li>
                     </ul>
@@ -346,7 +349,7 @@
             </div>
             <div class="col-md-4">
                 <div class="all-post-btn text-md-end">
-                    <a href="javascript:void(0)" class="main-btn" style="margin-bottom: 36px;">Barchasi</a>
+                    <a asp-controller="home" asp-action="blog" class="main-btn" style="margin-bottom: 36px;">Barchasi</a>
                 </div>
             </div>
         </div>
@@ -355,7 +358,7 @@
                 <div class="single-blog">
                     <div class="blog-image">
                         <a href="javascript:void(0)">
-                            <img src="assets/images/thumbnail.png" alt="blog">
+                            <img src="/assets/images/thumbnail.png" alt="blog">
                         </a>
                         <span class="blog-tag"> Design </span>
                     </div>
