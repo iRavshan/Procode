@@ -1,4 +1,7 @@
 ﻿@model IndexViewModel
+@{
+    ViewData["Title"] = Model.PageTitle;
+}
 <!-- ====== Hero Start ====== -->
 <section class="hero" id="home">
     <div class="hero-layer">
@@ -10,7 +13,7 @@
                         <p class="hero-desc">
                             Biz bilan professionallardan bepul ta'lim oling. O'z imkoniyat va chegaralaringizni yanada kengaytiring.
                         </p>
-                        <a href="javascript:void(0)" class="main-btn">Boshlash</a>
+                        <a asp-controller="account" asp-action="login" class="main-btn">Boshlash</a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-xl-6">
