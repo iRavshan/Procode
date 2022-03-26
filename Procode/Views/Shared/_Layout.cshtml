@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - Procode.uz</title>
+
+
+    @RenderSection("styles", required: false)
+
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/animate.css" />
+    <link rel="stylesheet" href="/assets/css/glightbox.min.css" />
+    <link rel="stylesheet" href="/assets/css/lineicons.css" />
+    <link rel="stylesheet" href="/assets/css/swiper.css">
+    <link rel="stylesheet" href="/assets/css/index.css" />
+</head>
+<body>
+
+    <!-- ====== Header Start ====== -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="navbar-wrapper">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" asp-controller="home" asp-action="index">
+                                <img src="./assets/images/logo/logo.png" alt="Logo" width="50" height="53" />
+                            </a>
+                            <button class="navbar-toggler">
+                                <span class="toggler-icon"> </span>
+                                <span class="toggler-icon"> </span>
+                                <span class="toggler-icon"> </span>
+                            </button>
+
+                            <div class="navbar-collapse">
+                                <ul id="nav" class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <a asp-controller="home" asp-action="index">Bosh sahifa</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-controller="home" asp-action="books">Kitoblar</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-controller="home" asp-action="blog">Blog</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-controller="home" asp-action="contact">Aloqa</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-controller="account" asp-action="login">Kirish</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ====== Header End ====== -->
+
+    @RenderBody()
+
+    <!-- ====== Footer Start ====== -->
+    <footer class="footer wow fadeInUp" data-wow-delay=".15s">
+        <div class="footer-widgets">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6">
+                        <div class="widget">
+                            <h5 class="widget-title">Procode.uz</h5>
+                            <p class="widget-desc">
+                                Biz bilan professionallardan bepul ta'lim oling. O'z imkoniyat va chegaralaringizni yanada kengaytiring.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
+                        <div class="widget">
+                            <h5 class="widget-title">Sahifalar</h5>
+                            <ul class="widget-links">
+                                <li>
+                                    <a asp-controller="home" asp-action="index">Bosh sahifa</a>
+                                </li>
+                                <li>
+                                    <a asp-controller="home" asp-action="blog">Blog</a>
+                                </li>
+                                <li>
+                                    <a asp-controller="home" asp-action="contact">Aloqa</a>
+                                </li>
+                                <li>
+                                    <a asp-controller="home" asp-action="team">Bizning jamoa</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                        <div class="widget">
+                            <h5 class="widget-title">Bo'limlar</h5>
+                            <ul class="widget-links">
+                                <li>
+                                    <a href="javascript:void(0)">Dasturlash</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Kiberxavfsizlik</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">SMM &amp; Dizayn</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">Brending</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                        <div class="widget">
+                            <h5 class="widget-title">Ijtimoiy tarmoqlarimiz</h5>
+                            <p class="widget-desc">
+                                Ijtimoiy tarmoqlarda savol va takliflaringizni qoldiring
+                            </p>
+                            <ul class="widget-socials">
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <i class="lni lni-twitter-filled"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <i class="lni lni-instagram-filled"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <i class="lni lni-linkedin-original"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ====== Footer End ====== -->
+
+    <!-- ====== Back To Top Start ====== -->
+    <a href="javascript:void(0)" class="back-to-top">
+        <i class="lni lni-chevron-up"> </i>
+    </a>
+    <!-- ====== Back To Top End ====== -->
+
+
+    @RenderSection("scripts", required: false)
+    <!-- ====== All Javascript Files ====== -->
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/wow.min.js"></script>
+    <script src="/assets/js/glightbox.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

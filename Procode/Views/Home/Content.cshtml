@@ -1,0 +1,68 @@
+﻿@model ContentViewModel
+@{
+    ViewData["Title"] = Model.PageTitle;
+}
+
+<div class="page-content bg-white">
+    <div class="page-banner ovbl-dark" style="background: url(/assets/images/bg.png); ">
+        <div class="container">
+            <div class="page-banner-entry">
+                <h1 class="text-white">@Model.BannerTitle</h1>
+            </div>
+        </div>
+    </div>
+    <div class="content-block">
+        <div class="section-area section-bg section-sp1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-xl-12">
+                        <div class="recent-news blog-lg">
+                            <div class="action-box blog-lg">
+                                <iframe width="727" height="409" src="https://www.youtube.com/embed/DG6wWyEtAlQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="info-bx">
+                                <ul class="media-post">
+                                    <li><i class="fa fa-user-o mr-2"></i>@($"{Model.Content.AuthorFirstname} {Model.Content.AuthorLastname}")</li>
+                                </ul>
+                                <h5 class="post-title">@Model.Content.Name</h5>
+                                <p>@Model.Content.ShortDescription</p>
+                                <h6 class="mb-3 mt-5">Ijtimoiy tarmoqlarda ulashing: </h6>
+                                <ul class="list-inline contact-social-bx">
+                                    <li><a href="#" class="btn outline radius-xl mr-1"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#" class="btn outline radius-xl mr-1"><i class="fa fa-paper-plane"></i></a></li>
+                                    <li><a href="#" class="btn outline radius-xl mr-1"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="#" class="btn outline radius-xl"><i class="fa fa-google-plus"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section styles{
+    <link rel="stylesheet" type="text/css" href="/assets/css/assets.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/typography.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/shortcodes/shortcodes.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link class="skin" rel="stylesheet" type="text/css" href="/assets/css/color/color-1.css">
+}
+
+@section scripts{
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/vendors/bootstrap/js/popper.min.js"></script>
+    <script src="/assets/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="/assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+    <script src="/assets/vendors/magnific-popup/magnific-popup.js"></script>
+    <script src="/assets/vendors/counter/waypoints-min.js"></script>
+    <script src="/assets/vendors/counter/counterup.min.js"></script>
+    <script src="/assets/vendors/imagesloaded/imagesloaded.js"></script>
+    <script src="/assets/vendors/masonry/masonry.js"></script>
+    <script src="/assets/vendors/masonry/filter.js"></script>
+    <script src="/assets/vendors/owl-carousel/owl.carousel.js"></script>
+    <script src="/assets/js/functions.js"></script>
+}

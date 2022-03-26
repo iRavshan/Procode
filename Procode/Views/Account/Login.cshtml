@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<div class="heading-bx left">
+    <h2 class="title-head">Login</h2>
+    <p class="subtitle-head">Hisobingiz mavjud emasmi ? <a asp-controller="account" asp-action="register">Ro'yxatdan o'ting</a></p>
+</div>
+<form action="" class="contact-bx">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="form-group">
+                <label for="name-txt" class="form-label">Foydalanuvchi nomi</label>
+                <input type="text" class="name-txt">
+            </div>
+            <div class="form-group" style="margin-top: 30px;">
+                <label for="name-txt" class="form-label">Parol</label>
+                <input type="password" class="name-txt">
+            </div>
+            <input type="checkbox">
+            <label for="" class="check-text">Meni eslab qol</label>
+            <a asp-controller="account" asp-action="forgotpassword" class="forgot-text">Parolni unutdingizmi ?</a>
+            <a href="#" class="btn-login">Kirish</a>
+        </div>
+    </div>
+</form>
