@@ -57,39 +57,23 @@
                             <div class="widget recent-posts-entry widget-root">
                                 <h6 class="widget-title">Eng so'nggilar</h6>
                                 <div class="widget-post-bx">
-                                    <div class="widget-post clearfix">
-                                        <div class="ttr-post-media"> <img src="assets/images/blog/recent-blog/pic1.jpg" width="200" height="143" alt=""> </div>
-                                        <div class="ttr-post-info">
-                                            <div class="ttr-post-header">
-                                                <h6 class="post-title"><a href="blog-details.html">This Story Behind Education</a></h6>
-                                            </div>
-                                            <ul class="media-post">
-                                                <li> <button class="btn-tag"><i class="fa fa-user mr-2"></i>By William</button></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="widget-post clearfix">
-                                        <div class="ttr-post-media"> <img src="/assets/images/thumbnail.png" width="200" height="143" alt=""> </div>
-                                        <div class="ttr-post-info">
-                                            <div class="ttr-post-header">
-                                                <h6 class="post-title"><a href="blog-details.html">This Story Behind Education</a></h6>
-                                            </div>
-                                            <ul class="media-post">
-                                                <li> <button class="btn-tag"><i class="fa fa-user mr-2"></i>By William</button></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="widget-post clearfix">
-                                        <div class="ttr-post-media"> <img src="/assets/images/img3.png" width="200" height="143" alt=""> </div>
-                                        <div class="ttr-post-info">
-                                            <div class="ttr-post-header">
-                                                <h6 class="post-title"><a href="blog-details.html">This Story Behind Education</a></h6>
-                                            </div>
-                                            <ul class="media-post">
-                                                <li> <button class="btn-tag"><i class="fa fa-user mr-2"></i>By William</button></li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                    @{
+                                        foreach(var content in Model.LastContents)
+                                        {
+                                                                        <div class="widget-post clearfix">
+                                                                            <div class="ttr-post-media"> <img src="@($"https://ytimg.googleusercontent.com/vi/{content.YoutubeVideoId}/maxresdefault.jpg")" width="200" height="143" alt=""> </div>
+                                                                            <div class="ttr-post-info">
+                                                                                <div class="ttr-post-header">
+                                                                                    <h6 class="post-title"><a asp-controller="home" asp-action="content" asp-route-Id="@content.Id">@content.Name</a></h6>
+                                                                                </div>
+                                                                                <ul class="media-post">
+                                                                                    <li> <button class="btn-tag"><i class="fa fa-user mr-2"></i>@($"{content.AuthorFirstname.Substring(0, 1)}. {content.AuthorLastname}")</button></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                        }
+                                    }
+                                    
                                 </div>
                             </div>
                             <div class="widget widget-newslatter widget-root">
