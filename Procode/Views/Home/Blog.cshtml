@@ -18,23 +18,32 @@
                     <!-- Left part start -->
                     <div class="col-md-7 col-lg-8 col-xl-8">
                         @{
-                            foreach (var content in Model.Contents)
+                            if (Model.Contents is not null)
                             {
-                                <div class="recent-news blog-lg m-b40">
-                                    <div class="info-bx">
-                                        <h5 class="post-title"><a asp-controller="home" asp-action="content" asp-route-Id="@content.Id">@content.Name</a></h5>
-                                        <p>@content.ShortDescription</p>
-                                        <ul class="media-post">
-                                            <li> <button class="btn-tag"><i class="fa fa-user mr-2"></i>@($"{content.AuthorFirstname} {content.AuthorLastname}")</button></li>
-                                            <li> <button class="btn-tag-font">#@content.Tag</button></li>
-                                        </ul>
-                                        <div class="post-extra mt-0 pt-0">
-                                            <a asp-controller="home" asp-action="content" asp-route-Id="@content.Id" class="btn-link">Batafsil</a>
+                                foreach (var content in Model.Contents)
+                                {
+                                    <div class="recent-news blog-lg m-b40">
+                                        <div class="info-bx">
+                                            <h5 class="post-title"><a asp-controller="home" asp-action="content" asp-route-Id="@content.Id">@content.Name</a></h5>
+                                            <p>@content.ShortDescription</p>
+                                            <ul class="media-post">
+                                                <li> <button class="btn-tag"><i class="fa fa-user mr-2"></i>@($"{content.AuthorFirstname} {content.AuthorLastname}")</button></li>
+                                                <li> <button class="btn-tag-font">#@content.Tag</button></li>
+                                            </ul>
+                                            <div class="post-extra mt-0 pt-0">
+                                                <a asp-controller="home" asp-action="content" asp-route-Id="@content.Id" class="btn-link">Batafsil</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
+                                }
                             }
+
+                            else
+                            {
+                                <p>@($"'{Model.Search}' qidiruvi bo'yicha hech narsa topilmadi")</p>
+                            }
+
                         }
                     </div>
                     <!-- Left part END -->
@@ -64,14 +73,14 @@
                                               <div class="ttr-post-media"> 
                                                   <img src="@($"https://ytimg.googleusercontent.com/vi/{content.YoutubeVideoId}/maxresdefault.jpg")" width="200" height="143" alt=""> 
                                               </div>
-                                                    <div class="ttr-post-info">
-                                                        <div class="ttr-post-header">
-                                                            <h6 class="post-title"><a asp-controller="home" asp-action="content" asp-route-Id="@content.Id">@content.Name</a></h6>
-                                                        </div>
-                                                        <ul class="media-post">
-                                                           <li> <button class="btn-tag"><i class="fa fa-user mr-2"></i>@($"{content.AuthorFirstname.Substring(0, 1)}. {content.AuthorLastname}")</button></li>
-                                                        </ul>
-                                                    </div>
+                                              <div class="ttr-post-info">
+                                                 <div class="ttr-post-header">
+                                                     <h6 class="post-title"><a asp-controller="home" asp-action="content" asp-route-Id="@content.Id">@content.Name</a></h6>
+                                                 </div>
+                                                 <ul class="media-post">
+                                                     <li> <button class="btn-tag-font"><i class="fa fa-user mr-2"></i>@($"{content.AuthorFirstname.Substring(0, 1)}. {content.AuthorLastname}")</button></li>
+                                                  </ul>
+                                              </div>
                                           </div>
                                         }
                                     }
@@ -81,13 +90,13 @@
                             <div class="widget widget-newslatter widget-root">
                                 <h6 class="widget-title">Yangiliklar</h6>
                                 <div class="news-box">
-                                    <p>Enter your e-mail and subscribe to our newsletter.</p>
+                                    <p>Mahorat darslarini tashkil etish bo'yicha takliflarni bizga yozib qoldiring.</p>
                                 </div>
                             </div>
                             <div class="widget widget_tag_cloud widget-root">
-                                <h6 class="widget-title">Tags</h6>
+                                <h6 class="widget-title">Teglar</h6>
                                 <div class="tagcloud">
-                                    <a href="#">Design</a>
+                                    <a asp-controller="home" asp-action="blog" asp-route-t="design">Design</a>
                                     <a href="#">User interface</a>
                                 </div>
                             </div>

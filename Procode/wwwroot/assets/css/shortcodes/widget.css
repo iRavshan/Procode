@@ -7,9 +7,6 @@
 	vertical-align: middle;
 }
 
-.widget .post-title {
-	text-transform: uppercase;
-}
 .recent-posts-entry ul,
 .category-entry ul {
     margin: 0;

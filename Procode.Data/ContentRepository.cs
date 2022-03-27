@@ -52,15 +52,35 @@ namespace Procode.Data
 
             IEnumerable<Content> results = new List<Content>();
 
+            List<Content> exList = allContents.ToList();
+
             foreach (string item in TextOfSearch)
             {
                 results = results.Concat(allContents.Where(w => w.Tag.ToLower().Contains(item.ToLower())));
+                exList.Remove((Content)results);
+                allContents = exList;
                 results = results.Concat(allContents.Where(w => w.AuthorFirstname.ToLower().Contains(item.ToLower())));
+                exList.Remove((Content)results);
+                allContents = exList;
                 results = results.Concat(allContents.Where(w => w.AuthorLastname.ToLower().Contains(item.ToLower())));
+                exList.Remove((Content)results);
+                allContents = exList;
                 results = results.Concat(allContents.Where(w => w.Name.ToLower().Contains(item.ToLower())));
-                //results = results.Concat(allContents.Where(w => w.Text.ToLower().Contains(item.ToLower())));
+                exList.Remove((Content)results);
+                allContents = exList;
                 results = results.Concat(allContents.Where(w => w.ShortDescription.ToLower().Contains(item.ToLower())));
             }
+
+            return results;
+        }
+
+        public async Task<IEnumerable<Content>> SearchByTagName(string tag)
+        {
+            IEnumerable<Content> allContents = Enumerable.Reverse(await GetAll());
+
+            IEnumerable<Content> results = new List<Content>();
+
+            results = results.Concat(allContents.Where(w => w.Tag.ToLower().Equals(tag.ToLower())));
 
             return results;
         }

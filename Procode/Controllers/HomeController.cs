@@ -20,7 +20,7 @@ namespace Procode.Controllers
         private readonly IContentRepository contentRepo;
         private readonly IFeedbackRepository feedbackRepo;
 
-        public HomeController(ILogger<HomeController> logger, 
+        public HomeController(ILogger<HomeController> logger,
                               ISpeakerRepository speakerRepo,
                               IContentRepository contentRepo,
                               IFeedbackRepository feedbackRepo)
@@ -58,7 +58,7 @@ namespace Procode.Controllers
             return View(model);
         }
 
-        public async Task<IActionResult> Content([FromRoute]Guid Id)
+        public async Task<IActionResult> Content([FromRoute] Guid? Id)
         {
             ContentViewModel model = new ContentViewModel
             {
@@ -100,8 +100,22 @@ namespace Procode.Controllers
                 return View(exModel);
             }
 
-            
-            
+
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Blog([FromRoute]string t)
+        {
+            BlogViewModel model = new BlogViewModel
+            {
+                PageTitle = "Blog",
+                BannerTitle = "Foydali blog",
+                Contents = await contentRepo.SearchByTagName(t),
+                LastContents = await contentRepo.LastContents(3)
+            };
+
+            return View(model);
         }
 
         public IActionResult Contact()

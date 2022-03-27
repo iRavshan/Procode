@@ -14,5 +14,6 @@ namespace Procode.Data.Interfaces
         Task<Content> LastContent();
         Task<Content[]> LastContents(int count);
         Task<IEnumerable<Content>> SearchContent(string text);
+        Task<IEnumerable<Content>> SearchByTagName(string tag);
     }
 }
