@@ -6,7 +6,7 @@
     margin-bottom: 20px;
 	vertical-align: middle;
 }
-.widget .widget-title,
+
 .widget .post-title {
 	text-transform: uppercase;
 }
@@ -191,6 +191,7 @@
 	font-size:15px;
 	height: 45px;
 	padding: 5px 20px;
+    color: snow;
 }
 /*widget recent-posts*/
 .recent-posts-entry .post-date,
