@@ -64,7 +64,8 @@ namespace Procode.Controllers
             {
                 PageTitle = (await contentRepo.GetById(Id)).Name,
                 BannerTitle = (await contentRepo.GetById(Id)).Name,
-                Content = await contentRepo.GetById(Id)
+                Content = await contentRepo.GetById(Id),
+                LastContents = await contentRepo.LastContents(3)
             };
 
             return View(model);

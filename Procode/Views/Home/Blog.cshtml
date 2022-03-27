@@ -18,7 +18,7 @@
                     <!-- Left part start -->
                     <div class="col-md-7 col-lg-8 col-xl-8">
                         @{
-                            if (Model.Contents != null)
+                            if (Model.Contents.ToList().Count != 0)
                             {
                                 foreach (var content in Model.Contents)
                                 {
@@ -39,7 +39,7 @@
                                 }
                             }
 
-                            if(Model.Contents == null)
+                            if(Model.Contents.ToList().Count == 0)
                             {
                                 <p>@($"'{Model.Search}' qidiruvi bo'yicha hech narsa topilmadi")</p>
                             }

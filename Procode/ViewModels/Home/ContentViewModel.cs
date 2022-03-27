@@ -9,5 +9,8 @@ namespace Procode.ViewModels.Home
     public class ContentViewModel : ViewModel
     {
         public Content Content { get; set; } 
+        public IEnumerable<Content> LastContents { get; set; }
+
+        public string Search { get; set; }
     }
 }

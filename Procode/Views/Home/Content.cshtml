@@ -36,6 +36,60 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-5 col-lg-4 col-xl-4">
+                        <aside class="side-bar" style="margin-left: 30px;">
+                            <div class="widget widget-root">
+                                <h6 class="widget-title">Qidirish</h6>
+                                <div class="search-bx style-1">
+                                    <form asp-controller="home" asp-action="blog" method="post">
+                                        <div class="input-group">
+                                            <input asp-for="Search" class="form-control" placeholder="Kalit so'zlarni kiriting..." type="text">
+                                            <span class="input-group-btn">
+                                                <button type="submit" class="fa fa-search text-primary"></button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="widget recent-posts-entry widget-root">
+                                <h6 class="widget-title">Eng so'nggilar</h6>
+                                <div class="widget-post-bx">
+                                    @{
+                                        foreach (var content in Model.LastContents)
+                                        {
+                                            <div class="widget-post clearfix">
+                                                <div class="ttr-post-media">
+                                                    <img src="@($"https://ytimg.googleusercontent.com/vi/{content.YoutubeVideoId}/maxresdefault.jpg")" width="200" height="143" alt="">
+                                                </div>
+                                                <div class="ttr-post-info">
+                                                    <div class="ttr-post-header">
+                                                        <h6 class="post-title"><a asp-controller="home" asp-action="content" asp-route-Id="@content.Id">@content.Name</a></h6>
+                                                    </div>
+                                                    <ul class="media-post">
+                                                        <li> <button class="btn-tag-font"><i class="fa fa-user mr-2"></i>@($"{content.AuthorFirstname.Substring(0, 1)}. {content.AuthorLastname}")</button></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+
+                                </div>
+                            </div>
+                            <div class="widget widget-newslatter widget-root">
+                                <h6 class="widget-title">Yangiliklar</h6>
+                                <div class="news-box">
+                                    <p>Mahorat darslarini tashkil etish bo'yicha takliflarni bizga yozib qoldiring.</p>
+                                </div>
+                            </div>
+                            <div class="widget widget_tag_cloud widget-root">
+                                <h6 class="widget-title">Teglar</h6>
+                                <div class="tagcloud">
+                                    <a asp-controller="home" asp-action="blog" asp-route-t="design">Design</a>
+                                    <a href="#">User interface</a>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
                 </div>
             </div>
         </div>
