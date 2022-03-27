@@ -73,7 +73,7 @@ namespace Procode.Controllers
         [HttpPost]
         public async Task<IActionResult> BlogAsync(BlogViewModel model)
         {
-            if(model.Search is not null)
+            if(model.Search != null)
             {
                 BlogViewModel newModel = new BlogViewModel
                 {
@@ -90,7 +90,7 @@ namespace Procode.Controllers
             {
                 PageTitle = "Blog",
                 BannerTitle = "Foydali blog",
-                Contents = await contentRepo.GetAll(),
+                Contents = Enumerable.Reverse(await contentRepo.GetAll()),
                 LastContents = await contentRepo.LastContents(3)
             };
 
