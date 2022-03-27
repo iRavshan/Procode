@@ -57,17 +57,9 @@ namespace Procode.Data
             foreach (string item in TextOfSearch)
             {
                 results = results.Concat(allContents.Where(w => w.Tag.ToLower().Contains(item.ToLower())));
-                exList.Remove((Content)results);
-                allContents = exList;
                 results = results.Concat(allContents.Where(w => w.AuthorFirstname.ToLower().Contains(item.ToLower())));
-                exList.Remove((Content)results);
-                allContents = exList;
                 results = results.Concat(allContents.Where(w => w.AuthorLastname.ToLower().Contains(item.ToLower())));
-                exList.Remove((Content)results);
-                allContents = exList;
                 results = results.Concat(allContents.Where(w => w.Name.ToLower().Contains(item.ToLower())));
-                exList.Remove((Content)results);
-                allContents = exList;
                 results = results.Concat(allContents.Where(w => w.ShortDescription.ToLower().Contains(item.ToLower())));
             }
 
