@@ -45,7 +45,7 @@ namespace Procode.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> BlogAsync()
+        public async Task<IActionResult> Blog()
         {
             BlogViewModel model = new BlogViewModel
             {
@@ -58,7 +58,7 @@ namespace Procode.Controllers
             return View(model);
         }
 
-        public async Task<IActionResult> ContentAsync([FromRoute]Guid Id)
+        public async Task<IActionResult> Content([FromRoute]Guid Id)
         {
             ContentViewModel model = new ContentViewModel
             {
@@ -71,7 +71,7 @@ namespace Procode.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> BlogAsync(BlogViewModel model)
+        public async Task<IActionResult> Blog(BlogViewModel model)
         {
             if(model.Search != null)
             {
