@@ -58,7 +58,7 @@ namespace Procode.Controllers
             return View(model);
         }
 
-        public async Task<IActionResult> Content([FromRoute] Guid? Id)
+        public async Task<IActionResult> Content([FromRoute] Guid Id)
         {
             ContentViewModel model = new ContentViewModel
             {
