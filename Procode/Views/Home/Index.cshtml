@@ -360,17 +360,17 @@
                     <div class="col-lg-4 col-md-6" data-wow-delay=".1s">
                         <div class="single-blog">
                             <div class="blog-image">
-                                <a asp-controller="home" asp-route="content" asp-route-Id="@content.Id">
+                                <a asp-controller="home" asp-action="content" asp-route-Id="@content.Id">
                                     <img src="@($"https://ytimg.googleusercontent.com/vi/{content.YoutubeVideoId}/maxresdefault.jpg")" alt="blog">
                                 </a>
                                 <span class="blog-tag">@content.Tag</span>
                             </div>
                             <div class="blog-content">
                                 <h3>
-                                    <a asp-controller="home" asp-route="content" asp-route-Id="@content.Id">@content.Name</a>
+                                    <a asp-controller="home" asp-action="content" asp-route-Id="@content.Id">@content.Name</a>
                                 </h3>
                                 <p>@content.ShortDescription</p>
-                                <a asp-controller="home" asp-route="content" asp-route-Id="@content.Id" class="main-btn">Batafsil</a>
+                                <a asp-controller="home" asp-action="content" asp-route-Id="@content.Id" class="main-btn">Batafsil</a>
                             </div>
                         </div>
                     </div>
