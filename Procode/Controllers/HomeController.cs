@@ -104,7 +104,6 @@ namespace Procode.Controllers
 
         }
 
-        [HttpPost]
         public async Task<IActionResult> Blog([FromRoute]string t)
         {
             BlogViewModel model = new BlogViewModel
