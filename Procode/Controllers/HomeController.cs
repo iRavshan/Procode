@@ -104,19 +104,6 @@ namespace Procode.Controllers
 
         }
 
-        public async Task<IActionResult> Blog([FromRoute]string t)
-        {
-            BlogViewModel model = new BlogViewModel
-            {
-                PageTitle = "Blog",
-                BannerTitle = "Foydali blog",
-                Contents = await contentRepo.SearchByTagName(t),
-                LastContents = await contentRepo.LastContents(3)
-            };
-
-            return View(model);
-        }
-
         public IActionResult Contact()
         {
             return View();
