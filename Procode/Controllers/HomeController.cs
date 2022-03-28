@@ -81,7 +81,8 @@ namespace Procode.Controllers
                     PageTitle = "Blog",
                     BannerTitle = "Foydali blog",
                     Contents = await contentRepo.SearchContent(model.Search),
-                    LastContents = await contentRepo.LastContents(3)
+                    LastContents = await contentRepo.LastContents(3),
+                    Search = model.Search
                 };
 
                 return View(newModel);
@@ -95,7 +96,8 @@ namespace Procode.Controllers
                     PageTitle = "Blog",
                     BannerTitle = "Foydali blog",
                     Contents = Enumerable.Reverse(await contentRepo.GetAll()),
-                    LastContents = await contentRepo.LastContents(3)
+                    LastContents = await contentRepo.LastContents(3),
+                    Search = model.Search
                 };
 
                 return View(exModel);

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -40,6 +41,10 @@ namespace Procode
             {
                 client.BaseAddress = new Uri("https://procodeapi.herokuapp.com/api/");
             });
+
+            services.AddMvc(options =>
+                options.EnableEndpointRouting = false
+            );
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -65,8 +70,16 @@ namespace Procode
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}/{t?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}/{tag?}");
             });
+
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(
+            //            name: "custom",
+            //            template: "{name}/{id}/{title}",
+            //            defaults: new { controller = "Products" });
+            //});
         }
     }
 }
