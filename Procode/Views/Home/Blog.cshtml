@@ -66,13 +66,13 @@
                                 {
                                     <div class="single-popular-feed">
                                         <div class="feed-img">
-                                            <a asp-controller="home" asp-action="content" asp-route-Id="@item.Id"><img src="@($"https://img.youtube.com/vi/{item.YoutubeVideoId}/hqdefault.jpg")" alt="#"></a>
+                                            <a asp-controller="home" asp-action="content" asp-route-Id="@item.Id"><img src="@($"https://img.youtube.com/vi/{item.YoutubeVideoId}/mqdefault.jpg")" alt="content"></a>
                                         </div>
                                         <div class="feed-desc">
                                             <h6 class="post-title">
                                                 <a asp-controller="home" asp-action="content" asp-route-Id="@item.Id">@item.Name</a>
                                             </h6>
-                                            <span class="time"><i class="lni lni-calendar"></i>@item.CreateTime</span>
+                                            <span class="time"><i class="lni lni-calendar"></i>@item.CreateTime.ToString("dd.MM.yyyy")</span>
                                         </div>
                                     </div>
                                 }
