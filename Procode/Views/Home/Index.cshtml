@@ -3,382 +3,209 @@
     ViewData["Title"] = Model.PageTitle;
 }
 
-<!-- ====== Hero Start ====== -->
-<section class="hero" id="home">
-    <div class="hero-layer">
+<!-- Start Hero Area -->
+<section class="hero-area">
+    <div class="verticle-lines">
+        <div class="vlines one"></div>
+        <div class="vlines two"></div>
+        <div class="vlines three"></div>
+        <div class="vlines four"></div>
+    </div>
+    <!-- Single Slider -->
+    <div class="hero-inner">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-10 col-lg-6 col-xl-6">
-                    <div class="hero-content wow fadeInUp" data-wow-delay=".2s">
-                        <h1 class="hero-title">Procode ::: professional ta'lim</h1>
-                        <p class="hero-desc">
-                            Biz bilan professionallardan bepul ta'lim oling. O'z imkoniyat va chegaralaringizni yanada kengaytiring.
-                        </p>
-                        <p class="hero-desc mb-3">
-                            We are against war. Stop WAR !
-                        </p>
-                        <a asp-controller="account" asp-action="login" class="main-btn">Boshlash</a>
+            <div class="row ">
+                <div class="col-lg-6 co-12">
+                    <div class="Bosh sahifa-slider">
+                        <div class="hero-text">
+                            <h5 class="wow fadeInUp" data-wow-delay=".3s">Eng yaxshilar bilan birga</h5>
+                            <h1 class="wow fadeInUp" data-wow-delay=".5s">
+                                Procode bilan professional ta'lim
+                            </h1>
+                            <p class="wow fadeInUp" data-wow-delay=".7s">Biz bilan professionallardan bepul ta'lim oling. O'z imkoniyat va chegaralaringizni yanada kengaytiring.</p>
+                            <div class="button wow fadeInUp" data-wow-delay=".9s">
+                                <a href="about-us.html" class="btn">Hoziroq boshlang</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-xl-6">
-                    <div class="hero-image wow fadeInUp" data-wow-delay=".25s">
-                        <span class="video-play-button">
-                            <span></span>
-                        </span>
-                        <img src="/assets/images/thumb.png"
-                             alt="hero-image"
-                             class="image" />
+                <div class="col-lg-6 col-12">
+                    <div class="hero-image">
+                        <img class="shape3" src="assets/images/hero/shape2.png" alt="#">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!--/ End Single Slider -->
 </section>
-<!-- ====== Hero End ====== -->
-
-<!-- ====== Features Start ====== -->
-<section id="features" class="features">
+<!--/ End Hero Area -->
+<!-- Start Services Area -->
+<section class="features section">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title mx-auto text-center">
-                    <span>Biz haqimizda</span>
-                    <h2>Bizning maqsadlarimiz</h2>
+            <div class="col-12">
+                <div class="section-title">
+                    <span class="wow fadeInDown" data-wow-delay=".2s">Biz haqimizda</span>
+                    <h2 class="wow fadeInUp" data-wow-delay=".4s">Barchasi faqat siz uchun</h2>
+                    <p class="wow fadeInUp" data-wow-delay=".6s">Yetuk mutaxasislarimiz o'z bilimlarini ulashishga har qachon tayyor.</p>
+                    <h3 class="overlay-text">Procode</h3>
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-xl-4 col-md-6 col-sm-9">
-                <div class="single-feature wow fadeInUp" data-wow-delay=".1s">
-                    <div class="feature-icon">
-                        <i class="fas fa-fire"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3 class="feature-title">Professional ta'lim</h3>
-                        <p class="feature-desc">
-                            Bilim va tajribalarini ulashishga tayyor bo'lgan, o'z sohasining mutaxassislarini jalb etish
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6 col-sm-9">
-                <div class="single-feature wow fadeInUp" data-wow-delay=".15s">
-                    <div class="feature-icon">
-                        <i class="fas fa-podcast"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3 class="feature-title">Jonli muloqotlar</h3>
-                        <p class="feature-desc">
-                            Mutaxassislar bilan soha bo'yicha turli mavzularda mahorat darslarini o'tkazish.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6 col-sm-9">
-                <div class="single-feature wow fadeInUp" data-wow-delay=".2s">
-                    <div class="feature-icon">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <div class="feature-content">
-                        <h3 class="feature-title">Bepul xizmat</h3>
-                        <p class="feature-desc">
-                            Ilm talabidagi yaqinlarimizga har qaysi turdagi kontentlarni bepul ulashish.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- ====== Features End ====== -->
-
-<section id="about" class="about">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="about-content">
-                    <div class="section-title">
-                        <span>Biz haqimizda</span>
-                        <h2>Jonli muloqotlarda yangi qirralarni zabt eting.</h2>
-                    </div>
-                    <p>
-                        Biz IT sohasida ko'plab duch kelinadigan muammo va qiyinchiliklarning professionallar
-                        tomonidan yechimlarni jonli mahorat darslari tarzida ulashib boramiz.
-                    </p>
-                    <p>
-                        O'z bilim va tajribalarini ulashishga tayyor professional mentorlar bilan bo'lib o'tadigan
-                        bepul mahorat darslarimizda qatnashing va imkoniyatlaringizni yanda kengaytiring.
-                    </p>
-                    <a href="#blog" class="main-btn mb-5">Ko'proq</a>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="about-image-wrapper">
-                    <div class="about-image text-center text-lg-end">
-                        <img src="/assets/images/about/about.jpg" alt="about" class="image">
-                        <img src="/assets/images/about/dotted-shape.svg" alt="shape" class="shape shape-1">
-                        <img src="/assets/images/about/dotted-shape.svg" alt="shape" class="shape shape-2">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="testimonial" class="testimonials">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title mx-auto text-center">
-                    <span>Mentorlar</span>
-                    <h3 class="mb-4">Barcha tajribamizni siz bilan baham ko'ramiz</h3>
-                    <p>Yetuk mutaxasislarimiz o'z bilimlarini ulashishga har qachon tayyor.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="single-testimonial">
-                    <div class="testimonial-content">
+        <div class="single-head">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-12">
+                    <div class="single-feature">
+                        <span class="serial">01</span>
+                        <h5>Jonli muloqot</h5>
+                        <h3><a href="#">Professional mutaxassislar bilan mahorat darslari</a></h3>
                         <p>
-                            We Crafted an awesome design library matter you're buildi
-                            business presentation websit or a complex web application our
-                            design blocks can easily.
+                            Biz o'z bilim va tajribalarini ulashishga tayyor bo'lgan yetuk mutaxassislarimiz
+                            bilan birga soha bo'yicha mahorat darslarini tashkil etamiz.
                         </p>
-                    </div>
-                    <div class="testimonial-info">
-                        <h4>Margin Gesmu</h4>
-                        <p>Founder Lineicons</p>
-                    </div>
-                    <div class="testimonial-quote">
-                        <i class="fas fa-quote-right"></i>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-testimonial">
-                    <div class="testimonial-content">
+                <div class="col-lg-4 col-md-4 col-12">
+                    <div class="single-feature">
+                        <span class="serial">02</span>
+                        <h5>Ulkan auditoriya</h5>
+                        <h3><a href="#">Muammolar & ularning yechimlari</a></h3>
                         <p>
-                            We Crafted an awesome design library matter you're buildi
-                            business presentation websit or a complex web application our
-                            design blocks can easily.
+                            IT sohasining har qanday yo'nalishida faoliyat yurituvchi mutaxassis va ilmi toliblarni platformamizda bilim almashishlariga imkon yaratamiz.
                         </p>
-                    </div>
-                    <div class="testimonial-info">
-                        <h4>John Doe</h4>
-                        <p>Founder Ayroui</p>
-                    </div>
-                    <div class="testimonial-quote">
-                        <i class="fas fa-quote-right"></i>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-testimonial">
-                    <div class="testimonial-content">
-                        <p>
-                            We Crafted an awesome design library matter you're buildi
-                            business presentation websit or a complex web application our
-                            design blocks can easily.
-                        </p>
-                    </div>
-                    <div class="testimonial-info">
-                        <h4>Jonathon Smith</h4>
-                        <p>Founder Pagebulb</p>
-                    </div>
-                    <div class="testimonial-quote">
-                        <i class="fas fa-quote-right"></i>
+                <div class="col-lg-4 col-md-4 col-12">
+                    <div class="single-feature">
+                        <span class="serial">03</span>
+                        <h5>Bepul xizmat</h5>
+                        <h3><a href="#">Qulay muhitda bepul ta'lim olish</a></h3>
+                        <p>Platformamizdagi har qanday kontentimizga bir umrlik bepul foydalanish va ulashish imkoniyatini taqdim etamiz.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<!-- ====== Team Start ====== -->
-<section id="team" class="team">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title mx-auto text-center">
-                    <h2>Bizning jamoa</h2>
-                    <p>
-                        Bepul va sifatli ta'limni yetkazish uchun tinimsiz
-                        izlanish va harakatdamiz.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xl-3 col-lg-3 col-sm-6">
-                <div class="single-team wow fadeInUp" data-wow-delay=".1s">
-                    <div class="team-image-wrapper">
-                        <div class="team-image">
-                            <img src="/assets/images/team/team-01.png" alt="team" />
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <h5>Shahzod Shanbiyev</h5>
-                        <h6>Frontend dasturchi</h6>
-                    </div>
-                    <ul class="team-socials">
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="fab fa-telegram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-sm-6">
-                <div class="single-team wow fadeInUp" data-wow-delay=".15s">
-                    <div class="team-image-wrapper">
-                        <div class="team-image">
-                            <img src="/assets/images/team/Ravshan Sadikov.png" alt="team" />
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <h5>Ravshan Sodiqov</h5>
-                        <h6>Loyiha asoschisi</h6>
-                    </div>
-                    <ul class="team-socials">
-                        <li>
-                            <a href="https://github.com/iRavshan">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://t.me/ravshan77">
-                                <i class="fab fa-telegram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-sm-6">
-                <div class="single-team wow fadeInUp" data-wow-delay=".2s">
-                    <div class="team-image-wrapper">
-                        <div class="team-image">
-                            <img src="/assets/images/team/team-03.png" alt="team" />
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <h5>Andrieo Gloree</h5>
-                        <h6>App Developer</h6>
-                    </div>
-                    <ul class="team-socials">
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="lni lni-facebook-filled"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="lni lni-twitter-filled"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="lni lni-instagram-filled"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-sm-6">
-                <div class="single-team wow fadeInUp" data-wow-delay=".25s">
-                    <div class="team-image-wrapper">
-                        <div class="team-image">
-                            <img src="/assets/images/team/team-04.png" alt="team" />
-                        </div>
-                    </div>
-                    <div class="team-info">
-                        <h5>Jackie Sanders</h5>
-                        <h6>Content Writer</h6>
-                    </div>
-                    <ul class="team-socials">
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="lni lni-facebook-filled"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="lni lni-twitter-filled"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="lni lni-instagram-filled"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- ====== Team End ====== -->
-
-<section id="blog" class="blog">
+<!-- End Services Area -->
+<!-- Start About Us Area -->
+<section class="about-us section">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-md-8">
-                <div class="section-title">
-                    <span>Blog</span>
-                    <h2>Eng so'ngi postlar</h2>
-                    <p>
-                        Jonli tarzda bo'lib o'tadigan mahorat darslarimizda qatnashing va o'z
-                        imkoniyatlaringizni yanada kengaytiring
-                    </p>
+            <div class="col-lg-7 col-12">
+                <div class="about-left">
+                    <div class="section-title align-left">
+                        <span class="wow fadeInDown" data-wow-delay=".2s">Eng yaxshilar siz uchun</span>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Jonli muloqotlarda yangi qirralarni zabt eting.</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">Biz IT sohasida ko'plab duch kelinadigan muammo va qiyinchiliklarning professionallar tomonidan yechimlarni bepul va sifatli jonli mahorat darslari tarzida ulashib boramiz.</p>
+                        <p class="wow fadeInUp" data-wow-delay=".8s">O'z bilim va tajribalarini ulashishga tayyor professional mentorlar bilan bo'lib o'tadigan bepul mahorat darslarimizda qatnashing va imkoniyatlaringizni yanda kengaytiring.</p>
+                        <div class="author wow fadeInUp" data-wow-delay="1s">
+                            <img src="assets/images/about/author.png" alt="#">
+                            <div class="content">
+                                <h5>Ravshan Sadikov, <a href="#">@("@iRavshan")</a></h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="all-post-btn text-md-end">
-                    <a asp-controller="home" asp-action="blog" class="main-btn" style="margin-bottom: 36px;">Barchasi</a>
+            <div class="col-lg-5 col-12">
+                <div class="about-right wow fadeInRight" data-wow-delay=".4s">
+                    <img src="/assets/images/about/about-1.png" alt="#">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /End About Us Area -->
+
+
+<section class="intro-video-area overlay">
+    <div class="container-fluid">
+        <div class="video-inner ">
+            <div class="row">
+                <div class="col-12">
+                    <div class="intro-video-play">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10 col-12">
+                                <div class="play-thumb wow zoomIn" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: zoomIn;">
+                                    <a href="https://www.youtube.com/watch?v=r44RKWyfcFw&amp;fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM" class="glightbox video"><i class="lni lni-play"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-title white-text">
+                        <span class="wow fadeInDown" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">Biz allaqachon boshladik</span>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">Nega aynan biz bilan ?</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
+                            Yetuk bilim va tajribaga ega mahoratli ustozlardan ta'lim olish imkoniyatini qo'ldan boy bermang.
+                            Har bir mahorat darsi siz uchun yangi bilimlarni egallash uchun imkon.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Start Pricing Table Area -->
+<section class="pricing-table section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title">
+                    <span class="wow fadeInDown" data-wow-delay=".2s">Blog</span>
+                    <h2 class="wow fadeInUp" data-wow-delay=".4s">So'nggi darslar</h2>
+                    <h3 class="gray-bg">Blog</h3>
+                    <p class="wow fadeInUp" data-wow-delay=".6s">Jonli tarzda bo'lib o'tadigan mahorat darslarimizda qatnashing va o'z imkoniyatlaringizni yanada kengaytiring.</p>
                 </div>
             </div>
         </div>
         <div class="row">
-            @{
-                foreach (var content in Model.LastContents)
-                {
-                    <div class="col-lg-4 col-md-6" data-wow-delay=".1s">
-                        <div class="single-blog">
-                            <div class="blog-image">
-                                <a asp-controller="home" asp-action="content" asp-route-Id="@content.Id">
-                                    <img src="@($"https://ytimg.googleusercontent.com/vi/{content.YoutubeVideoId}/maxresdefault.jpg")" alt="blog">
-                                </a>
-                                <span class="blog-tag">@content.Tag</span>
-                            </div>
-                            <div class="blog-content">
-                                <h3>
-                                    <a asp-controller="home" asp-action="content" asp-route-Id="@content.Id">@content.Name</a>
-                                </h3>
-                                <p>@content.ShortDescription</p>
-                                <a asp-controller="home" asp-action="content" asp-route-Id="@content.Id" class="main-btn">Batafsil</a>
-                            </div>
-                        </div>
-                    </div>
-                }
-            }
-
+            <div class="col-lg-4 col-md-6 col-12">
+                <!-- Single Table -->
+                <div class="single-table wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                    <img src="/assets/images/breadcrumb/thumb.png" alt="" class="blog-thumbnail">
+                </div>
+                <!-- End Single Table-->
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <!-- Single Table -->
+                <div class="single-table wow fadeInUp p-0" data-wow-delay=".4s">
+                    <img src="/assets/images/breadcrumb/thumb.png" alt="" class="blog-thumbnail">
+                </div>
+                <!-- End Single Table-->
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <!-- Single Table -->
+                <div class="single-table wow fadeInUp p-0" data-wow-delay=".6s">
+                    <img src="/assets/images/breadcrumb/thumb.png" alt="" class="blog-thumbnail">
+                </div>
+                <!-- End Single Table-->
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <!-- Single Table -->
+                <div class="single-table wow fadeInUp p-0" data-wow-delay=".2s">
+                    <img src="/assets/images/breadcrumb/thumb.png" alt="" class="blog-thumbnail">
+                </div>
+                <!-- End Single Table-->
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <!-- Single Table -->
+                <div class="single-table wow fadeInUp p-0" data-wow-delay=".4s">
+                    <img src="/assets/images/breadcrumb/thumb.png" alt="" class="blog-thumbnail">
+                </div>
+                <!-- End Single Table-->
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+                <!-- Single Table -->
+                <div class="single-table wow fadeInUp p-0" data-wow-delay=".6s">
+                    <img src="/assets/images/breadcrumb/thumb.png" alt="" class="blog-thumbnail">
+                </div>
+                <!-- End Single Table-->
+            </div>
         </div>
     </div>
 </section>
+<!--/ End Pricing Table Area -->
