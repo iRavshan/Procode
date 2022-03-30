@@ -44,5 +44,6 @@ namespace Procode.Domain.Models
 
         [JsonProperty("CreateTime")]
         public DateTime CreateTime { get; set; }
+        public int CountOfComments { get; set; }
     }
 }
