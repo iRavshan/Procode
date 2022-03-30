@@ -1,66 +1,75 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="zxx">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>@ViewData["Title"] - Procode.uz</title>
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
-
-    @RenderSection("styles", required: false)
-
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/assets/css/animate.css" />
-    <link rel="stylesheet" href="/assets/css/glightbox.min.css" />
-    <link rel="stylesheet" href="/assets/css/swiper.css">
-    <link rel="stylesheet" href="/assets/css/index.css" />
-
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Bold - Multipurpose Business HTML Template.</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet"
           href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
           crossorigin="anonymous" />
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/css/animate.css" />
+    <link rel="stylesheet" href="/assets/css/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/css/glightbox.min.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+
 </head>
+
 <body>
-
-    <!-- ====== Header Start ====== -->
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /End Preloader -->
+    <!-- Start Header Area -->
     <header class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="navbar-wrapper">
+        <div class="header-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
                         <nav class="navbar navbar-expand-lg">
-                            <a class="navbar-brand" asp-controller="home" asp-action="index">
-                                <img src="/assets/images/logo/logo.png" alt="Logo" width="50" height="53" />
+                            <a class="navbar-brand" href="index.html">
+                                <img src="assets/images/logo/logo.png"
+                                     alt="#">
                             </a>
-                            <button class="navbar-toggler">
-                                <span class="toggler-icon"> </span>
-                                <span class="toggler-icon"> </span>
-                                <span class="toggler-icon"> </span>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="lni lni-menu open"></i>
                             </button>
-
-                            <div class="navbar-collapse">
-                                <ul id="nav" class="navbar-nav ms-auto">
-                                    <li class="nav-item">
-                                        <a asp-controller="home" asp-action="index">Bosh sahifa</a>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link active" href="#">Bosh sahifa</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" href="404.html">Kitoblar</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" href="404.html">Loyihalar</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" href="blog-grid.html">Blog</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a asp-controller="home" asp-action="books">Kitoblar</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a asp-controller="home" asp-action="blog">Blog</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a asp-controller="home" asp-action="contact">Aloqa</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a asp-controller="account" asp-action="login">Kirish</a>
+                                        <a class="nav-link" href="contact.html">Aloqa</a>
                                     </li>
                                 </ul>
+                                <div class="button">
+                                    <a href="contact.html" class="btn">Kirish</a>
+                                </div>
                             </div>
                         </nav>
                     </div>
@@ -68,110 +77,114 @@
             </div>
         </div>
     </header>
-    <!-- ====== Header End ====== -->
-
+    <!-- End Header Area -->
     @RenderBody()
-
-    <!-- ====== Footer Start ====== -->
-    <footer class="footer wow fadeInUp" data-wow-delay=".15s">
-        <div class="footer-widgets">
+    <!-- Start Footer Area -->
+    <footer class="footer">
+        <div class="call-action">
             <div class="container">
-                <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="widget">
-                            <h5 class="widget-title">Procode.uz</h5>
-                            <p class="widget-desc">
-                                Biz bilan professionallardan bepul ta'lim oling. O'z imkoniyat va chegaralaringizni yanada kengaytiring.
+                <div class="inner-content">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 col-md-8 col-12">
+                            <h2> <i class="fab fa-github" style="margin-right: 5px;"></i> Githubda biz bilan ishlashga nima deysiz ?</h2>
+                            <p>
+                                Biz loyihalarimiz uchun o'z hissasini qo'sha oladigan dasturchilarni qadrlaymiz <br>
+                                va ularni doim qo'llab quvvatlaymiz.
                             </p>
                         </div>
-                    </div>
-
-                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6">
-                        <div class="widget">
-                            <h5 class="widget-title">Sahifalar</h5>
-                            <ul class="widget-links">
-                                <li>
-                                    <a asp-controller="home" asp-action="index">Bosh sahifa</a>
-                                </li>
-                                <li>
-                                    <a asp-controller="home" asp-action="blog">Blog</a>
-                                </li>
-                                <li>
-                                    <a asp-controller="home" asp-action="contact">Aloqa</a>
-                                </li>
-                                <li>
-                                    <a asp-controller="home" asp-action="team">Bizning jamoa</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                        <div class="widget">
-                            <h5 class="widget-title">Bo'limlar</h5>
-                            <ul class="widget-links">
-                                <li>
-                                    <a href="javascript:void(0)">Dasturlash</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Kiberxavfsizlik</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">SMM &amp; Dizayn</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Brending</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                        <div class="widget">
-                            <h5 class="widget-title">Ijtimoiy tarmoqlarimiz</h5>
-                            <p class="widget-desc">
-                                Ijtimoiy tarmoqlarda savol va takliflaringizni qoldiring
-                            </p>
-                            <ul class="widget-socials">
-                                <li>
-                                    <a href="javascript:void(0)">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">
-                                        <i class="lni lni-twitter-filled"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">
-                                        <i class="lni lni-instagram-filled"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">
-                                        <i class="lni lni-linkedin-original"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                        <div class="col-lg-4 col-md-4 col-12 align-items-center">
+                            <div class="button">
+                                <a href="#" class="btn">Hoziroq boshlang</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Start Middle Top -->
+        <div class="container pb-5 mt-5">
+            <div class="row">
+                <div class="col-md-12 col-lg-8">
+                    <ul class="footer-list">
+                        <li><a href="">Bosh sahifa</a></li>
+                        <li><a href="">Kitoblar</a></li>
+                        <li><a href="">Loyihalar</a></li>
+                        <li><a href="">Blog</a></li>
+                        <li><a href="">Aloqa</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-12 text-center col-lg-4">
+                    <ul class="footer-list">
+                        <li><a href="" class="social-icon"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="" class="social-icon"><i class="fab fa-telegram-plane"></i></a></li>
+                        <li><a href="" class="social-icon"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="" class="social-icon"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="" class="social-icon"><i class="fab fa-github"></i></a></li>
+                    </ul>
+                </div>
+                <p class="text-left mt-4">Procode.uz &copy; 2019 - 2022</p>
+            </div>
+        </div>
     </footer>
-    <!-- ====== Footer End ====== -->
 
-    <!-- ====== Back To Top Start ====== -->
-    <a href="javascript:void(0)" class="back-to-top">
-        <i class="lni lni-chevron-up"> </i>
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
     </a>
-    <!-- ====== Back To Top End ====== -->
-
-
-    @RenderSection("scripts", required: false)
-    <!-- ====== All Javascript Files ====== -->
-    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/count-up.min.js"></script>
     <script src="/assets/js/wow.min.js"></script>
+    <script src="/assets/js/tiny-slider.js"></script>
     <script src="/assets/js/glightbox.min.js"></script>
+    <script src="/assets/js/imagesloaded.min.js"></script>
+    <script src="/assets/js/isotope.min.js"></script>
     <script src="/assets/js/main.js"></script>
+    <script type="text/javascript">
+        //========= testimonial
+        tns({
+            container: '.testimonial-slider',
+            items: 1,
+            slideBy: 'page',
+            autoplay: false,
+            mouseDrag: true,
+            gutter: 0,
+            nav: false,
+            controls: true,
+            controlsText: ['<i class="lni lni-arrow-left"></i>', '<i class="lni lni-arrow-right"></i>'],
+        });
+
+        //========= glightbox
+        GLightbox({
+            'href': 'https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM',
+            'type': 'video',
+            'source': 'youtube', //vimeo, youtube or local
+            'width': 900,
+            'autoplayVideos': true,
+        });
+
+        //============== isotope masonry js with imagesloaded
+        imagesLoaded('#container', function () {
+            var elem = document.querySelector('.grid');
+            var iso = new Isotope(elem, {
+                // options
+                itemSelector: '.grid-item',
+                masonry: {
+                    // use outer width of grid-sizer for columnWidth
+                    columnWidth: '.grid-item'
+                }
+            });
+
+            let filterButtons = document.querySelectorAll('.portfolio-btn-wrapper button');
+            filterButtons.forEach(e =>
+                e.addEventListener('click', () => {
+
+                    let filterValue = event.target.getAttribute('data-filter');
+                    iso.arrange({
+                        filter: filterValue
+                    });
+                })
+            );
+        });
+    </script>
 </body>
+
 </html>
