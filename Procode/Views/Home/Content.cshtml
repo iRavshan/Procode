@@ -2,121 +2,173 @@
 @{
     ViewData["Title"] = Model.PageTitle;
 }
-
-<div class="page-content bg-white">
-    <div class="page-banner ovbl-dark" style="background: url(/assets/images/bg.png); ">
-        <div class="container">
-            <div class="page-banner-entry">
-                <h1 class="text-white">@Model.BannerTitle</h1>
-            </div>
-        </div>
-    </div>
-    <div class="content-block">
-        <div class="section-area section-bg section-sp1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-xl-12">
-                        <div class="blog-lg">
-                            <div class="action-box blog-lg">
-                                <iframe width="100%" height="500px" src="@($"https://www.youtube.com/embed/{Model.Content.YoutubeVideoId}")" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div class="info-bx">
-                                <ul class="media-post">
-                                    <li><i class="fa fa-user-o mr-2"></i>@($"{Model.Content.AuthorFirstname} {Model.Content.AuthorLastname}")</li>
-                                </ul>
-                                <h5 class="post-title">@Model.Content.Name</h5>
-                                <p>@Model.Content.ShortDescription</p>
-                                <h6 class="mb-3 mt-5">Ijtimoiy tarmoqlarda ulashing: </h6>
-                                <ul class="list-inline contact-social-bx">
-                                    <li><a href="#" class="btn outline radius-xl mr-1"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#" class="btn outline radius-xl mr-1"><i class="fa fa-paper-plane"></i></a></li>
-                                    <li><a href="#" class="btn outline radius-xl mr-1"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="#" class="btn outline radius-xl"><i class="fab fa-twitch"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-5 col-lg-4 col-xl-4">
-                        <aside class="side-bar">
-                            <div class="widget widget-root">
-                                <h6 class="widget-title">Qidirish</h6>
-                                <div class="search-bx style-1">
-                                    <form asp-controller="home" asp-action="blog" method="post">
-                                        <div class="input-group">
-                                            <input asp-for="Search" class="form-control" placeholder="Kalit so'zlarni kiriting..." type="text">
-                                            <span class="input-group-btn">
-                                                <button type="submit" class="fa fa-search text-primary"></button>
-                                            </span>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="widget recent-posts-entry widget-root">
-                                <h6 class="widget-title">Eng so'nggilar</h6>
-                                <div class="widget-post-bx">
-                                    @{
-                                        foreach (var content in Model.LastContents)
-                                        {
-                                            <div class="widget-post clearfix">
-                                                <div class="ttr-post-media">
-                                                    <img src="@($"https://ytimg.googleusercontent.com/vi/{content.YoutubeVideoId}/maxresdefault.jpg")" width="200" height="143" alt="">
-                                                </div>
-                                                <div class="ttr-post-info">
-                                                    <div class="ttr-post-header">
-                                                        <h6 class="post-title"><a asp-controller="home" asp-action="content" asp-route-Id="@content.Id">@content.Name</a></h6>
-                                                    </div>
-                                                    <ul class="media-post">
-                                                        <li> <button class="btn-tag-font"><i class="fa fa-user mr-2"></i>@($"{content.AuthorFirstname.Substring(0, 1)}. {content.AuthorLastname}")</button></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        }
-                                    }
-
-                                </div>
-                            </div>
-                            <div class="widget widget-newslatter widget-root">
-                                <h6 class="widget-title">Yangiliklar</h6>
-                                <div class="news-box">
-                                    <p>Mahorat darslarini tashkil etish bo'yicha takliflarni bizga yozib qoldiring.</p>
-                                </div>
-                            </div>
-                            <div class="widget widget_tag_cloud widget-root">
-                                <h6 class="widget-title">Teglar</h6>
-                                <div class="tagcloud">
-                                    <a asp-controller="home" asp-action="blog" asp-route-t="design">Design</a>
-                                    <a href="#">User interface</a>
-                                </div>
-                            </div>
-                        </aside>
-                    </div>
+<div class="breadcrumbs overlay">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="breadcrumbs-content">
+                    <h1 class="page-title">Blog Single</h1>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                        been the industry's standard dummy text
+                    </p>
                 </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <ul class="breadcrumb-nav">
+                    <li><a href="index.html">Bosh sahifa</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
 
 
-@section styles{
-    <link rel="stylesheet" type="text/css" href="/assets/css/assets.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/typography.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/shortcodes/shortcodes.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
-    <link class="skin" rel="stylesheet" type="text/css" href="/assets/css/color/color-1.css">
-}
+<section class="section blog-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 col-md-12 col-12">
+                <div class="single-inner">
+                    <div class="post-thumbnils">
+                        <img src="assets/images/blog/blog-single.jpg" alt="#">
+                    </div>
+                    <div class="post-details">
+                        <div class="detail-inner">
 
-@section scripts{
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/vendors/bootstrap/js/popper.min.js"></script>
-    <script src="/assets/vendors/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
-    <script src="/assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
-    <script src="/assets/vendors/magnific-popup/magnific-popup.js"></script>
-    <script src="/assets/vendors/counter/waypoints-min.js"></script>
-    <script src="/assets/vendors/counter/counterup.min.js"></script>
-    <script src="/assets/vendors/imagesloaded/imagesloaded.js"></script>
-    <script src="/assets/vendors/masonry/masonry.js"></script>
-    <script src="/assets/vendors/masonry/filter.js"></script>
-    <script src="/assets/vendors/owl-carousel/owl.carousel.js"></script>
-    <script src="/assets/js/functions.js"></script>
-}
+                            <ul class="custom-flex post-meta">
+                                <li>
+                                    <a href="#">
+                                        <i class="lni lni-calendar"></i>
+                                        20th March 2023
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="lni lni-comments"></i>
+                                        35 Comments
+                                    </a>
+                                </li>
+                                <li>
+                                </li>
+                            </ul>
+                            <h2 class="post-title">
+                                How we can capture the market sales
+                            </h2>
+                            <p>
+                                We denounce with righteous indige nation and dislike men who are so beguiled and demo
+                                realized by the charms of pleasure of the moment, so blinded by desire, that they
+                                cannot
+                                foresee the pain and trouble that are bound to ensue; and equal blame belongs to
+                                those
+                                who fail in their duty through weakness of will, which is the same as saying through
+                                shrinking from toil and pain. These cases are perfectly simple and easy to
+                                distinguish.
+                                In a free hour, when our power of choice is untrammelled and when nothing prevents
+                                our
+                                being able to do what we like best, every pleasure is to be welcomed and every pain
+                                avoided.
+                            </p>
+                            <h3>A cleansing hot shower or bath</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                irure
+                                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                pariatur.
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.
+                            </p>
+                            <h3>Setting the mood with incense</h3>
+                            <p>
+                                Remove aversion, then, from all things that are not in our control, and transfer it
+                                to
+                                things contrary to the nature of what is in our control. But, for the present,
+                                totally
+                                suppress desire: for, if you desire any of the things which are not in your own
+                                control,
+                                you must necessarily be disappointed; and of those which are, and which it would be
+                                laudable to desire, nothing is yet in your possession. Use only the appropriate
+                                actions
+                                of pursuit and avoidance; and even these lightly, and with gentleness and
+                                reservation.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                irure
+                                dolor in reprehenderit.
+                            </p>
+                            <p>
+                                Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                                laborum.
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.
+                            </p>
+
+                            <div class="post-tags-media">
+                                <div class="post-tags popular-tag-widget mb-xl-40">
+                                    <h5 class="tag-title">Teglar</h5>
+                                    <div class="tags">
+                                        <a href="#">Popular</a>
+                                        <a href="#">Design</a>
+                                        <a href="#">UX</a>
+                                    </div>
+                                </div>
+                                <div class="post-social-media">
+                                    <h5 class="share-title">Ijtimoiy tarmoqlarda ulashing</h5>
+                                    <ul class="custom-flex">
+                                        <li>
+                                            <a href="#" class="facebook">
+                                                <i class="lni lni-facebook-original"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="twitter">
+                                                <i class="lni lni-twitter-original"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="google">
+                                                <i class="lni lni-google"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="pinterest">
+                                                <i class="lni lni-pinterest"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="vimeo">
+                                                <i class="lni lni-vimeo"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comment-form">
+                            <h3 class="comment-reply-title">Fikringizni qoldiring</h3>
+                            <form action="#" method="POST">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-box form-group">
+                                            <textarea name="#" rows="6" class="form-control form-control-custom" placeholder="Matnni kiriting"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="button">
+                                            <button type="submit" class="btn mouse-dir white-bg">Yuborish<span class="dir-part"></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -2,134 +2,275 @@
 @{
     ViewData["Title"] = Model.PageTitle;
 }
-
-<div class="page-content bg-white">
-    <div class="page-banner ovbl-dark" style="background-image:url(/assets/images/bg.png);">
-        <div class="container">
-            <div class="page-banner-entry">
-                <h1 class="text-white">@Model.PageTitle</h1>
-            </div>
-        </div>
-    </div>
-    <div class="content-block">
-        <div class="section-area section-sp1 section-bg">
-            <div class="container">
-                <div class="row">
-                    <!-- Left part start -->
-                    <div class="col-md-7 col-lg-8 col-xl-8">
-                        @{
-                            if (Model.Contents.ToList().Count != 0)
-                            {
-                                foreach (var content in Model.Contents)
-                                {
-                                    <div class="recent-news blog-lg m-b40">
-                                        <div class="info-bx">
-                                            <h5 class="post-title"><a asp-controller="home" asp-action="content" asp-route-Id="@content.Id">@content.Name</a></h5>
-                                            <p>@content.ShortDescription</p>
-                                            <ul class="media-post">
-                                                <li> <button class="btn-tag"><i class="fa fa-user mr-2"></i>@($"{content.AuthorFirstname} {content.AuthorLastname}")</button></li>
-                                                <li> <button class="btn-tag-font">#@content.Tag</button></li>
-                                            </ul>
-                                            <div class="post-extra mt-0 pt-0">
-                                                <a asp-controller="home" asp-action="content" asp-route-Id="@content.Id" class="btn-link">Batafsil</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                }
-                            }
-
-                            if(Model.Contents.ToList().Count == 0)
-                            {
-                                <p class="text-center mb-5">@($"'{Model.Search}' qidiruvi bo'yicha hech narsa topilmadi")</p>
-                            }
-
-                        }
-                    </div>
-                    <!-- Left part END -->
-                    <!-- Side bar start -->
-                    <div class="col-md-5 col-lg-4 col-xl-4">
-                        <aside class="side-bar">
-                            <div class="widget widget-root">
-                                <h6 class="widget-title">Qidirish</h6>
-                                <div class="search-bx style-1">
-                                    <form asp-controller="home" asp-action="blog" method="post">
-                                        <div class="input-group">
-                                            <input asp-for="Search" class="form-control" placeholder="Kalit so'zlarni kiriting..." type="text">
-                                            <span class="input-group-btn">
-                                                <button type="submit" class="fa fa-search text-primary"></button>
-                                            </span>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="widget recent-posts-entry widget-root">
-                                <h6 class="widget-title">Eng so'nggilar</h6>
-                                <div class="widget-post-bx">
-                                    @{
-                                        foreach(var content in Model.LastContents)
-                                        {
-                                          <div class="widget-post clearfix">
-                                              <div class="ttr-post-media"> 
-                                                  <img src="@($"https://ytimg.googleusercontent.com/vi/{content.YoutubeVideoId}/maxresdefault.jpg")" width="200" height="143" alt=""> 
-                                              </div>
-                                              <div class="ttr-post-info">
-                                                 <div class="ttr-post-header">
-                                                     <h6 class="post-title"><a asp-controller="home" asp-action="content" asp-route-Id="@content.Id">@content.Name</a></h6>
-                                                 </div>
-                                                 <ul class="media-post">
-                                                     <li> <button class="btn-tag-font"><i class="fa fa-user mr-2"></i>@($"{content.AuthorFirstname.Substring(0, 1)}. {content.AuthorLastname}")</button></li>
-                                                  </ul>
-                                              </div>
-                                          </div>
-                                        }
-                                    }
-                                    
-                                </div>
-                            </div>
-                            <div class="widget widget-newslatter widget-root">
-                                <h6 class="widget-title">Yangiliklar</h6>
-                                <div class="news-box">
-                                    <p>Mahorat darslarini tashkil etish bo'yicha takliflarni bizga yozib qoldiring.</p>
-                                </div>
-                            </div>
-                            <div class="widget widget_tag_cloud widget-root">
-                                <h6 class="widget-title">Teglar</h6>
-                                <div class="tagcloud">
-                                    <a asp-controller="home" asp-action="blog" asp-route-t="design">Design</a>
-                                    <a href="#">User interface</a>
-                                </div>
-                            </div>
-                        </aside>
-                    </div>
-                    <!-- Side bar END -->
+<div class="breadcrumbs overlay">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="breadcrumbs-content">
+                    <h1 class="page-title">Foydali blog</h1>
+                    <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                        been the industry's standard dummy text
+                    </p>
                 </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <ul class="breadcrumb-nav">
+                    <li><a href="index.html">Bosh sahifa</a></li>
+                    <li>Blog</li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
 
 
-@section styles{
-    <link rel="stylesheet" type="text/css" href="/assets/css/assets.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/typography.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/shortcodes/shortcodes.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
-    <link class="skin" rel="stylesheet" type="text/css" href="/assets/css/color/color-1.css">
-}
+<section class="section latest-news-area blog-list">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-7 col-12">
+                <div class="row">
+                    <div class="col-lg-12 col-12">
 
-@section scripts{
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/vendors/bootstrap/js/popper.min.js"></script>
-    <script src="/assets/vendors/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
-    <script src="/assets/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
-    <script src="/assets/vendors/magnific-popup/magnific-popup.js"></script>
-    <script src="/assets/vendors/counter/waypoints-min.js"></script>
-    <script src="/assets/vendors/counter/counterup.min.js"></script>
-    <script src="/assets/vendors/imagesloaded/imagesloaded.js"></script>
-    <script src="/assets/vendors/masonry/masonry.js"></script>
-    <script src="/assets/vendors/masonry/filter.js"></script>
-    <script src="/assets/vendors/owl-carousel/owl.carousel.js"></script>
-    <script src="/assets/js/functions.js"></script>
-}
+                        <div class="single-news custom-shadow-hover wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                            <div class="content-body">
+                                <a class="cat" href="#">Career</a>
+                                <h4 class="title">
+                                    <a href="blog-single-sidebar.html">
+                                        How to win any job you want.
+                                        Get
+                                        started with 5 steps.
+                                    </a>
+                                </h4>
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum
+                                    has been the industry's.
+                                </p>
+                                <div class="button">
+                                    <a href="blog-single-sidebar.html" class="btn">Batafsil</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-12 col-12">
+
+                        <div class="single-news custom-shadow-hover wow fadeInUp" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+
+                            <div class="content-body">
+                                <a class="cat" href="#">Lifestyle</a>
+                                <h4 class="title">
+                                    <a href="blog-single-sidebar.html">
+                                        10 ways to readuce your office
+                                        work
+                                        depression.
+                                    </a>
+                                </h4>
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum
+                                    has been the industry's.
+                                </p>
+                                <div class="button">
+                                    <a href="blog-single-sidebar.html" class="btn">Batafsil</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-12 col-12">
+
+                        <div class="single-news custom-shadow-hover wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                            <div class="content-body">
+                                <a class="cat" href="#">Career</a>
+                                <h4 class="title">
+                                    <a href="blog-single-sidebar.html">
+                                        Why should you work as a team
+                                        even on
+                                        small projects.
+                                    </a>
+                                </h4>
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum
+                                    has been the industry's.
+                                </p>
+                                <div class="button">
+                                    <a href="blog-single-sidebar.html" class="btn">Batafsil</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-12 col-12">
+
+                        <div class="single-news custom-shadow-hover wow fadeInUp" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+
+                            <div class="content-body">
+                                <a class="cat" href="#">Career</a>
+                                <h4 class="title">
+                                    <a href="blog-single-sidebar.html">
+                                        How to win any job you want.
+                                        Get
+                                        started with 5 steps.
+                                    </a>
+                                </h4>
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum
+                                    has been the industry's.
+                                </p>
+                                <div class="button">
+                                    <a href="blog-single-sidebar.html" class="btn">Batafsil</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-12 col-12">
+
+                        <div class="single-news custom-shadow-hover wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                            <div class="content-body">
+                                <a class="cat" href="#">Lifestyle</a>
+                                <h4 class="title">
+                                    <a href="blog-single-sidebar.html">
+                                        10 ways to readuce your office
+                                        work
+                                        depression.
+                                    </a>
+                                </h4>
+                                <p>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum
+                                    has been the industry's.
+                                </p>
+                                <div class="button">
+                                    <a href="blog-single-sidebar.html" class="btn">Batafsil</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-12 col-12">
+
+                        <div class="single-news custom-shadow-hover wow fadeInUp" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+
+                            <div class="content-body">
+                                <a class="cat" href="#">Career</a>
+                                <h4 class="title">
+                                    <a href="blog-single-sidebar.html">
+                                        Why should you work as a team
+                                        even on small projects.
+                                    </a>
+                                </h4>
+                                <p>Lorem Ipsum is simply dummy text</p>
+                                <div class="button">
+                                    <a href="blog-single-sidebar.html" class="btn">Batafsil</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <aside class="col-lg-4 col-md-5 col-12">
+                <div class="sidebar">
+                    <div class="widget search-widget">
+                        <h5 class="widget-title">Qidiruv</h5>
+                        <form action="#">
+                            <input type="text" placeholder="Barchasi topiladi ...">
+                            <button type="submit"><i class="lni lni-search-alt"></i></button>
+                        </form>
+                    </div>
+                    <div class="widget popular-feeds">
+                        <h5 class="widget-title">Eng so'nggilar</h5>
+                        <div class="popular-feed-loop">
+                            <div class="single-popular-feed">
+                                <div class="feed-img">
+                                    <a href="blog-single.html"><img src="assets/images/blog/blog-sidebar1.jpg" alt="#"></a>
+                                </div>
+                                <div class="feed-desc">
+                                    <h6 class="post-title">
+                                        <a href="#">5 Effective Ways to Hire More Workers</a>
+                                    </h6>
+                                    <span class="time"><i class="lni lni-calendar"></i> 05th Nov 2023</span>
+                                </div>
+                            </div>
+                            <div class="single-popular-feed">
+                                <div class="feed-img">
+                                    <a href="blog-single.html"><img src="assets/images/blog/blog-sidebar2.jpg" alt="#"></a>
+                                </div>
+                                <div class="feed-desc">
+                                    <h6 class="post-title">
+                                        <a href="#">
+                                            Does My Business Need a Director of
+                                            Training?
+                                        </a>
+                                    </h6>
+                                    <span class="time"><i class="lni lni-calendar"></i> 24th March 2023</span>
+                                </div>
+                            </div>
+                            <div class="single-popular-feed">
+                                <div class="feed-img">
+                                    <a href="blog-single.html"><img src="assets/images/blog/blog-sidebar3.jpg" alt="#"></a>
+                                </div>
+                                <div class="feed-desc">
+                                    <h6 class="post-title">
+                                        <a href="#">What are the 2023 Staffing Trends in USA</a>
+                                    </h6>
+                                    <span class="time"><i class="lni lni-calendar"></i> 30th Jan 2023</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget categories-widget">
+                        <h5 class="widget-title">Kategoriyalar</h5>
+                        <ul class="custom">
+                            <li>
+                                <a href="#">Business <i class="lni lni-arrow-right"></i></a>
+                            </li>
+                            <li>
+                                <a href="#">Consultant <i class="lni lni-arrow-right"></i></a>
+                            </li>
+                            <li>
+                                <a href="#">Creative <i class="lni lni-arrow-right"></i></a>
+                            </li>
+                            <li>
+                                <a href="#">UI/UX <i class="lni lni-arrow-right"></i></a>
+                            </li>
+                            <li>
+                                <a href="#">Technology <i class="lni lni-arrow-right"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="widget popular-tag-widget">
+                        <h5 class="widget-title">Teglar</h5>
+                        <div class="tags">
+                            <a href="#">Popular Template</a>
+                            <a href="#">Design</a>
+                            <a href="#">UX</a>
+                            <a href="#">Icon</a>
+                            <a href="#">Usability</a>
+                            <a href="#">Tech</a>
+                            <a href="#">Mouse</a>
+                            <a href="#">Kit</a>
+                            <a href="#">Consult</a>
+                            <a href="#">Business</a>
+                            <a href="#">Keyboard</a>
+                            <a href="#">Develop</a>
+                        </div>
+                    </div>
+
+                    <div class="widget call-us">
+                        <div class="content">
+                            <h4>Yangiliklar<span>Mahorat darslarimizning keyingi mavzulari haqidagi takliflarni bizga yo'llang</span></h4>
+                            <div class="button">
+                                <a href="contact.html" class="btn">Yuborish</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
