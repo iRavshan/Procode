@@ -12,8 +12,4 @@
     <ProjectReference Include="..\Procode.Data\Procode.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\assets\images\blog\" />
-  </ItemGroup>
-
 </Project>
