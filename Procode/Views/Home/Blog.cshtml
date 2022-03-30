@@ -2,22 +2,20 @@
 @{
     ViewData["Title"] = Model.PageTitle;
 }
+
 <div class="breadcrumbs overlay">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="breadcrumbs-content">
-                    <h1 class="page-title">Foydali blog</h1>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been the industry's standard dummy text
-                    </p>
+                    <h1 class="page-title">@Model.BannerTitle</h1>
+                    <p></p>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-12">
                 <ul class="breadcrumb-nav">
                     <li><a asp-controller="home" asp-action="index">Bosh sahifa</a></li>
-                    <li>Blog</li>
+                    <li>@Model.PageTitle</li>
                 </ul>
             </div>
         </div>
@@ -30,197 +28,55 @@
         <div class="row">
             <div class="col-lg-8 col-md-7 col-12">
                 <div class="row">
-                    <div class="col-lg-12 col-12">
-
-                        <div class="single-news custom-shadow-hover wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                            <div class="content-body">
-                                <a class="cat" href="#">Career</a>
-                                <h4 class="title">
-                                    <a href="blog-single-sidebar.html">
-                                        How to win any job you want.
-                                        Get
-                                        started with 5 steps.
-                                    </a>
-                                </h4>
-                                <p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum
-                                    has been the industry's.
-                                </p>
-                                <div class="button">
-                                    <a href="blog-single-sidebar.html" class="btn">Batafsil</a>
+                    @{
+                        foreach (var item in Model.Contents)
+                        {
+                            <div class="col-lg-12 col-12">
+                                <div class="single-news custom-shadow-hover wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                                    <div class="content-body">
+                                        <a class="cat" href="#">@item.Tag</a>
+                                        <h4 class="title">
+                                            <a asp-controller="home" asp-action="content" asp-route-Id="@item.Id">@item.Name</a>
+                                        </h4>
+                                        <p>@item.ShortDescription</p>
+                                        <div class="button">
+                                            <a asp-controller="home" asp-action="content" asp-route-Id="@item.Id">Batafsil</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-12 col-12">
-
-                        <div class="single-news custom-shadow-hover wow fadeInUp" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-
-                            <div class="content-body">
-                                <a class="cat" href="#">Lifestyle</a>
-                                <h4 class="title">
-                                    <a href="blog-single-sidebar.html">
-                                        10 ways to readuce your office
-                                        work
-                                        depression.
-                                    </a>
-                                </h4>
-                                <p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum
-                                    has been the industry's.
-                                </p>
-                                <div class="button">
-                                    <a href="blog-single-sidebar.html" class="btn">Batafsil</a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-12 col-12">
-
-                        <div class="single-news custom-shadow-hover wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                            <div class="content-body">
-                                <a class="cat" href="#">Career</a>
-                                <h4 class="title">
-                                    <a href="blog-single-sidebar.html">
-                                        Why should you work as a team
-                                        even on
-                                        small projects.
-                                    </a>
-                                </h4>
-                                <p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum
-                                    has been the industry's.
-                                </p>
-                                <div class="button">
-                                    <a href="blog-single-sidebar.html" class="btn">Batafsil</a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-12 col-12">
-
-                        <div class="single-news custom-shadow-hover wow fadeInUp" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-
-                            <div class="content-body">
-                                <a class="cat" href="#">Career</a>
-                                <h4 class="title">
-                                    <a href="blog-single-sidebar.html">
-                                        How to win any job you want.
-                                        Get
-                                        started with 5 steps.
-                                    </a>
-                                </h4>
-                                <p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum
-                                    has been the industry's.
-                                </p>
-                                <div class="button">
-                                    <a href="blog-single-sidebar.html" class="btn">Batafsil</a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-12 col-12">
-
-                        <div class="single-news custom-shadow-hover wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                            <div class="content-body">
-                                <a class="cat" href="#">Lifestyle</a>
-                                <h4 class="title">
-                                    <a href="blog-single-sidebar.html">
-                                        10 ways to readuce your office
-                                        work
-                                        depression.
-                                    </a>
-                                </h4>
-                                <p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum
-                                    has been the industry's.
-                                </p>
-                                <div class="button">
-                                    <a href="blog-single-sidebar.html" class="btn">Batafsil</a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-lg-12 col-12">
-
-                        <div class="single-news custom-shadow-hover wow fadeInUp" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-
-                            <div class="content-body">
-                                <a class="cat" href="#">Career</a>
-                                <h4 class="title">
-                                    <a href="blog-single-sidebar.html">
-                                        Why should you work as a team
-                                        even on small projects.
-                                    </a>
-                                </h4>
-                                <p>Lorem Ipsum is simply dummy text</p>
-                                <div class="button">
-                                    <a href="blog-single-sidebar.html" class="btn">Batafsil</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        }
+                    }
                 </div>
-            </div>
             <aside class="col-lg-4 col-md-5 col-12">
                 <div class="sidebar">
                     <div class="widget search-widget">
                         <h5 class="widget-title">Qidiruv</h5>
-                        <form action="#">
-                            <input type="text" placeholder="Barchasi topiladi ...">
+                        <form asp-controller="home" asp-action="blog" method="post">
+                            <input asp-for="Search" type="text" placeholder="Barchasi topiladi ...">
                             <button type="submit"><i class="lni lni-search-alt"></i></button>
                         </form>
                     </div>
                     <div class="widget popular-feeds">
                         <h5 class="widget-title">Eng so'nggilar</h5>
                         <div class="popular-feed-loop">
-                            <div class="single-popular-feed">
-                                <div class="feed-img">
-                                    <a href="blog-single.html"><img src="assets/images/blog/blog-sidebar1.jpg" alt="#"></a>
-                                </div>
-                                <div class="feed-desc">
-                                    <h6 class="post-title">
-                                        <a href="#">5 Effective Ways to Hire More Workers</a>
-                                    </h6>
-                                    <span class="time"><i class="lni lni-calendar"></i> 05th Nov 2023</span>
-                                </div>
-                            </div>
-                            <div class="single-popular-feed">
-                                <div class="feed-img">
-                                    <a href="blog-single.html"><img src="assets/images/blog/blog-sidebar2.jpg" alt="#"></a>
-                                </div>
-                                <div class="feed-desc">
-                                    <h6 class="post-title">
-                                        <a href="#">
-                                            Does My Business Need a Director of
-                                            Training?
-                                        </a>
-                                    </h6>
-                                    <span class="time"><i class="lni lni-calendar"></i> 24th March 2023</span>
-                                </div>
-                            </div>
-                            <div class="single-popular-feed">
-                                <div class="feed-img">
-                                    <a href="blog-single.html"><img src="assets/images/blog/blog-sidebar3.jpg" alt="#"></a>
-                                </div>
-                                <div class="feed-desc">
-                                    <h6 class="post-title">
-                                        <a href="#">What are the 2023 Staffing Trends in USA</a>
-                                    </h6>
-                                    <span class="time"><i class="lni lni-calendar"></i> 30th Jan 2023</span>
-                                </div>
-                            </div>
+                            @{
+                                foreach (var item in Model.LastContents)
+                                {
+                                    <div class="single-popular-feed">
+                                        <div class="feed-img">
+                                            <a asp-controller="home" asp-action="content" asp-route-Id="@item.Id"><img src="assets/images/blog/blog-sidebar1.jpg" alt="#"></a>
+                                        </div>
+                                        <div class="feed-desc">
+                                            <h6 class="post-title">
+                                                <a asp-controller="home" asp-action="content" asp-route-Id="@item.Id">@item.Name</a>
+                                            </h6>
+                                            <span class="time"><i class="lni lni-calendar"></i> 05th Nov 2023</span>
+                                        </div>
+                                    </div>
+                                }
+                            }
+
                         </div>
                     </div>
                     <div class="widget categories-widget">
@@ -260,7 +116,6 @@
                             <a href="#">Develop</a>
                         </div>
                     </div>
-
                     <div class="widget call-us">
                         <div class="content">
                             <h4>Yangiliklar<span>Mahorat darslarimizning keyingi mavzulari haqidagi takliflarni bizga yo'llang</span></h4>

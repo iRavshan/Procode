@@ -9,6 +9,7 @@ namespace Procode.ViewModels
     {
         public string PageTitle { get; set; }
         public string BannerTitle { get; set; }
+        public string BannerSubtitle { get; set; }
         public List<string> PageTags { get; set; }
     }
 }
