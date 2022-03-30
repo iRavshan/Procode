@@ -1,4 +1,5 @@
-﻿@model BlogViewModel
+﻿<%= Page.User.Identity.IsAuthenticated %>
+@model BlogViewModel
 @{
     ViewData["Title"] = Model.PageTitle;
 }
@@ -50,10 +51,10 @@
                             }
                         }
 
-            else
-            {
-                <p class="text-center">"@Model.Search" qidiruvi bo'yicha hech narsa topilmadi.</p>
-            }
+                        else
+                        {
+                            <p class="text-center">"@Model.Search" qidiruvi bo'yicha hech narsa topilmadi.</p>
+                        }
 
                     }
                 </div>
