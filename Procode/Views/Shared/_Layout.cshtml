@@ -1,10 +1,9 @@
 ﻿<!DOCTYPE html>
 <html class="no-js" lang="zxx">
-
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Bold - Multipurpose Business HTML Template.</title>
+    <title>@ViewData["Title"] - Procode.uz</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -13,15 +12,19 @@
           href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
           crossorigin="anonymous" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/assets/css/LineIcons.2.0.css" />
     <link rel="stylesheet" href="/assets/css/animate.css" />
     <link rel="stylesheet" href="/assets/css/tiny-slider.css" />
     <link rel="stylesheet" href="/assets/css/glightbox.min.css" />
     <link rel="stylesheet" href="/assets/css/main.css" />
-
 </head>
-
 <body>
     <!-- Preloader -->
     <div class="preloader">
@@ -41,7 +44,7 @@
                     <div class="col-12">
                         <nav class="navbar navbar-expand-lg">
                             <a class="navbar-brand" href="index.html">
-                                <img src="assets/images/logo/logo.png"
+                                <img src="/assets/images/logo/logo.png"
                                      alt="#">
                             </a>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -52,7 +55,7 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link active" href="#">Bosh sahifa</a>
+                                        <a class="nav-link active" asp-controller="home" asp-action="index">Bosh sahifa</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link" href="404.html">Kitoblar</a>
@@ -61,14 +64,14 @@
                                         <a class="nav-link" href="404.html">Loyihalar</a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" href="blog-grid.html">Blog</a>
+                                        <a class="nav-link" asp-controller="home" asp-action="blog">Blog</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="contact.html">Aloqa</a>
+                                        <a class="nav-link" asp-controller="home" asp-action="contact">Aloqa</a>
                                     </li>
                                 </ul>
                                 <div class="button">
-                                    <a href="contact.html" class="btn">Kirish</a>
+                                    <a asp-controller="account" asp-action="login" class="btn">Kirish</a>
                                 </div>
                             </div>
                         </nav>
@@ -94,7 +97,7 @@
                         </div>
                         <div class="col-lg-4 col-md-4 col-12 align-items-center">
                             <div class="button">
-                                <a href="#" class="btn">Hoziroq boshlang</a>
+                                <a href="https://github.com/procodetm" class="btn">Hoziroq boshlang</a>
                             </div>
                         </div>
                     </div>
@@ -106,23 +109,23 @@
             <div class="row">
                 <div class="col-md-12 col-lg-8">
                     <ul class="footer-list">
-                        <li><a href="">Bosh sahifa</a></li>
+                        <li><a asp-controller="home" asp-action="index">Bosh sahifa</a></li>
                         <li><a href="">Kitoblar</a></li>
                         <li><a href="">Loyihalar</a></li>
-                        <li><a href="">Blog</a></li>
-                        <li><a href="">Aloqa</a></li>
+                        <li><a asp-controller="home" asp-action="blog">Blog</a></li>
+                        <li><a asp-controller="home" asp-action="contact">Aloqa</a></li>
                     </ul>
                 </div>
                 <div class="col-md-12 text-center col-lg-4">
                     <ul class="footer-list">
-                        <li><a href="" class="social-icon"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="" class="social-icon"><i class="fab fa-telegram-plane"></i></a></li>
-                        <li><a href="" class="social-icon"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="" class="social-icon"><i class="fab fa-youtube"></i></a></li>
-                        <li><a href="" class="social-icon"><i class="fab fa-github"></i></a></li>
+                        <li><a href="https://t.me/procodeuz" class="social-icon"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://t.me/procodeuz" class="social-icon"><i class="fab fa-telegram-plane"></i></a></li>
+                        <li><a href="https://t.me/procodeuz" class="social-icon"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCElASHX7ztJEtMpT1IKKGDg" class="social-icon"><i class="fab fa-youtube"></i></a></li>
+                        <li><a href="https://github.com/procodetm" class="social-icon"><i class="fab fa-github"></i></a></li>
                     </ul>
                 </div>
-                <p class="text-left mt-4">Procode.uz &copy; 2019 - 2022</p>
+                <p class="text-left mt-4">Procode.uz &copy; 2019 - @DateTime.Now.Year</p>
             </div>
         </div>
     </footer>
@@ -130,6 +133,7 @@
     <a href="#" class="scroll-top btn-hover">
         <i class="lni lni-chevron-up"></i>
     </a>
+
     <script src="/assets/js/bootstrap.min.js"></script>
     <script src="/assets/js/count-up.min.js"></script>
     <script src="/assets/js/wow.min.js"></script>
