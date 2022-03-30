@@ -37,7 +37,7 @@
                                 <li>
                                     <a href="#">
                                         <i class="far fa-user"></i>
-                                        @(Model.Content.AuthorFirstname + Model.Content.AuthorLastname)
+                                        @(Model.Content.AuthorFirstname + " " + Model.Content.AuthorLastname)
                                     </a>
                                 </li>
                                 <li>
@@ -48,7 +48,7 @@
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i class="fas fa-hashtag"></i>
+                                        <i class="fas fa-hashtag">@Model.Content.Tag</i>
                                     </a>
                                 </li>
                             </ul>
@@ -81,22 +81,22 @@
                                     <ul class="custom-flex">
                                         <li>
                                             <a href="#" class="facebook">
-                                                <i class="lni lni-facebook-original"></i>
+                                                <i class="fab fa-facebook-f"></i>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" class="twitter">
-                                                <i class="lni lni-twitter-original"></i>
+                                                <i class="fab fa-telegram-plane"></i>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" class="google">
-                                                <i class="lni lni-google"></i>
+                                                <i class="fab fa-twitch"></i>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" class="pinterest">
-                                                <i class="lni lni-pinterest"></i>
+                                                <i class="fab fa-facebook-messenger"></i>
                                             </a>
                                         </li>
                                         <li>

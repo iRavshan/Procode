@@ -4061,13 +4061,14 @@ blockquote {
 
 .post-details .post-tags-media .post-social-media ul li a {
   font-size: 14px;
-  color: #fff;
+  color: #0dbfa3;
   height: 35px;
   width: 35px;
   line-height: 35px;
-  background-color: #473bf0;
-  text-align: center;
-  border-radius: 4px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid #0dbfa3;
+  text-align:center;
 }
 
 .comment-form {
