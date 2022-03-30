@@ -4167,6 +4167,7 @@ blockquote {
 .latest-news-area .single-news .content-body .cat {
   color: #888;
   font-size: 13px;
+  text-transform:lowercase;
 }
 
 .latest-news-area .single-news .content-body .title {

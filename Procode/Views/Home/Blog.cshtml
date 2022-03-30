@@ -34,13 +34,13 @@
                             <div class="col-lg-12 col-12">
                                 <div class="single-news custom-shadow-hover wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
                                     <div class="content-body">
-                                        <a class="cat" href="#">@item.Tag</a>
+                                        <a class="cat" href="#">#@item.Tag</a>
                                         <h4 class="title">
                                             <a asp-controller="home" asp-action="content" asp-route-Id="@item.Id">@item.Name</a>
                                         </h4>
                                         <p>@item.ShortDescription</p>
                                         <div class="button">
-                                            <a asp-controller="home" asp-action="content" asp-route-Id="@item.Id">Batafsil</a>
+                                            <a asp-controller="home" asp-action="content" asp-route-Id="@item.Id" class="btn">Batafsil</a>
                                         </div>
                                     </div>
                                 </div>
@@ -66,13 +66,13 @@
                                 {
                                     <div class="single-popular-feed">
                                         <div class="feed-img">
-                                            <a asp-controller="home" asp-action="content" asp-route-Id="@item.Id"><img src="assets/images/blog/blog-sidebar1.jpg" alt="#"></a>
+                                            <a asp-controller="home" asp-action="content" asp-route-Id="@item.Id"><img src="@($"https://img.youtube.com/vi/{item.YoutubeVideoId}/hqdefault.jpg")" alt="#"></a>
                                         </div>
                                         <div class="feed-desc">
                                             <h6 class="post-title">
                                                 <a asp-controller="home" asp-action="content" asp-route-Id="@item.Id">@item.Name</a>
                                             </h6>
-                                            <span class="time"><i class="lni lni-calendar"></i> 05th Nov 2023</span>
+                                            <span class="time"><i class="lni lni-calendar"></i>@item.CreateTime</span>
                                         </div>
                                     </div>
                                 }
@@ -121,7 +121,7 @@
                         <div class="content">
                             <h4>Yangiliklar<span>Mahorat darslarimizning keyingi mavzulari haqidagi takliflarni bizga yo'llang</span></h4>
                             <div class="button">
-                                <a href="contact.html" class="btn">Yuborish</a>
+                                <a asp-controller="home" asp-action="contact" class="btn">Yuborish</a>
                             </div>
                         </div>
                     </div>
