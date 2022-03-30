@@ -7,11 +7,8 @@
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6 col-12">
                 <div class="breadcrumbs-content">
-                    <h1 class="page-title">Blog Single</h1>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been the industry's standard dummy text
-                    </p>
+                    <h1 class="page-title">@Model.BannerTitle</h1>
+                    <p>@Model.Content.ShortDescription</p>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-12">
@@ -31,7 +28,7 @@
             <div class="col-lg-10 offset-lg-1 col-md-12 col-12">
                 <div class="single-inner">
                     <div class="post-thumbnils">
-                        <img src="@($"https://img.youtube.com/vi/{Model.Content.YoutubeVideoId}/hqdefault.jpg")" alt="Content">
+                        <img src="@($"https://img.youtube.com/vi/{Model.Content.YoutubeVideoId}/mqdefault.jpg")" alt="content">
                     </div>
                     <div class="post-details">
                         <div class="detail-inner">
@@ -39,21 +36,24 @@
                             <ul class="custom-flex post-meta">
                                 <li>
                                     <a href="#">
-                                        <i class="lni lni-calendar"></i>
-                                        20th March 2023
+                                        <i class="far fa-user"></i>
+                                        @(Model.Content.AuthorFirstname + Model.Content.AuthorLastname)
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <i class="lni lni-comments"></i>
-                                        35 Comments
+                                        <i class="far fa-calendar-alt"></i>
+                                        @Model.Content.CreateTime.ToString("dd.MM.yyyy")
                                     </a>
                                 </li>
                                 <li>
+                                    <a href="#">
+                                        <i class="fas fa-hashtag"></i>
+                                    </a>
                                 </li>
                             </ul>
                             <h2 class="post-title">
-                                How we can capture the market sales
+                                @Model.Content.Name
                             </h2>
                             <p>
                                 We denounce with righteous indige nation and dislike men who are so beguiled and demo
@@ -69,51 +69,11 @@
                                 being able to do what we like best, every pleasure is to be welcomed and every pain
                                 avoided.
                             </p>
-                            <h3>A cleansing hot shower or bath</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                irure
-                                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                pariatur.
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.
-                            </p>
-                            <h3>Setting the mood with incense</h3>
-                            <p>
-                                Remove aversion, then, from all things that are not in our control, and transfer it
-                                to
-                                things contrary to the nature of what is in our control. But, for the present,
-                                totally
-                                suppress desire: for, if you desire any of the things which are not in your own
-                                control,
-                                you must necessarily be disappointed; and of those which are, and which it would be
-                                laudable to desire, nothing is yet in your possession. Use only the appropriate
-                                actions
-                                of pursuit and avoidance; and even these lightly, and with gentleness and
-                                reservation.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                irure
-                                dolor in reprehenderit.
-                            </p>
-                            <p>
-                                Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                                laborum.
-                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.
-                            </p>
-
                             <div class="post-tags-media">
                                 <div class="post-tags popular-tag-widget mb-xl-40">
                                     <h5 class="tag-title">Teglar</h5>
                                     <div class="tags">
-                                        <a href="#">Popular</a>
-                                        <a href="#">Design</a>
-                                        <a href="#">UX</a>
+                                        <a href="#">@Model.Content.Tag</a>
                                     </div>
                                 </div>
                                 <div class="post-social-media">
