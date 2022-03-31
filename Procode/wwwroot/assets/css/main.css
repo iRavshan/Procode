@@ -4108,21 +4108,21 @@ blockquote {
 }
 
 .post-comments .comments-list li {
-  padding-left: 130px;
+  padding-left: 70px;
   position: relative;
   font-size: 14px;
 }
 
 .post-comments .comments-list li .comment-img {
   position: absolute;
-  left: 27px;
+  left: 0;
   width: 100px;
   height: 100px;
 }
 
 .post-comments .comments-list li .comment-img img {
-  max-width: 80px;
-  max-height: 80px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
 }
 
@@ -4864,5 +4864,122 @@ lines .vlines {
   .error-area .error-content h2 {
     font-size: 15px!important;
     margin-bottom: 10px!important;
+  }
+}
+
+/*=== Login ===*/
+.account-login {
+  background-color: #F4F7FA;
+  padding-top: 110px;
+  padding-bottom: 110px;
+  position: relative;
+}
+
+.account-login .login-form {
+  padding: 70px;
+  background-color: #fff;
+  border: none;
+}
+
+.account-login .login-form .card-body {
+  padding: 0;
+}
+
+.account-login .login-form .title {
+  margin-bottom: 45px;
+}
+
+.account-login .login-form .title h3 {
+  font-size: 25px;
+  font-weight: 700;
+  color: #151515;
+  margin-bottom: 10px;
+}
+
+.account-login .form-group {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.account-login .form-group label {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 9;
+}
+
+.account-login .form-group .form-control {
+  padding: 0 18px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  border: 1px solid #eee;
+  background-color: #fff;
+  color: #505050;
+  font-size: 15px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 52px;
+  border-radius: 8px !important;
+  overflow: hidden;
+  width: 100%;
+  padding-left: 55px;
+}
+
+.account-login .form-group {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.account-login .button {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.account-login .button .btn {
+  padding: 14px 40px;
+  margin-right: 20px;
+  width: 100%;
+}
+
+.account-login .button .btn.alt {
+  background-color: #fff;
+  color: #151515;
+  -webkit-box-shadow: 0px 3px 10px rgb(0 0 0 / 6%);
+  box-shadow: 0px 3px 10px rgb(0 0 0 / 6%);
+}
+
+.account-login .button .btn:last-child {
+  margin: 0;
+}
+
+.account-login .bottom-content {
+  margin-top: 25px;
+}
+
+.account-login .lost-pass {
+  color: #888;
+}
+
+@media (max-width: 767px){
+
+  .account-login .login-form {
+    padding: 35px;
+  }
+
+  .account-login .button {
+    display: block;
+    margin-top: 30px;
+  }
+
+  .account-login .button .btn {
+      margin-bottom: 13px;
   }
 }
