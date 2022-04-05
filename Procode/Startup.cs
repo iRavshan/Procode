@@ -42,9 +42,14 @@ namespace Procode
                 client.BaseAddress = new Uri("https://procodeapi.herokuapp.com/api/");
             });
 
-            services.AddMvc(options =>
-                options.EnableEndpointRouting = false
-            );
+            services.AddHttpClient<IUserRepository, UserRepository>(client =>
+            {
+                client.BaseAddress = new Uri("https://procodeapi.herokuapp.com/api/");
+            });
+
+            //services.AddMvc(options =>
+            //    options.EnableEndpointRouting = false
+            //);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -53,6 +58,7 @@ namespace Procode
             {
                 app.UseDeveloperExceptionPage();
             }
+
             else
             {
                 app.UseHsts();
@@ -66,6 +72,8 @@ namespace Procode
 
             app.UseAuthorization();
 
+            app.UseAuthentication();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
@@ -78,7 +86,7 @@ namespace Procode
             //    routes.MapRoute(
             //            name: "custom",
             //            template: "{name}/{id}/{title}",
-            //            defaults: new { controller = "Products" });
+            //            defaults: new { controller = "Home" });
             //});
         }
     }

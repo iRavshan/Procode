@@ -4061,14 +4061,13 @@ blockquote {
 
 .post-details .post-tags-media .post-social-media ul li a {
   font-size: 14px;
-  color: #0dbfa3;
+  color: #fff;
   height: 35px;
   width: 35px;
   line-height: 35px;
-  background-color: transparent;
-  border-radius: 50%;
-  border: 1px solid #0dbfa3;
-  text-align:center;
+  background-color: #473bf0;
+  text-align: center;
+  border-radius: 4px;
 }
 
 .comment-form {
@@ -4108,21 +4107,21 @@ blockquote {
 }
 
 .post-comments .comments-list li {
-  padding-left: 70px;
+  padding-left: 130px;
   position: relative;
   font-size: 14px;
 }
 
 .post-comments .comments-list li .comment-img {
   position: absolute;
-  left: 0;
+  left: 27px;
   width: 100px;
   height: 100px;
 }
 
 .post-comments .comments-list li .comment-img img {
-  width: 50px;
-  height: 50px;
+  max-width: 80px;
+  max-height: 80px;
   border-radius: 50%;
 }
 
@@ -4181,6 +4180,7 @@ blockquote {
 .post-comments .comments-list li.children {
   margin-left: 130px;
 }
+
 
 /*==== Blog Grid ====*/
 
@@ -4243,7 +4243,6 @@ blockquote {
 .latest-news-area .single-news .content-body .cat {
   color: #888;
   font-size: 13px;
-  text-transform:lowercase;
 }
 
 .latest-news-area .single-news .content-body .title {
@@ -4911,7 +4910,7 @@ lines .vlines {
 }
 
 .account-login .form-group .form-control {
-  padding: 0 18px;
+  padding: 0 10px;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   border: 1px solid #eee;
@@ -4925,7 +4924,7 @@ lines .vlines {
   border-radius: 8px !important;
   overflow: hidden;
   width: 100%;
-  padding-left: 55px;
+  padding-left: 18px;
 }
 
 .account-login .form-group {
@@ -4966,6 +4965,43 @@ lines .vlines {
 
 .account-login .lost-pass {
   color: #888;
+}
+
+.account-login .form-check{
+  margin-bottom: 1.275rem;
+}
+
+.account-login .input-label{
+  margin-bottom: 7px;
+  margin-top: 21px;
+  font-size: 16px;
+}
+
+
+.account-login .status{
+  border: 1px solid #7a37bc;
+  padding: 2px 6px;
+  color: #7a37bc;
+  border-radius: 1.1rem;
+  font-size: 10px;
+  margin-left: 10px;
+}
+
+.account-login .delete-btn{
+  color:white;
+  background: #a70400;
+}
+
+.account-login .delete-label{
+  font-size: 15px;
+}
+
+.account-login .delete-label span{
+  color: snow;
+  background-color: #5E678C;
+  font-size: 13px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  padding: 2px 3px;
 }
 
 @media (max-width: 767px){

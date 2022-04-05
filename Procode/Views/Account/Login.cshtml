@@ -1,12 +1,13 @@
-﻿@{
-    ViewData["Title"] = "Hisobni faollashtirish";
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = Model.PageTitle;
 }
 
 <div class="account-login">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-12">
-                <form class="card login-form inner-content" method="post">
+                <form class="card login-form inner-content" asp-controller="account" asp-action="login" method="post">
                     <div class="card-body">
                         <div class="title">
                             <h3>Hisobga kirish</h3>
@@ -14,17 +15,15 @@
                         </div>
                         <div class="input-head">
                             <div class="form-group input-group">
-                                <label><i class="lni lni-user"></i></label>
-                                <input class="form-control" type="text" placeholder="Ismingiz yoki email manzil">
+                                <input asp-for="Email" class="form-control" type="text" placeholder="Email manzil">
                             </div>
                             <div class="form-group input-group">
-                                <label><i class="lni lni-lock-alt"></i></label>
-                                <input class="form-control" type="password" placeholder="Parol">
+                                <input asp-for="Password" class="form-control" type="password" placeholder="Parol">
                             </div>
                         </div>
                         <div class="button">
                             <button class="btn" type="submit">Kirish</button>
-                            <a class="btn alt" href="signin.html">Hisob yaratish</a>
+                            <a class="btn alt" asp-controller="account" asp-action="register">Hisob yaratish</a>
                         </div>
                     </div>
                 </form>

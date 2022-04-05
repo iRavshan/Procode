@@ -37,8 +37,7 @@ namespace Procode.Controllers
             IndexViewModel model = new IndexViewModel
             {
                 PageTitle = "Bosh sahifa",
-                LastContents = await contentRepo.LastContents(3),
-                Speakers = await speakerRepo.GetAll()
+                LastContents = await contentRepo.LastContents(3)
             };
 
             return View(model);
@@ -109,6 +108,34 @@ namespace Procode.Controllers
 
         public IActionResult Contact()
         {
+            ContactViewModel model = new ContactViewModel
+            {
+                PageTitle = "Aloqa",
+                BannerTitle = "Aloqa",
+                BannerSubtitle = "Fikr va takliflaringizni biz bilan baham ko'ring"
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Contact(ContactViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                Feedback feedback = new Feedback
+                {
+                    Id = Guid.NewGuid(),
+                    Subject = model.Subject,
+                    Text = model.Text
+                };
+
+                await feedbackRepo.Create(feedback);
+            }
+            
+
+
+
             return View();
         }
 
