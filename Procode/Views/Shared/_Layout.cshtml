@@ -71,7 +71,18 @@
                                     </li>
                                 </ul>
                                 <div class="button">
-                                    <a asp-controller="account" asp-action="login" class="btn">Kirish</a>
+                                    @{
+                                        if (!User.Identity.IsAuthenticated)
+                                        {
+                                            <a asp-controller="account" asp-action="login" class="btn">Kirish</a>
+                                        }
+
+                                        else
+                                        {
+                                            <a asp-controller="account" asp-action="logout" class="btn">@User.Identity.Name</a>
+                                        }
+                                    }
+
                                 </div>
                             </div>
                         </nav>
@@ -118,9 +129,9 @@
                 </div>
                 <div class="col-md-12 text-center col-lg-4">
                     <ul class="footer-list">
-                        <li><a href="https://t.me/procodeuz" class="social-icon"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="https://t.me/procodeuz" class="social-icon"><i class="fab fa-telegram-plane"></i></a></li>
-                        <li><a href="https://t.me/procodeuz" class="social-icon"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://t.me/procode_uz" class="social-icon"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://t.me/procode_uz" class="social-icon"><i class="fab fa-telegram-plane"></i></a></li>
+                        <li><a href="https://t.me/procode_uz" class="social-icon"><i class="fab fa-instagram"></i></a></li>
                         <li><a href="https://www.youtube.com/channel/UCElASHX7ztJEtMpT1IKKGDg" class="social-icon"><i class="fab fa-youtube"></i></a></li>
                         <li><a href="https://github.com/procodetm" class="social-icon"><i class="fab fa-github"></i></a></li>
                     </ul>

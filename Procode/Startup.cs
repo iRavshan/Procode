@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -47,6 +49,15 @@ namespace Procode
                 client.BaseAddress = new Uri("https://procodeapi.herokuapp.com/api/");
             });
 
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
+
             //services.AddMvc(options =>
             //    options.EnableEndpointRouting = false
             //);
@@ -69,9 +80,8 @@ namespace Procode
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseCookiePolicy();
             app.UseAuthorization();
-
             app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>

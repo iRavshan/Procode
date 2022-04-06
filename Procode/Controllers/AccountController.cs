@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Procode.Data.DTO;
 using Procode.Data.Interfaces;
@@ -7,6 +9,7 @@ using Procode.ViewModels.Account;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace Procode.Controllers
@@ -36,20 +39,24 @@ namespace Procode.Controllers
         [HttpPost]
         public IActionResult Login(LoginViewModel model)
         {
-            UserLoginRequest request = new UserLoginRequest
+            if (ModelState.IsValid)
             {
-                Email = model.Email,
-                Password = model.Password
-            };
+                if (model.Email == "user@gmail.com" && model.Password == "Ravshan-01981")
+                {
+                    var identity = new ClaimsIdentity(new[] {
+                    new Claim(ClaimTypes.Email, model.Email),
+                    new Claim(ClaimTypes.Name, "Ravshan")
+                }, CookieAuthenticationDefaults.AuthenticationScheme);
 
-            userRepos.Login(request);
+                    var principal = new ClaimsPrincipal(identity);
 
-            if (User.Identity.IsAuthenticated)
-            {
-                return View("~/Home/Index");
+                    HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+                    return RedirectToAction("Index", "Home");
+                }
+
             }
 
-            return View(model);
+            return View();
         }
 
         public IActionResult Register()
@@ -64,7 +71,8 @@ namespace Procode.Controllers
 
         public IActionResult Logout()
         {
-            return View();
+            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Index", "Home");
         }
     }
 }
