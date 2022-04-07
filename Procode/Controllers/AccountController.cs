@@ -1,13 +1,17 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Procode.Data.DTO;
+using Procode.Data.DTO.Requests;
+using Procode.Data.DTO.Responses;
 using Procode.Data.Interfaces;
 using Procode.Domain.Models;
 using Procode.ViewModels.Account;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -17,12 +21,6 @@ namespace Procode.Controllers
 
     public class AccountController : Controller
     {
-        private readonly IUserRepository userRepos;
-
-        public AccountController(IUserRepository userRepos)
-        {
-            this.userRepos = userRepos;
-        }
 
         [HttpGet]
         public IActionResult Login()
@@ -35,44 +33,47 @@ namespace Procode.Controllers
             return View(model);
         }
 
-
-        [HttpPost]
-        public IActionResult Login(LoginViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                if (model.Email == "user@gmail.com" && model.Password == "Ravshan-01981")
-                {
-                    var identity = new ClaimsIdentity(new[] {
-                    new Claim(ClaimTypes.Email, model.Email),
-                    new Claim(ClaimTypes.Name, "Ravshan")
-                }, CookieAuthenticationDefaults.AuthenticationScheme);
-
-                    var principal = new ClaimsPrincipal(identity);
-
-                    HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-                    return RedirectToAction("Index", "Home");
-                }
-
-            }
-
-            return View();
-        }
-
+        [HttpGet]
         public IActionResult Register()
-        {
-            return View();
-        }
-
-        public IActionResult ForgotPassword()
         {
             return View();
         }
 
         public IActionResult Logout()
         {
-            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            HttpContext.SignOutAsync();
             return RedirectToAction("Index", "Home");
+        }
+
+        private readonly IUserRepository userRepos;
+
+        public AccountController(IUserRepository userRepos)
+        {
+            this.userRepos = userRepos;
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel model)
+        {
+                UserLoginRequest request = new UserLoginRequest
+                {
+                    Email = model.Email,
+                    Password = model.Password
+                };
+
+                AuthResponse res = await userRepos.Login(request);
+
+                if (res.Succes)
+                {
+                    return View();
+                }
+                
+                return View();  
+        }
+
+        public IActionResult ForgotPassword()
+        {
+            return View();
         }
     }
 }

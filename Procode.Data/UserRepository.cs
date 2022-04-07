@@ -1,4 +1,7 @@
-﻿using Procode.Data.DTO;
+﻿using Newtonsoft.Json;
+using Procode.Data.DTO;
+using Procode.Data.DTO.Requests;
+using Procode.Data.DTO.Responses;
 using Procode.Data.Interfaces;
 using Procode.Data.Requests;
 using Procode.Domain.Models;
@@ -8,6 +11,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Procode.Data
@@ -31,10 +35,14 @@ namespace Procode.Data
             return await client.GetFromJsonAsync<User>($"{client.BaseAddress}{UserAPI.GetById}{Id}");
         }
 
-        public async Task Login(UserLoginRequest userRequest)
+        public async Task<AuthResponse> Login(UserLoginRequest userRequest)
         {
-            await client.PostAsJsonAsync($"{client.BaseAddress}{UserAPI.Login}", userRequest);
+            var response = (await client.PostAsJsonAsync($"{client.BaseAddress}{UserAPI.Login}", userRequest));
+            AuthResponse result = await response.Content.ReadFromJsonAsync<AuthResponse>();
+            return result;
         }
+
+
 
         public async Task Update(User user)
         {

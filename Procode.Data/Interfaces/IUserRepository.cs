@@ -1,4 +1,6 @@
 ﻿using Procode.Data.DTO;
+using Procode.Data.DTO.Requests;
+using Procode.Data.DTO.Responses;
 using Procode.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -13,6 +15,6 @@ namespace Procode.Data.Interfaces
         Task<User> GetById(Guid Id);
         Task Update(User user);
         Task Delete(Guid Id);
-        Task Login(UserLoginRequest userRequest);
+        Task<AuthResponse> Login(UserLoginRequest userRequest);
     }
 }

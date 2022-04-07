@@ -56,7 +56,15 @@ namespace Procode
             });
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.HttpOnly = true;
+                options.Cookie.Expiration = TimeSpan.FromHours(6);
+                options.LoginPath = "/account/login";
+            });
 
             //services.AddMvc(options =>
             //    options.EnableEndpointRouting = false

@@ -11,7 +11,7 @@ namespace Procode.Data.Requests
         public static readonly string GetById = "user/getbyid?Id=";
         public static readonly string Delete = "user/delete?Id=";
         public static readonly string Update = "user/update";
-        public static readonly string Login = "user/login";
-        public static readonly string Register = "user/register";
+        public static readonly string Login = "account/login";
+        public static readonly string Register = "account/register";
     }
 }
