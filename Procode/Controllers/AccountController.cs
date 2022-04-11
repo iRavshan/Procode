@@ -98,6 +98,7 @@ namespace Procode.Controllers
             {
                 UserRegisterRequest request = new UserRegisterRequest
                 {
+                    Username = model.Username,
                     Email = model.Email,
                     Password = model.Password,
                     ConfirmedPassword = model.ConfirmedPassword
