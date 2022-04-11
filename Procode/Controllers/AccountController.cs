@@ -22,7 +22,7 @@ namespace Procode.Controllers
     public class AccountController : Controller
     {
 
-        [HttpGet, ActionName("SignIn")]
+        [HttpGet]
         public IActionResult Login()
         {
             LoginViewModel model = new LoginViewModel
@@ -33,7 +33,7 @@ namespace Procode.Controllers
             return View(model);
         }
 
-        [HttpGet, ActionName("SignUp")]
+        [HttpGet]
         public IActionResult Register()
         {
             return View();
@@ -52,7 +52,7 @@ namespace Procode.Controllers
             this.userRepos = userRepos;
         }
 
-        [HttpPost, ActionName("SignIn")]
+        [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
@@ -91,7 +91,7 @@ namespace Procode.Controllers
             return View();  
         }
 
-        [HttpPost, ActionName("SignUp")]
+        [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
