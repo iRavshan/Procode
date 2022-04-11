@@ -66,15 +66,12 @@
                                     <li class="nav-item dropdown">
                                         <a class="nav-link" asp-controller="home" asp-action="blog">Blog</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-controller="home" asp-action="contact">Aloqa</a>
-                                    </li>
                                 </ul>
                                 @{
                                     if (!User.Identity.IsAuthenticated)
                                     {
                                         <div class="button">
-                                            <a asp-controller="account" asp-action="signin" class="btn">Kirish</a>
+                                            <a asp-controller="account" asp-action="login" class="btn">Kirish</a>
                                         </div>
                                     }
 

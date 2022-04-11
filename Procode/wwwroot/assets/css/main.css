@@ -1,32 +1,3 @@
-/* ===========================
-Index Of css
-
-01. Variables CSS
-02. Normalize CSS
-03. Header CSS
-04. Hero CSS
-05. Features CSS
-06. Service CSS
-07. About CSS
-08. Achievement CSS
-09. Why Choose CSS
-10. Call Action CSS
-11. Portfolio CSS
-12. Team CSS
-13. Testimonial CSS
-14. Pricing CSS
-15. Intro Video CSS
-16. Faq CSS
-17. Blog CSS
-18. Newsletter CSS
-19. Clients CSS
-20. Footer CSS
-21. Responsive CSS
-22. Contact CSS
-23. 404 Error CSS
-24. Mail Success CSS
-
-========================================*/
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 html {
@@ -5002,6 +4973,13 @@ lines .vlines {
   font-size: 13px;
   font-family: "Lucida Console", "Courier New", monospace;
   padding: 2px 3px;
+}
+
+.field-validation-error {
+    color: #e53a2d;
+    margin-bottom: 10px;
+    margin-left: 4px;
+    margin-top: 8px;
 }
 
 @media (max-width: 767px){

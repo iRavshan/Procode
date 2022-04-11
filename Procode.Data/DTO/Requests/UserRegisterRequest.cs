@@ -19,7 +19,7 @@ namespace Procode.Data.DTO.Requests
         [Required(ErrorMessage = "Parolni kiriting")]
         public string Password { get; set; }
 
-        [Required(ErrorMessage = "Parolni kiriting")]
+        [Required(ErrorMessage = "Parolni tasdiqlang")]
         public string ConfirmedPassword { get; set; }
     }
 }
