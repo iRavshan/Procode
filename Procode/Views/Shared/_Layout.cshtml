@@ -86,7 +86,7 @@
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                     <li><a class="dropdown-item" asp-controller="@User.Identity.Name" asp-action="settings">Profil</a></li>
                                                     <li><a class="dropdown-item" asp-controller="account" asp-action="settings">Sozlamalar</a></li>
-                                                    <li><a class="dropdown-item" asp-controller="account" asp-action="logout">Chiqish</a></li>
+                                                    <li><a class="dropdown-item" asp-controller="@User.Identity.Name" asp-action="logout">Chiqish</a></li>
                                                 </ul>
                                             </div>
                                         </div>

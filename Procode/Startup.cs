@@ -49,26 +49,16 @@ namespace Procode
                 client.BaseAddress = new Uri("https://procodeapi.herokuapp.com/api/");
             });
 
-            services.Configure<CookiePolicyOptions>(options =>
-            {
-                options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
-            });
-
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
 
-            services.ConfigureApplicationCookie(options =>
+            services.Configure<CookiePolicyOptions>(options =>
             {
-                options.Cookie.HttpOnly = true;
-                options.Cookie.Expiration = TimeSpan.FromHours(6);
-                options.LoginPath = "/account/login";
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.Strict;
             });
 
-            //services.AddMvc(options =>
-            //    options.EnableEndpointRouting = false
-            //);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -84,9 +74,7 @@ namespace Procode
             }
 
             app.UseHttpsRedirection();
-
             app.UseStaticFiles();
-
             app.UseRouting();
             app.UseCookiePolicy();
             app.UseAuthorization();
@@ -98,14 +86,6 @@ namespace Procode
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}/{tag?}");
             });
-
-            //app.UseMvc(routes =>
-            //{
-            //    routes.MapRoute(
-            //            name: "custom",
-            //            template: "{name}/{id}/{title}",
-            //            defaults: new { controller = "Home" });
-            //});
         }
     }
 }

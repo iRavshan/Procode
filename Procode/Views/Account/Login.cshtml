@@ -16,9 +16,11 @@
                         <div class="input-head">
                             <div class="form-group input-group">
                                 <input asp-for="Email" class="form-control" type="text" placeholder="Email manzil">
+                                <span asp-validation-for="Email"></span>
                             </div>
                             <div class="form-group input-group">
                                 <input asp-for="Password" class="form-control" type="password" placeholder="Parol">
+                                <span asp-validation-for="Password"></span>
                             </div>
                         </div>
                         <div class="button">

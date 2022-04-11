@@ -9,7 +9,7 @@ namespace Procode.Data.DTO.Requests
 {
     public class UserLoginRequest
     {
-        [EmailAddress]
+        [EmailAddress(ErrorMessage = "Email manzil noto'g'ri kiritilgan")]
         [Required(ErrorMessage = "Email manzilni kiriting")]
         public string Email { get; set; }
 

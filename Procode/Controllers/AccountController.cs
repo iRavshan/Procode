@@ -39,9 +39,9 @@ namespace Procode.Controllers
             return View();
         }
 
-        public IActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
-            HttpContext.SignOutAsync();
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Index", "Home");
         }
 
@@ -65,15 +65,34 @@ namespace Procode.Controllers
 
                 if (res.Succes)
                 {
-                    return View();
+
+                    User user = new User
+                    {
+                        Id = Guid.NewGuid(),
+                        Username = "iRavshan"
+                    };
+
+                    var identity = new ClaimsIdentity(new[] {
+                        new Claim(ClaimTypes.GivenName, user.Username),
+                        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                        new Claim(ClaimTypes.Role, "user")
+                    }, CookieAuthenticationDefaults.AuthenticationScheme);
+
+                    var principal = new ClaimsPrincipal(identity);
+
+                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+
+                    return RedirectToAction("Index", "Home");
                 }
                 
-                return View();  
+                return View(model);  
         }
 
-        public IActionResult ForgotPassword()
+        private JwtSecurityToken DecodeToken(string token)
         {
-            return View();
+            var handler = new JwtSecurityTokenHandler();
+            var claimToken = handler.ReadToken(token) as JwtSecurityToken;
+            return claimToken;
         }
     }
 }
