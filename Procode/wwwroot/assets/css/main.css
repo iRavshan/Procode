@@ -1684,9 +1684,9 @@ ol {
 }
 
 /* Dropdown Menu */
-.header .dropdown-menu {
+.header .navbar .button .dropdown .dropdown-menu {
     background: #fff;
-    width: 230px;
+    width: 190px;
     text-align: left;
     -webkit-box-shadow: 0 15px 26px rgba(0, 0, 0, 0.07);
     box-shadow: 0 15px 26px rgba(0, 0, 0, 0.07);

@@ -49,7 +49,7 @@ namespace Procode.Controllers
             BlogViewModel model = new BlogViewModel
             {
                 PageTitle = "Blog",
-                BannerTitle = "Procode Community",
+                BannerTitle = "Procode hamjamiyati",
                 Contents = Enumerable.Reverse(await contentRepo.GetAll()),
                 LastContents = await contentRepo.LastContents(3)
             };
