@@ -77,7 +77,8 @@ namespace Procode.Controllers
                     var identity = new ClaimsIdentity(new[] {
                         new Claim(ClaimTypes.GivenName, user.Username),
                         new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                        new Claim(ClaimTypes.Role, "user")
+                        new Claim(ClaimTypes.Role, "user"),
+                        new Claim(ClaimTypes.Name, user.Username)
                     }, CookieAuthenticationDefaults.AuthenticationScheme);
 
                     var principal = new ClaimsPrincipal(identity);
@@ -118,7 +119,8 @@ namespace Procode.Controllers
                     var identity = new ClaimsIdentity(new[] {
                         new Claim(ClaimTypes.GivenName, user.Username),
                         new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                        new Claim(ClaimTypes.Role, "user")
+                        new Claim(ClaimTypes.Role, "user"),
+                        new Claim(ClaimTypes.Name, user.Username)
                     }, CookieAuthenticationDefaults.AuthenticationScheme);
 
                     var principal = new ClaimsPrincipal(identity);
@@ -131,7 +133,6 @@ namespace Procode.Controllers
 
             return View();
         }
-
 
         private JwtSecurityToken DecodeToken(string token)
         {
