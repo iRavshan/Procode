@@ -16,5 +16,6 @@ namespace Procode.Data.Interfaces
         Task Update(User user);
         Task Delete(Guid Id);
         Task<AuthResponse> Login(UserLoginRequest userRequest);
+        Task<AuthResponse> Register(UserRegisterRequest userRequest);
     }
 }

@@ -1,7 +1,7 @@
-﻿@{
-    ViewData["Title"] = "Register";
+﻿@model RegisterViewModel 
+@{
+    ViewData["Title"] = "Registratsiya";
 }
-
 
 <div class="account-login">
     <div class="container">
@@ -17,29 +17,29 @@
                             <div class="row">
                                 <div class="col-lg-6 col-12">
                                     <div class="form-group input-group">
-                                        <label><i class="lni lni-user"></i></label>
-                                        <input class="form-control" type="text" placeholder="Ismingiz">
+                                        <input asp-for="Username" class="form-control" type="text" placeholder="Ismingiz">
+                                        <span asp-validation-for="Username"></span>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-12">
                                     <div class="form-group input-group">
-                                        <label><i class="lni lni-envelope"></i></label>
-                                        <input class="form-control" type="email" placeholder="Email">
+                                        <input asp-for="Email" class="form-control" type="email" placeholder="Email">
+                                        <span asp-validation-for="Email"></span>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group input-group">
-                                <label><i class="lni lni-lock-alt"></i></label>
-                                <input class="form-control" type="password" placeholder="Parol yarating">
+                                <input asp-for="Password" class="form-control" type="password" placeholder="Parol yarating">
+                                <span asp-validation-for="Password"></span>
                             </div>
                             <div class="form-group input-group">
-                                <label><i class="lni lni-lock-alt"></i></label>
-                                <input class="form-control" type="password" placeholder="Parolni tasdiqlang">
+                                <input asp-for="ConfirmedPassword" class="form-control" type="password" placeholder="Parolni tasdiqlang">
+                                <span asp-validation-for="ConfirmedPassword"></span>
                             </div>
                         </div>
                         <div class="button">
                             <button class="btn" type="submit">Hisob yaratish</button>
-                            <a class="btn alt" href="signin.html">Login</a>
+                            <a class="btn alt" asp-controller="account" asp-action="signin">Login</a>
                         </div>
                     </div>
                 </form>

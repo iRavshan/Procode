@@ -53,8 +53,11 @@ namespace Procode.Controllers
         }
 
         [HttpPost]
+        [ActionName("SignIn")]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
+            if (ModelState.IsValid)
+            {
                 UserLoginRequest request = new UserLoginRequest
                 {
                     Email = model.Email,
@@ -84,9 +87,52 @@ namespace Procode.Controllers
 
                     return RedirectToAction("Index", "Home");
                 }
-                
-                return View(model);  
+            }
+
+            return View(model);  
         }
+
+        [HttpPost]
+        [ActionName("SignUp")]
+        public async Task<IActionResult> Register(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                UserRegisterRequest request = new UserRegisterRequest
+                {
+                    Email = model.Email,
+                    Password = model.Password,
+                    ConfirmedPassword = model.ConfirmedPassword
+                };
+
+                AuthResponse res = await userRepos.Register(request);
+
+                if (res.Succes)
+                {
+
+                    User user = new User
+                    {
+                        Id = Guid.NewGuid(),
+                        Username = "iRavshan"
+                    };
+
+                    var identity = new ClaimsIdentity(new[] {
+                        new Claim(ClaimTypes.GivenName, user.Username),
+                        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                        new Claim(ClaimTypes.Role, "user")
+                    }, CookieAuthenticationDefaults.AuthenticationScheme);
+
+                    var principal = new ClaimsPrincipal(identity);
+
+                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+
+            return View(model);
+        }
+
 
         private JwtSecurityToken DecodeToken(string token)
         {

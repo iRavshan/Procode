@@ -42,7 +42,12 @@ namespace Procode.Data
             return result;
         }
 
-
+        public async Task<AuthResponse> Register(UserRegisterRequest userRequest)
+        {
+            var response = (await client.PostAsJsonAsync($"{client.BaseAddress}{UserAPI.Register}", userRequest));
+            AuthResponse result = await response.Content.ReadFromJsonAsync<AuthResponse>();
+            return result;
+        }
 
         public async Task Update(User user)
         {
