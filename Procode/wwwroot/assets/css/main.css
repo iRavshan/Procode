@@ -1659,7 +1659,11 @@ ol {
 
 @media (max-width: 767px) {
   .header .button {
-    display: none !important;
+      margin: 0px;
+  }
+
+  .header .button .dropdown .nav-link{
+      padding: .5rem;
   }
 }
 
