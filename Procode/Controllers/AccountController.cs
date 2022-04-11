@@ -52,8 +52,7 @@ namespace Procode.Controllers
             this.userRepos = userRepos;
         }
 
-        [HttpPost]
-        [ActionName("SignIn")]
+        [HttpPost, ActionName("SignIn")]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
@@ -92,8 +91,7 @@ namespace Procode.Controllers
             return View(model);  
         }
 
-        [HttpPost]
-        [ActionName("SignUp")]
+        [HttpPost, ActionName("SignUp")]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
