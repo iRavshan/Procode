@@ -1684,19 +1684,19 @@ ol {
 }
 
 /* Dropdown Menu */
-.header .navbar-nav .dropdown-menu {
-  background: #fff;
-  width: 230px;
-  text-align: left;
-  -webkit-box-shadow: 0 15px 26px rgba(0, 0, 0, 0.07);
-  box-shadow: 0 15px 26px rgba(0, 0, 0, 0.07);
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-  border-radius: 0px 0 8px 8px;
-  margin: 0;
-  border: none;
-  border-top: 3px solid #473BF0;
-  padding: 15px 0;
+.header .dropdown-menu {
+    background: #fff;
+    width: 230px;
+    text-align: left;
+    -webkit-box-shadow: 0 15px 26px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 15px 26px rgba(0, 0, 0, 0.07);
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    border-radius: 0px 0 8px 8px;
+    margin: 0;
+    border: none;
+    border-top: 3px solid #0dbfa3;
+    padding: 15px 0;
 }
 
 .header .navbar-nav .dropdown-menu li a {

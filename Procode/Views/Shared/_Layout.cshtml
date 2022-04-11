@@ -79,11 +79,11 @@
                                     {
                                         <div class="button">
                                             <div class="dropdown">
-                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">@User.Identity.Name</a>
+                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: #0dbfa3;">@User.Identity.Name</a>
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                    <li><a class="dropdown-item" asp-controller="@User.Identity.Name" asp-action="settings">Profil</a></li>
-                                                    <li><a class="dropdown-item" asp-controller="account" asp-action="settings">Sozlamalar</a></li>
-                                                    <li><a class="dropdown-item" asp-controller="account" asp-action="logout">Chiqish</a></li>
+                                                    <li><a class="dropdown-item" asp-controller="@User.Identity.Name" asp-action="settings"><i class="fas fa-user-circle"></i>Profil</a></li>
+                                                    <li><a class="dropdown-item" asp-controller="account" asp-action="settings"><i class="fas fa-cog"></i> Sozlamalar</a></li>
+                                                    <li><a class="dropdown-item" asp-controller="account" asp-action="logout"><i class="fas fa-sign-out-alt"></i> Chiqish</a></li>
                                                 </ul>
                                             </div>
                                         </div>
