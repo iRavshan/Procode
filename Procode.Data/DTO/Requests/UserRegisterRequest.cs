@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -11,15 +12,19 @@ namespace Procode.Data.DTO.Requests
     {
         [EmailAddress(ErrorMessage = "Email manzil noto'g'ri kiritilgan")]
         [Required(ErrorMessage = "Email manzilni kiriting")]
+        [JsonProperty("Email")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Bu maydonni to'ldiring")]
+        [JsonProperty("Username")]
         public string Username { get; set; }
 
         [Required(ErrorMessage = "Parolni kiriting")]
+        [JsonProperty("Password")]
         public string Password { get; set; }
 
         [Required(ErrorMessage = "Parolni tasdiqlang")]
+        [JsonProperty("confirmedPassword")]
         public string ConfirmedPassword { get; set; }
     }
 }
