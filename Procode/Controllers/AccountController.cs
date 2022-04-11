@@ -22,7 +22,7 @@ namespace Procode.Controllers
     public class AccountController : Controller
     {
 
-        [HttpGet]
+        [HttpGet, ActionName("SignIn")]
         public IActionResult Login()
         {
             LoginViewModel model = new LoginViewModel
@@ -33,7 +33,7 @@ namespace Procode.Controllers
             return View(model);
         }
 
-        [HttpGet]
+        [HttpGet, ActionName("SignUp")]
         public IActionResult Register()
         {
             return View();
@@ -88,7 +88,7 @@ namespace Procode.Controllers
                 }
             }
 
-            return View(model);  
+            return View();  
         }
 
         [HttpPost, ActionName("SignUp")]
@@ -128,7 +128,7 @@ namespace Procode.Controllers
                 }
             }
 
-            return View(model);
+            return View();
         }
 
 
