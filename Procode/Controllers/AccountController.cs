@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Procode.Data.DTO;
 using Procode.Data.DTO.Requests;
 using Procode.Data.DTO.Responses;
@@ -64,6 +65,12 @@ namespace Procode.Controllers
                 };
 
                 AuthResponse res = await userRepos.Login(request);
+                
+                if (!res.Succes)
+                {
+                    ModelState.AddModelError("error", res.Errors.ToString());
+                    return View();
+                }
 
                 if (res.Succes)
                 {
@@ -106,6 +113,12 @@ namespace Procode.Controllers
                 };
 
                 AuthResponse res = await userRepos.Register(request);
+
+                if (!res.Succes)
+                {
+                    ModelState.AddModelError("error", res.Errors.ToString());
+                    return View();
+                }
 
                 if (res.Succes)
                 {

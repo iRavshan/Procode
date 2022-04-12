@@ -59,6 +59,14 @@ namespace Procode
                 options.MinimumSameSitePolicy = SameSiteMode.Strict;
             });
 
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.Expiration = TimeSpan.FromHours(6);
+                options.LoginPath = "/account/login";
+                options.LogoutPath = "/account/logout";
+            });
+
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -80,6 +88,7 @@ namespace Procode
             app.UseAuthorization();
             app.UseAuthentication();
 
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
