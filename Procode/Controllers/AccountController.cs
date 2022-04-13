@@ -37,6 +37,11 @@ namespace Procode.Controllers
         [HttpGet]
         public IActionResult Register()
         {
+            RegisterViewModel model = new RegisterViewModel
+            {
+               PageTitle = "Ro'yxatdan o'tish"
+            };
+
             return View();
         }
 

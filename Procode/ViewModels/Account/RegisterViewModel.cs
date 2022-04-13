@@ -8,6 +8,7 @@ namespace Procode.ViewModels.Account
 {
     public class RegisterViewModel : UserRegisterRequest
     {
+        public string PageTitle { get; set; }
         public string Error { get; set; }
     }
 }
