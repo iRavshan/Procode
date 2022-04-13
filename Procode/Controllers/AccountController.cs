@@ -42,7 +42,7 @@ namespace Procode.Controllers
                PageTitle = "Ro'yxatdan o'tish"
             };
 
-            return View();
+            return View(model);
         }
 
         private readonly IUserRepository userRepos;
