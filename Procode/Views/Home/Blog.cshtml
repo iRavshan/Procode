@@ -50,11 +50,15 @@
                             }
                         }
 
-                        else
+                        if (Model.Contents.ToList().Count == 0 && Model.Search != null)
                         {
                             <p class="text-center">"@Model.Search" qidiruvi bo'yicha hech narsa topilmadi.</p>
                         }
 
+                        if (Model.Contents.ToList().Count == 0 && Model.Search != null)
+                        {
+                            <p class="text-center">Ushbu bo'lim bo'yicha kontentlar mavjud emas.</p>
+                        }
                     }
                 </div>
             </div>

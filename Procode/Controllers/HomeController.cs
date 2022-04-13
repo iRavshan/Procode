@@ -44,7 +44,6 @@ namespace Procode.Controllers
         }
 
         [HttpGet]
-        [Authorize]
         public async Task<IActionResult> Blog()
         {
             BlogViewModel model = new BlogViewModel
