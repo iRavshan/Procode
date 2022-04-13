@@ -1,6 +1,6 @@
 ﻿@model LoginViewModel
 @{
-    ViewData["Title"] = "Hisobga kirish";
+    ViewData["Title"] = "Kirish";
 }
 
 <div class="account-login">
@@ -10,13 +10,13 @@
                 <form class="card login-form inner-content" asp-controller="account" asp-action="login" method="post">
                     <div class="card-body">
                         <div class="title">
-                            <h3>Hisobga kirish</h3>
+                            <h3>Kirish</h3>
                             <p>Mavjud hisobingizni faollashtiring.</p>
                             <span class="field-validation-error">@Model.Error</span>
                         </div>
                         <div class="input-head">
                             <div class="form-group input-group">
-                                <input asp-for="Email" class="form-control" type="text" placeholder="Email manzil">
+                                <input asp-for="Email" class="form-control" type="text" placeholder="Elektron pochta">
                                 <span asp-validation-for="Email"></span>
                             </div>
                             <div class="form-group input-group">

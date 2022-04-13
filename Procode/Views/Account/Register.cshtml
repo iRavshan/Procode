@@ -1,6 +1,6 @@
 ﻿@model RegisterViewModel 
 @{
-    ViewData["Title"] = "Registratsiya";
+    ViewData["Title"] = "Ro'yxatdan o'tish";
 }
 
 <div class="account-login">
@@ -10,21 +10,22 @@
                 <form asp-controller="account" asp-action="register" method="post" class="card login-form inner-content">
                     <div class="card-body">
                         <div class="title">
-                            <h3>Registratsiya</h3>
+                            <h3>Ro'yxatdan o'tish</h3>
                             <p>Hamjamiyatimizga qo'shilishning ayni vaqti.</p>
+                            <span class="field-validation-error">@Model.Error</span>
                         </div>
                         <div class="input-head">
                             <div class="row">
                                 <div class="col-lg-6 col-12">
                                     <div class="form-group input-group">
-                                        <input asp-for="Username" class="form-control" type="text" placeholder="Ismingiz">
-                                        <span asp-validation-for="Username"></span>
+                                        <input asp-for="Email" class="form-control" type="email" placeholder="Email">
+                                        <span asp-validation-for="Email"></span>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-12">
                                     <div class="form-group input-group">
-                                        <input asp-for="Email" class="form-control" type="email" placeholder="Email">
-                                        <span asp-validation-for="Email"></span>
+                                        <input asp-for="Username" class="form-control" type="text" placeholder="Ismingiz">
+                                        <span asp-validation-for="Username"></span>
                                     </div>
                                 </div>
                             </div>
@@ -39,7 +40,7 @@
                         </div>
                         <div class="button">
                             <button class="btn" type="submit">Hisob yaratish</button>
-                            <a class="btn alt" asp-controller="account" asp-action="login">Login</a>
+                            <a class="btn alt" asp-controller="account" asp-action="login">Kirish</a>
                         </div>
                     </div>
                 </form>

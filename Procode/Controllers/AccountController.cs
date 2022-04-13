@@ -123,8 +123,16 @@ namespace Procode.Controllers
 
                 if (!res.Succes)
                 {
-                    ModelState.AddModelError("error", res.Errors.ToString());
-                    return View();
+                    RegisterViewModel exModel = new RegisterViewModel
+                    {
+                        Email = model.Email,
+                        Password = model.Password,
+                        ConfirmedPassword = model.ConfirmedPassword,
+                        Username = model.Username,
+                        Error = res.Errors.ToArray()[0]
+                    };
+
+                    return View(exModel);
                 }
 
                 if (res.Succes)
@@ -150,8 +158,15 @@ namespace Procode.Controllers
                     return RedirectToAction("Index", "Home");
                 }
             }
-
-            return View();
+            RegisterViewModel newModel = new RegisterViewModel
+            {
+                Email = model.Email,
+                Password = model.Password,
+                ConfirmedPassword = model.ConfirmedPassword,
+                Username = model.Username,
+                Error = string.Empty
+            };
+            return View(newModel);
         }
 
         private JwtSecurityToken DecodeToken(string token)
