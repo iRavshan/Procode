@@ -62,14 +62,14 @@ namespace Procode.Controllers
                 
                 if (!res.Succes)
                 {
-                    LoginViewModel newModel = new LoginViewModel
+                    LoginViewModel exModel = new LoginViewModel
                     {
                         Email = model.Email,
                         Password = model.Password,
                         Error = res.Errors.ToArray()[0]
                     };
 
-                    return View(newModel);
+                    return View(exModel);
                 }
 
                 if (res.Succes)
@@ -96,7 +96,14 @@ namespace Procode.Controllers
                 }
             }
 
-            return View();  
+            LoginViewModel newModel = new LoginViewModel
+            {
+                Email = model.Email,
+                Password = model.Password,
+                Error = string.Empty
+            };
+
+            return View(newModel);  
         }
 
         [HttpPost]
