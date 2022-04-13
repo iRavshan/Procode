@@ -40,12 +40,6 @@ namespace Procode.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Logout()
-        {
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Index", "Home");
-        }
-
         private readonly IUserRepository userRepos;
 
         public AccountController(IUserRepository userRepos)
@@ -68,8 +62,14 @@ namespace Procode.Controllers
                 
                 if (!res.Succes)
                 {
-                    ModelState.AddModelError("error", res.Errors.ToString());
-                    return View();
+                    LoginViewModel newModel = new LoginViewModel
+                    {
+                        Email = model.Email,
+                        Password = model.Password,
+                        Error = res.Errors.ToArray()[0]
+                    };
+
+                    return View(newModel);
                 }
 
                 if (res.Succes)

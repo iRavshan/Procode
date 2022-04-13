@@ -11,5 +11,6 @@ namespace Procode.ViewModels.Account
     public class LoginViewModel :  UserLoginRequest
     {
         public string PageTitle { get; set; }
+        public string Error { get; set; }
     }
 }

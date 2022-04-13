@@ -12,7 +12,7 @@
                         <div class="title">
                             <h3>Hisobga kirish</h3>
                             <p>Mavjud hisobingizni faollashtiring.</p>
-                            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                            <span class="field-validation-error">@Model.Error</span>
                         </div>
                         <div class="input-head">
                             <div class="form-group input-group">
