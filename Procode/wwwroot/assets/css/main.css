@@ -5022,6 +5022,7 @@ li.ikkilist {
     border: 3px solid transparent;
     background-color: transparent;
     color: #495057;
+    margin-left: 20px;
 }
 
 .nav-tabs .nav-link.active {
