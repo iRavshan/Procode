@@ -1657,16 +1657,6 @@ ol {
   }
 }
 
-@media (max-width: 767px) {
-  .header .button {
-      margin: 0px;
-  }
-
-  .header .button .dropdown .nav-link{
-      padding: .5rem;
-  }
-}
-
 .header .button .btn {
   color: #fff;
   padding: 12px 25px;
@@ -2072,6 +2062,16 @@ ol {
     transform: scaleY(0);
     -webkit-transform-origin: bottom left;
     transform-origin: bottom left;
+  }
+}
+
+@media (max-width: 767px) {
+  .header .button {
+      margin: 10px 0px;
+  }
+
+  .header .button .dropdown .nav-link{
+      padding: .5rem;
   }
 }
 
