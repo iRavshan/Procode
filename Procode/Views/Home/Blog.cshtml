@@ -35,121 +35,122 @@
                 </div>
             </nav>
             <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...</div>
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div class="col-lg-8 col-md-7 col-12">
+                        <div class="row">
+                            @{
+                                if (Model.Contents.ToList().Count != 0)
+                                {
+                                    foreach (var item in Model.Contents)
+                                    {
+                                        <div class="col-lg-12 col-12">
+                                            <div class="single-news custom-shadow-hover wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                                                <div class="content-body">
+                                                    <a class="cat" href="#">#@item.Tag</a>
+                                                    <h4 class="title">
+                                                        <a asp-controller="home" asp-action="content" asp-route-Id="@item.Id">@item.Name</a>
+                                                    </h4>
+                                                    <p>@item.ShortDescription</p>
+                                                    <div class="button">
+                                                        <a asp-controller="home" asp-action="content" asp-route-Id="@item.Id" class="btn">Batafsil</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+
+                                if (Model.Contents.ToList().Count == 0 && Model.Search != null)
+                                {
+                                    <p class="text-center">"@Model.Search" qidiruvi bo'yicha hech narsa topilmadi.</p>
+                                }
+
+                                if (Model.Contents.ToList().Count == 0 && Model.Search == null)
+                                {
+                                    <p class="text-center">Ushbu bo'lim bo'yicha kontentlar mavjud emas.</p>
+                                }
+                            }
+                        </div>
+                    </div>
+                    <aside class="col-lg-4 col-md-5 col-12">
+                        <div class="sidebar">
+                            <div class="widget search-widget">
+                                <h5 class="widget-title">Qidiruv</h5>
+                                <form asp-controller="home" asp-action="blog" method="post">
+                                    <input asp-for="Search" type="text" placeholder="Barchasi topiladi ...">
+                                    <button type="submit"><i class="lni lni-search-alt"></i></button>
+                                </form>
+                            </div>
+                            <div class="widget popular-feeds">
+                                <h5 class="widget-title">Eng so'nggilar</h5>
+                                <div class="popular-feed-loop">
+                                    @{
+                                        foreach (var item in Model.LastContents)
+                                        {
+                                            <div class="single-popular-feed">
+                                                <div class="feed-img">
+                                                    <a asp-controller="home" asp-action="content" asp-route-Id="@item.Id"><img src="@($"https://img.youtube.com/vi/{item.YoutubeVideoId}/mqdefault.jpg")" alt="content"></a>
+                                                </div>
+                                                <div class="feed-desc">
+                                                    <h6 class="post-title">
+                                                        <a asp-controller="home" asp-action="content" asp-route-Id="@item.Id">@item.Name</a>
+                                                    </h6>
+                                                    <span class="time"><i class="far fa-calendar-alt"></i>@item.CreateTime.ToString("dd.MM.yyyy")</span>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+
+                                </div>
+                            </div>
+                            <div class="widget categories-widget">
+                                <h5 class="widget-title">Kategoriyalar</h5>
+                                <ul class="custom">
+                                    <li>
+                                        <a href="#">Business <i class="lni lni-arrow-right"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Consultant <i class="lni lni-arrow-right"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Creative <i class="lni lni-arrow-right"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#">UI/UX <i class="lni lni-arrow-right"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Technology <i class="lni lni-arrow-right"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="widget popular-tag-widget">
+                                <h5 class="widget-title">Teglar</h5>
+                                <div class="tags">
+                                    <a href="#">Popular Template</a>
+                                    <a href="#">Design</a>
+                                    <a href="#">UX</a>
+                                    <a href="#">Icon</a>
+                                    <a href="#">Usability</a>
+                                    <a href="#">Tech</a>
+                                    <a href="#">Mouse</a>
+                                    <a href="#">Kit</a>
+                                    <a href="#">Consult</a>
+                                    <a href="#">Business</a>
+                                    <a href="#">Keyboard</a>
+                                    <a href="#">Develop</a>
+                                </div>
+                            </div>
+                            <div class="widget call-us">
+                                <div class="content">
+                                    <h4>Yangiliklar<span>Mahorat darslarimizning keyingi mavzulari haqidagi takliflarni bizga yo'llang</span></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
                 <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
             </div>
-            <div class="col-lg-8 col-md-7 col-12">
-                <div class="row">
-                    @{
-                        if (Model.Contents.ToList().Count != 0)
-                        {
-                            foreach (var item in Model.Contents)
-                            {
-                                <div class="col-lg-12 col-12">
-                                    <div class="single-news custom-shadow-hover wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                                        <div class="content-body">
-                                            <a class="cat" href="#">#@item.Tag</a>
-                                            <h4 class="title">
-                                                <a asp-controller="home" asp-action="content" asp-route-Id="@item.Id">@item.Name</a>
-                                            </h4>
-                                            <p>@item.ShortDescription</p>
-                                            <div class="button">
-                                                <a asp-controller="home" asp-action="content" asp-route-Id="@item.Id" class="btn">Batafsil</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            }
-                        }
-
-                        if (Model.Contents.ToList().Count == 0 && Model.Search != null)
-                        {
-                            <p class="text-center">"@Model.Search" qidiruvi bo'yicha hech narsa topilmadi.</p>
-                        }
-
-                        if (Model.Contents.ToList().Count == 0 && Model.Search == null)
-                        {
-                            <p class="text-center">Ushbu bo'lim bo'yicha kontentlar mavjud emas.</p>
-                        }
-                    }
-                </div>
-            </div>
-            <aside class="col-lg-4 col-md-5 col-12">
-                <div class="sidebar">
-                    <div class="widget search-widget">
-                        <h5 class="widget-title">Qidiruv</h5>
-                        <form asp-controller="home" asp-action="blog" method="post">
-                            <input asp-for="Search" type="text" placeholder="Barchasi topiladi ...">
-                            <button type="submit"><i class="lni lni-search-alt"></i></button>
-                        </form>
-                    </div>
-                    <div class="widget popular-feeds">
-                        <h5 class="widget-title">Eng so'nggilar</h5>
-                        <div class="popular-feed-loop">
-                            @{
-                                foreach (var item in Model.LastContents)
-                                {
-                                    <div class="single-popular-feed">
-                                        <div class="feed-img">
-                                            <a asp-controller="home" asp-action="content" asp-route-Id="@item.Id"><img src="@($"https://img.youtube.com/vi/{item.YoutubeVideoId}/mqdefault.jpg")" alt="content"></a>
-                                        </div>
-                                        <div class="feed-desc">
-                                            <h6 class="post-title">
-                                                <a asp-controller="home" asp-action="content" asp-route-Id="@item.Id">@item.Name</a>
-                                            </h6>
-                                            <span class="time"><i class="far fa-calendar-alt"></i>@item.CreateTime.ToString("dd.MM.yyyy")</span>
-                                        </div>
-                                    </div>
-                                }
-                            }
-
-                        </div>
-                    </div>
-                    <div class="widget categories-widget">
-                        <h5 class="widget-title">Kategoriyalar</h5>
-                        <ul class="custom">
-                            <li>
-                                <a href="#">Business <i class="lni lni-arrow-right"></i></a>
-                            </li>
-                            <li>
-                                <a href="#">Consultant <i class="lni lni-arrow-right"></i></a>
-                            </li>
-                            <li>
-                                <a href="#">Creative <i class="lni lni-arrow-right"></i></a>
-                            </li>
-                            <li>
-                                <a href="#">UI/UX <i class="lni lni-arrow-right"></i></a>
-                            </li>
-                            <li>
-                                <a href="#">Technology <i class="lni lni-arrow-right"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="widget popular-tag-widget">
-                        <h5 class="widget-title">Teglar</h5>
-                        <div class="tags">
-                            <a href="#">Popular Template</a>
-                            <a href="#">Design</a>
-                            <a href="#">UX</a>
-                            <a href="#">Icon</a>
-                            <a href="#">Usability</a>
-                            <a href="#">Tech</a>
-                            <a href="#">Mouse</a>
-                            <a href="#">Kit</a>
-                            <a href="#">Consult</a>
-                            <a href="#">Business</a>
-                            <a href="#">Keyboard</a>
-                            <a href="#">Develop</a>
-                        </div>
-                    </div>
-                    <div class="widget call-us">
-                        <div class="content">
-                            <h4>Yangiliklar<span>Mahorat darslarimizning keyingi mavzulari haqidagi takliflarni bizga yo'llang</span></h4>
-                        </div>
-                    </div>
-                </div>
-            </aside>
         </div>
     </div>
 </section>
