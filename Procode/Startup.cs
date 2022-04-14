@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Procode.Data;
 using Procode.Data.Interfaces;
+using Procode.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,8 @@ namespace Procode
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddIdentityCore<User>();
 
             services.AddHttpClient<ISpeakerRepository, SpeakerRepository>(client =>
             {
@@ -80,7 +83,7 @@ namespace Procode
             {
                 app.UseHsts();
             }
-
+ 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();

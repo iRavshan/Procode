@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -22,8 +23,13 @@ namespace Procode.Controllers
 
     public class AccountController : Controller
     {
+        public AccountController(Ide)
+        {
+
+        }
 
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult Login()
         {
             LoginViewModel model = new LoginViewModel
@@ -53,6 +59,7 @@ namespace Procode.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
