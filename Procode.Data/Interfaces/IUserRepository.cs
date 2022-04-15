@@ -15,6 +15,7 @@ namespace Procode.Data.Interfaces
         Task<User> GetById(Guid Id);
         Task Update(User user);
         Task Delete(Guid Id);
+        Task ChangePassword(ChangePasswordRequest request);
         Task<AuthResponse> Login(UserLoginRequest userRequest);
         Task<AuthResponse> Register(UserRegisterRequest userRequest);
     }

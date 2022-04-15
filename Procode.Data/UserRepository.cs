@@ -25,6 +25,11 @@ namespace Procode.Data
             this.client = client;
         }
 
+        public async Task ChangePassword(ChangePasswordRequest request)
+        {
+            await client.PostAsJsonAsync($"{client.BaseAddress}{UserAPI.ChangePassword}", request);
+        }
+
         public async Task Delete(Guid Id)
         {
            await client.DeleteAsync($"{client.BaseAddress}{Id}");

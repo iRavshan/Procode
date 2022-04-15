@@ -5036,7 +5036,8 @@ li.ikkilist {
     border-color: transparent;
 }
 
-planned-video-thumbnail{
+.planned-video-thumbnail{
     border-radius: 7px;
     width: 100%;
+    margin-bottom: 20px;
 }

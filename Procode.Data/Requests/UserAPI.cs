@@ -13,5 +13,6 @@ namespace Procode.Data.Requests
         public static readonly string Update = "user/update";
         public static readonly string Login = "account/login";
         public static readonly string Register = "account/register";
+        public static readonly string ChangePassword = "account/changepassword";
     }
 }
