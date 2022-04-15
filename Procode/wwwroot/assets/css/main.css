@@ -5035,3 +5035,8 @@ li.ikkilist {
 .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
     border-color: transparent;
 }
+
+planned-video-thumbnail{
+    border-radius: 7px;
+    width: 100%;
+}
