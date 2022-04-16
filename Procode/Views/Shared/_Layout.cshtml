@@ -58,7 +58,7 @@
                                         <a class="nav-link active" asp-controller="home" asp-action="index">Bosh sahifa</a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" href="404.html">Kitoblar</a>
+                                        <a class="nav-link" asp-controller="home" asp-action="books">Kitoblar</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link" href="404.html">Loyihalar</a>
@@ -129,7 +129,7 @@
                 <div class="col-md-12 col-lg-8">
                     <ul class="footer-list">
                         <li><a asp-controller="home" asp-action="index">Bosh sahifa</a></li>
-                        <li><a href="">Kitoblar</a></li>
+                        <li><a asp-controller="home" asp-action="books">Kitoblar</a></li>
                         <li><a href="">Loyihalar</a></li>
                         <li><a asp-controller="home" asp-action="blog">Blog</a></li>
                     </ul>
@@ -143,7 +143,7 @@
                         <li><a href="https://github.com/procodetm" class="social-icon"><i class="fab fa-github"></i></a></li>
                     </ul>
                 </div>
-                <p class="text-left mt-4">Procode.uz &copy; 2019 - @DateTime.Now.Year</p>
+                <p class="text-center mt-5">Procode.uz &copy; 2019 - @DateTime.Now.Year</p>
             </div>
         </div>
     </footer>
