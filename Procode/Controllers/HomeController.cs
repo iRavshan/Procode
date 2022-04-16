@@ -106,17 +106,6 @@ namespace Procode.Controllers
 
         }
 
-        public IActionResult Contact()
-        {
-            ContactViewModel model = new ContactViewModel
-            {
-                PageTitle = "Aloqa",
-                BannerTitle = "Aloqa",
-                BannerSubtitle = "Fikr va takliflaringizni biz bilan baham ko'ring"
-            };
-
-            return View(model);
-        }
 
         [HttpPost]
         public async Task<IActionResult> Contact(ContactViewModel model)
@@ -139,6 +128,7 @@ namespace Procode.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult Books()
         {
             return View();
