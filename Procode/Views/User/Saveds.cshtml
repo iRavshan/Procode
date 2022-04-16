@@ -14,7 +14,7 @@
             <div class="col-lg-6 col-md-6 col-12">
                 <ul class="breadcrumb-nav">
                     <li><a asp-controller="home" asp-action="index">Bosh sahifa</a></li>
-                    <li><a asp-controller="home" asp-action="blog">Blog</a></li>
+                    <li>@User.Identity.Name</li>
                 </ul>
             </div>
         </div>
@@ -25,7 +25,15 @@
 <section class="section blog-single">
     <div class="container">
         <div class="row">
-            <p class="text-center">Sizda hozircha saqlangan kontentlar mavjud emas</p>
+            <div class="col-lg-10 offset-lg-1 col-md-12 col-12">
+                <div class="single-inner">
+                    <div class="post-details">
+                        <div class="detail-inner">
+                            <p>Sizda hozircha saqlanganlar mavjud emas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
