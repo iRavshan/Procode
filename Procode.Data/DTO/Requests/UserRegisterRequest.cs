@@ -12,19 +12,17 @@ namespace Procode.Data.DTO.Requests
     {
         [EmailAddress(ErrorMessage = "Email manzil noto'g'ri kiritilgan")]
         [Required(ErrorMessage = "Email manzilni kiriting")]
-        [JsonProperty("Email")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Bu maydonni to'ldiring")]
-        [JsonProperty("Username")]
+        [MinLength(6, ErrorMessage = "Kamida 6 ta belgidan iborat bo'lishi kerak")]
+        [RegularExpression(@"^[a-zA-Z0-9\_]+$", ErrorMessage = "Bu ism yaroqli emas")]
         public string Username { get; set; }
 
         [Required(ErrorMessage = "Parolni kiriting")]
-        [JsonProperty("Password")]
         public string Password { get; set; }
 
         [Required(ErrorMessage = "Parolni tasdiqlang")]
-        [JsonProperty("confirmedPassword")]
         public string ConfirmedPassword { get; set; }
     }
 }

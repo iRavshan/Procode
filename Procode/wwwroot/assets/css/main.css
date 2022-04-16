@@ -850,7 +850,7 @@ ol {
   vertical-align: middle;
 }
 
-@media only screen and (min-width: 480px) and (max-width: 767px) {
+@media only screen and (min-width: 480px) and (max-width: 768px) {
   .container {
     width: 450px;
   }
@@ -1414,7 +1414,7 @@ ol {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .navbar {
     padding: 17px 0;
   }
@@ -1479,7 +1479,7 @@ ol {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .navbar-collapse {
     position: absolute;
     top: 100%;
@@ -1524,7 +1524,7 @@ ol {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .navbar-nav .nav-item a {
     display: inline-block;
     padding: 6px 0px;
@@ -1551,7 +1551,7 @@ ol {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
 
   .navbar-nav .nav-item a:hover::after,
   .navbar-nav .nav-item a:hover::before,
@@ -1573,7 +1573,7 @@ ol {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .navbar-nav .nav-item:hover .sub-menu {
     top: 0;
   }
@@ -1590,7 +1590,7 @@ ol {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .navbar-nav .nav-item .sub-menu {
     position: relative;
     width: 100%;
@@ -1620,7 +1620,7 @@ ol {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .navbar-nav .sub-nav-toggler {
     display: block;
     position: absolute;
@@ -2065,7 +2065,7 @@ ol {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .header .button {
       margin: 10px 0px;
   }
@@ -3286,7 +3286,7 @@ ol {
 }
 
 /* Mobile Screen */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   .section {
     padding: 50px 0px;
   }
@@ -4161,6 +4161,7 @@ blockquote {
 
 .latest-news-area {
   background-color: #f4f7fa;
+  padding-top: 150px;
 }
 
 .blog-list .single-news {
@@ -4170,6 +4171,7 @@ blockquote {
 .latest-news-area .single-news {
   border-radius: 7px;
   background-color: #fff;
+  margin-bottom: 28px;
 }
 
 .custom-shadow-hover {
@@ -4501,7 +4503,7 @@ blockquote {
   border-color: #fff;
 }
 
-@media only screen and (max-width: 767px){
+@media only screen and (max-width: 768px){
   .intro-video-area {
     padding: 60px 0;
   }
@@ -4830,7 +4832,11 @@ lines .vlines {
   margin-bottom: 30px;
 }
 
-@media only screen and (max-width: 767px){
+@media only screen and (max-width: 768px){
+   .footer-list{
+      text-align: center;
+   }
+
   .error-area .error-content h1 {
       font-size: 65px!important;
   }
@@ -4850,12 +4856,13 @@ li.ikkilist {
     margin-bottom: 9px;
 }
 
+
 /*=== Login ===*/
 .account-login {
-  background-color: #F4F7FA;
-  padding-top: 110px;
-  padding-bottom: 110px;
-  position: relative;
+    background-color: #F4F7FA;
+    padding-top: 110px;
+    padding-bottom: 110px;
+    position: relative;
 }
 
 .account-login .login-form {
@@ -4995,7 +5002,7 @@ li.ikkilist {
     margin-top: 8px;
 }
 
-@media (max-width: 767px){
+@media (max-width: 768px){
 
   .account-login .login-form {
     padding: 35px;
