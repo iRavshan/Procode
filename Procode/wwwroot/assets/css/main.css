@@ -3243,7 +3243,7 @@ ol {
   }
 
   .footer .call-action .inner-content {
-    padding: 60px 0;
+    padding: 60px 13px;
   }
 
   .footer .call-action .inner-content p {
@@ -3253,9 +3253,14 @@ ol {
     line-height: 23px;
   }
 
-  .footer .call-action .inner-content .button .btn {
-    font-size: 13px;
+  .footer .call-action .inner-content .button{
+     text-align: center;
+     margin-top: 30px;
   }
+
+   .footer .call-action .inner-content .button .btn {
+     font-size: 13px;
+   }
 
   .footer .f-link ul li {
     margin-bottom: 13px;

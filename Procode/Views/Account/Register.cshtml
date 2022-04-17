@@ -1,6 +1,6 @@
 ﻿@model RegisterViewModel 
 @{
-    ViewData["Title"] = "Ro'yxatdan o'tish";
+    ViewData["Title"] = Model.PageTitle;
 }
 
 <div class="account-login">
@@ -10,7 +10,7 @@
                 <form asp-controller="account" asp-action="register" method="post" class="card login-form inner-content">
                     <div class="card-body">
                         <div class="title">
-                            <h3>Ro'yxatdan o'tish</h3>
+                            <h3>@Model.PageTitle</h3>
                             <p>Hamjamiyatimizga qo'shilishning ayni vaqti.</p>
                             <span class="field-validation-error">@Model.Error</span>
                         </div>

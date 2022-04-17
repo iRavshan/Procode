@@ -12,6 +12,9 @@
           href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
           crossorigin="anonymous" />
+    <script src="https://cdn.tiny.cloud/1/4zc4hp1yfxk9n7hjlhfjtrg5djok5z31jf7ehf03n0ohh5vr/tinymce/6/tinymce.min.js" 
+            referrerpolicy="origin">
+    </script>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
@@ -61,7 +64,7 @@
                                         <a class="nav-link" asp-controller="home" asp-action="books">Kitoblar</a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link" href="404.html">Loyihalar</a>
+                                        <a class="nav-link" asp-controller="home" asp-action="projects">Loyihalar</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link" asp-controller="home" asp-action="blog">Blog</a>
@@ -130,7 +133,7 @@
                     <ul class="footer-list">
                         <li><a asp-controller="home" asp-action="index">Bosh sahifa</a></li>
                         <li><a asp-controller="home" asp-action="books">Kitoblar</a></li>
-                        <li><a href="">Loyihalar</a></li>
+                        <li><a asp-controller="home" asp-action="projects">Loyihalar</a></li>
                         <li><a asp-controller="home" asp-action="blog">Blog</a></li>
                     </ul>
                 </div>
@@ -155,8 +158,18 @@
             var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
         })('https://widget.replain.cc/dist/client.js');
     </script>
-    <script type="text/javascript" 
+    <script type="text/javascript"
             src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6253c2971c78e669">
+    </script>
+    <script>
+        tinymce.init({
+            selector: 'textarea#default-editor',
+            plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
+            toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
+            toolbar_mode: 'floating',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+        });
     </script>
     <script src="/assets/js/bootstrap.min.js"></script>
     <script src="/assets/js/count-up.min.js"></script>
