@@ -68,15 +68,9 @@ namespace Procode.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        [HttpGet]
         public IActionResult NewPost()
         {
-            NewPostViewModel model = new NewPostViewModel
-            {
-                PageTitle = "Yangi post"
-            };
-
-            return View(model);
+            return View();
         }
     }
 }
