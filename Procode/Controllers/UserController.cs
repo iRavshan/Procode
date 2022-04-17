@@ -67,10 +67,5 @@ namespace Procode.Controllers
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Index", "Home");
         }
-
-        public IActionResult NewPost()
-        {
-            return View();
-        }
     }
 }
