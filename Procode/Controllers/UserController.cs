@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 
 namespace Procode.Controllers
 {
-    [Route("{Username}/[action]")]
     public class UserController : Controller
     {
         private readonly IUserRepository userRepo;
@@ -28,6 +27,11 @@ namespace Procode.Controllers
         }
 
         public IActionResult Profile()
+        {
+            return View();
+        }
+
+        public IActionResult NewPost()
         {
             return View();
         }
