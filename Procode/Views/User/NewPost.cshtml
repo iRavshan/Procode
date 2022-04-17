@@ -1,6 +1,6 @@
 ﻿@model NewPostViewModel
 @{
-    ViewData["Title"] = "Yangi post";
+    ViewData["Title"] = Model.PageTitle;
 }
 
 <div class="account-login">
@@ -10,7 +10,7 @@
                 <form class="card login-form inner-content" method="post">
                     <div class="card-body">
                         <div class="title">
-                            <h3>Yangi post</h3>
+                            <h3>@Model.PageTitle</h3>
                         </div>
                         <div class="input-head">
                             <label class="input-label">Mavzu sarlavhasi</label>

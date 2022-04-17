@@ -71,7 +71,12 @@ namespace Procode.Controllers
         [HttpGet]
         public IActionResult NewPost()
         {
-            return View();
+            NewPostViewModel model = new NewPostViewModel
+            {
+                PageTitle = "Yangi post"
+            };
+
+            return View(model);
         }
     }
 }
