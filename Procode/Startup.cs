@@ -30,8 +30,6 @@ namespace Procode
         {
             services.AddControllersWithViews();
 
-            services.AddIdentityCore<User>();
-
             services.AddHttpClient<ISpeakerRepository, SpeakerRepository>(client =>
             {
                 client.BaseAddress = new Uri("https://procodeapi.herokuapp.com/api/");
@@ -52,15 +50,15 @@ namespace Procode
                 client.BaseAddress = new Uri("https://procodeapi.herokuapp.com/api/");
             });
 
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
-
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
-
             services.Configure<CookiePolicyOptions>(options =>
             {
                 options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.Strict;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Latest);
 
             services.ConfigureApplicationCookie(options =>
             {
@@ -68,8 +66,6 @@ namespace Procode
                 options.LoginPath = "/account/login";
                 options.LogoutPath = "/account/logout";
             });
-
-
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Procode.Data.DTO.Requests;
 using Procode.Data.Interfaces;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace Procode.Controllers
 {
+    [Authorize]
     public class UserController : Controller
     {
         private readonly IUserRepository userRepo;

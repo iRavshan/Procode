@@ -83,18 +83,24 @@ namespace Procode.Controllers
 
                 if (res.Succes)
                 {
+                    var name = DecodeToken(res.Token).Claims.First(claim => claim.Type == "GivenName").Value;
+                    var email = DecodeToken(res.Token).Claims.First(claim => claim.Type == "Email").Value;
+                    string id = DecodeToken(res.Token).Claims.First(claim => claim.Type == "NameIdentifier").Value.ToString();
+
 
                     User user = new User
                     {
-                        Id = Guid.NewGuid(),
-                        Username = "iRavshan"
+                        Id = new Guid(id),
+                        Username = name,
+                        Email = email
                     };
 
                     var identity = new ClaimsIdentity(new[] {
                         new Claim(ClaimTypes.GivenName, user.Username),
                         new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                         new Claim(ClaimTypes.Role, "user"),
-                        new Claim(ClaimTypes.Name, user.Username)
+                        new Claim(ClaimTypes.Name, user.Username),
+                        new Claim(ClaimTypes.Email, user.Email)
                     }, CookieAuthenticationDefaults.AuthenticationScheme);
 
                     var principal = new ClaimsPrincipal(identity);
