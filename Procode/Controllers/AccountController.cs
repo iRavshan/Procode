@@ -20,7 +20,6 @@ using System.Threading.Tasks;
 
 namespace Procode.Controllers
 {
-
     public class AccountController : Controller
     {
 
@@ -83,10 +82,10 @@ namespace Procode.Controllers
 
                 if (res.Succes)
                 {
-                    var name = DecodeToken(res.Token).Claims.First(claim => claim.Type == "GivenName").Value;
-                    var email = DecodeToken(res.Token).Claims.First(claim => claim.Type == "Email").Value;
-                    string id = DecodeToken(res.Token).Claims.First(claim => claim.Type == "NameIdentifier").Value.ToString();
-
+                    var name = DecodeToken(res.Token).Claims.First(claim => claim.Type == "given_name").Value;
+                    var email = DecodeToken(res.Token).Claims.First(claim => claim.Type == "email").Value;
+                    string id = DecodeToken(res.Token).Claims.First(claim => claim.Type == "nameid").Value.ToString();
+                    string role = DecodeToken(res.Token).Claims.First(claim => claim.Type == "role").Value.ToString();
 
                     User user = new User
                     {
@@ -98,7 +97,7 @@ namespace Procode.Controllers
                     var identity = new ClaimsIdentity(new[] {
                         new Claim(ClaimTypes.GivenName, user.Username),
                         new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                        new Claim(ClaimTypes.Role, "user"),
+                        new Claim(ClaimTypes.Role, role),
                         new Claim(ClaimTypes.Name, user.Username),
                         new Claim(ClaimTypes.Email, user.Email)
                     }, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -144,7 +143,8 @@ namespace Procode.Controllers
                         Password = model.Password,
                         ConfirmedPassword = model.ConfirmedPassword,
                         Username = model.Username,
-                        Error = res.Errors.ToArray()[0]
+                        Error = res.Errors.ToArray()[0],
+                        PageTitle = "Ro'yxatdan o'tish"
                     };
 
                     return View(exModel);
@@ -153,17 +153,24 @@ namespace Procode.Controllers
                 if (res.Succes)
                 {
 
+                    var name = DecodeToken(res.Token).Claims.First(claim => claim.Type == "given_name").Value;
+                    var email = DecodeToken(res.Token).Claims.First(claim => claim.Type == "email").Value;
+                    string id = DecodeToken(res.Token).Claims.First(claim => claim.Type == "nameid").Value.ToString();
+                    string role = DecodeToken(res.Token).Claims.First(claim => claim.Type == "role").Value.ToString();
+
                     User user = new User
                     {
-                        Id = Guid.NewGuid(),
-                        Username = "iRavshan"
+                        Id = new Guid(id),
+                        Username = name,
+                        Email = email
                     };
 
                     var identity = new ClaimsIdentity(new[] {
                         new Claim(ClaimTypes.GivenName, user.Username),
                         new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                        new Claim(ClaimTypes.Role, "user"),
-                        new Claim(ClaimTypes.Name, user.Username)
+                        new Claim(ClaimTypes.Role, role),
+                        new Claim(ClaimTypes.Name, user.Username),
+                        new Claim(ClaimTypes.Email, user.Email)
                     }, CookieAuthenticationDefaults.AuthenticationScheme);
 
                     var principal = new ClaimsPrincipal(identity);
@@ -173,14 +180,17 @@ namespace Procode.Controllers
                     return RedirectToAction("Index", "Home");
                 }
             }
+
             RegisterViewModel newModel = new RegisterViewModel
             {
                 Email = model.Email,
                 Password = model.Password,
                 ConfirmedPassword = model.ConfirmedPassword,
                 Username = model.Username,
-                Error = string.Empty
+                Error = string.Empty,
+                PageTitle = "Ro'yxatdan o'tish"
             };
+
             return View(newModel);
         }
 

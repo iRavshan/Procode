@@ -86,7 +86,7 @@
                                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                     <li><a class="dropdown-item" asp-controller="@User.Identity.Name" asp-action="profile"><i class="fas fa-user-circle" style="margin-right: 11px;"></i>Profil</a></li>
                                                     <li><a class="dropdown-item" asp-controller="@User.Identity.Name" asp-action="saveds"><i class="fas fa-bookmark" style="margin-right: 11px;"></i>Saqlanganlar</a></li>
-                                                    <li class="ikkilist"><a class="dropdown-item" asp-controller="@User.Identity.Name" asp-action="profile"><i class="fas fa-pen" style="margin-right: 11px;"></i>Yangi post</a></li>
+                                                    <li class="ikkilist"><a class="dropdown-item" asp-controller="@User.Identity.Name" asp-action="newpost"><i class="fas fa-pen" style="margin-right: 11px;"></i>Yangi post</a></li>
                                                     <li><a class="dropdown-item" asp-controller="@User.Identity.Name" asp-action="settings"><i class="fas fa-cog" style="margin-right: 11px;"></i> Sozlamalar</a></li>
                                                     <li><a class="dropdown-item" asp-controller="@User.Identity.Name" asp-action="logout"><i class="fas fa-sign-out-alt" style="margin-right: 11px;"></i> Chiqish</a></li>
                                                 </ul>
@@ -146,7 +146,7 @@
                         <li><a href="https://github.com/procodetm" class="social-icon"><i class="fab fa-github"></i></a></li>
                     </ul>
                 </div>
-                <p class="text-center mt-5">Procode.uz &copy; 2019 - @DateTime.Now.Year</p>
+                <p class="text-center mt-5">Procode.uz &copy; @DateTime.Now.Year</p>
             </div>
         </div>
     </footer>

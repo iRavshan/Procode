@@ -16,7 +16,7 @@ namespace Procode.Data.DTO.Requests
 
         [Required(ErrorMessage = "Bu maydonni to'ldiring")]
         [MinLength(6, ErrorMessage = "Kamida 6 ta belgidan iborat bo'lishi kerak")]
-        [RegularExpression(@"^[a-zA-Z0-9\_]+$", ErrorMessage = "Ushbu nom yaroqli emas")]
+        [RegularExpression("^[a-zA-Z0-9_]*$", ErrorMessage = "Ushbu nom yaroqli emas")]
         public string Username { get; set; }
 
         [Required(ErrorMessage = "Parolni kiriting")]
