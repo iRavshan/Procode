@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ namespace Procode.Domain.Models
         public string AuthorLastname { get; set; }
 
         [JsonProperty("ShortDescription")]
+        [Required(ErrorMessage = "Qisqacha tavsifni kiriting")]
         public string ShortDescription { get; set; }
 
         [JsonProperty("Text")]

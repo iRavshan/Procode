@@ -2218,7 +2218,7 @@ ol {
 .about-us .about-left .author .content h5 a {
   display: inline-block;
   margin-left: 5px;
-  color: #473BF0;
+  color: darkturquoise;
   font-weight: 500;
 }
 
@@ -4432,7 +4432,7 @@ blockquote {
 /*==== Video Thumbnail ====*/
 .intro-video-area {
   background-color: #f4f7fa;
-  background-image: url(/assets/images/breadcrumb/thumb.png);
+  background-image: url(/assets/images/breadcrumb/thumbnail.jpg);
   background-size: cover;
   background-position: center;
   padding: 120px 60px;
