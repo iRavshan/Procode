@@ -25,7 +25,13 @@ namespace Procode.Controllers
         [HttpGet]
         public IActionResult Settings()
         {
-            return View();
+            SettingsViewModel model = new SettingsViewModel
+            {
+                Username = User.Identity.Name,
+                Email = User.Claims.First(claim => claim.Type == "email").Value,
+            };
+
+            return View(model);
         }
 
         public IActionResult Profile()

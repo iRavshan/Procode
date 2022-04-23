@@ -10,36 +10,40 @@
                     <div class="card-body">
                         <div class="title">
                             <h3>Sozlamalar</h3>
-                            <p>@($"@{User.Identity.Name}")<span class="status"></span></p>
-                        </div>
-                        <div class="input-head">
-                            <label class="input-label">Foydalanuvchi nomi</label>
-                            <div class="form-group input-group">
-                                <input class="form-control" type="text">
+                            <p>
+                                @($"@{User.Identity.Name}")
+                                @{
+                                    if (Model.Status != null)
+                                    {
+                                        <span class="status">@Model.Status</span>
+                                    }
+                                }
+                            </p>
                             </div>
-                            <label class="input-label">Email</label>
+                        <div class="input-head">
+                            <label class="input-label" asp-for="Username"></label>
                             <div class="form-group input-group">
-                                <input class="form-control" type="text">
+                                <input asp-for="Username" class="form-control" type="text">
+                            </div>
+                            <label asp-for="Email" class="input-label"></label>
+                            <div class="form-group input-group">
+                                <input asp-for="Email" class="form-control" type="text">
                             </div>
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input width-auto" id="exampleCheck1">
-                                <label class="form-check-label">Email profilda ko'rsatilsin</label>
+                                <input asp-for="DisplayEmail" type="checkbox" class="form-check-input width-auto" id="exampleCheck1">
+                                <label asp-for="DisplayEmail" class="form-check-label"></label>
                             </div>
-                            <label class="input-label">Bio</label>
+                            <label asp-for="Bio" class="input-label"></label>
                             <div class="form-group input-group">
-                                <input class="form-control" type="text">
+                                <input asp-for="Bio" class="form-control" type="text">
                             </div>
-                            <label class="input-label">URL</label>
+                            <label asp-for="WebsiteUri" class="input-label"></label>
                             <div class="form-group input-group">
-                                <input class="form-control" type="text">
+                                <input asp-for="WebsiteUri" class="form-control" type="text">
                             </div>
-                            <label class="input-label">Ish yoki o'qish manzilingiz</label>
+                            <label asp-for="Company" class="input-label"></label>
                             <div class="form-group input-group">
-                                <input class="form-control" type="text">
-                            </div>
-                            <label class="input-label">Yashash manzilingiz</label>
-                            <div class="form-group input-group">
-                                <input class="form-control" type="text">
+                                <input asp-for="Company" class="form-control" type="text">
                             </div>
                         </div>
                         <div class="button">
@@ -87,7 +91,7 @@
                         <div class="input-head">
                             <label class="input-label delete-label">Hisobni o'chirish uchun <span>@User.Identity.Name</span> nomini tasdiqlang.</label>
                             <div class="form-group input-group">
-                                <input class="form-control" type="text">
+                                <input asp-for="IdentityName" class="form-control" type="text">
                             </div>
                         </div>
                         <div class="button">
