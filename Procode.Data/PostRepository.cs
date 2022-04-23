@@ -1,5 +1,6 @@
 ﻿using Procode.Data.Interfaces;
 using Procode.Data.Requests;
+using Procode.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

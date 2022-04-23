@@ -1,0 +1,86 @@
+﻿@model PostViewModel
+@{
+    ViewData["Title"] = Model.Post.Title;
+}
+
+<div class="breadcrumbs overlay">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="breadcrumbs-content">
+                    <h1 class="page-title">@Model.Post.Title</h1>
+                    <p>@Model.Post.ShortDescription</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <ul class="breadcrumb-nav">
+                    <li><a asp-controller="home" asp-action="index">Bosh sahifa</a></li>
+                    <li><a asp-controller="home" asp-action="blog">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="section blog-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 col-md-12 col-12">
+                <div class="single-inner">
+                    <div class="post-details">
+                        <div class="detail-inner">
+                            <ul class="custom-flex post-meta">
+                                <li>
+                                    <a href="#">
+                                        <i class="far fa-user"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="far fa-calendar-alt"></i>
+                                        @Model.Post.CreatedTime.ToString("dd.MM.yyyy")
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fas fa-hashtag"></i>
+                                        @Model.Post.Tags
+                                    </a>
+                                </li>
+                            </ul>
+                            <h2 class="post-title">
+                                @Model.Post.Title
+                            </h2>
+                            <p>
+                                We denounce with righteous indige nation and dislike men who are so beguiled and demo
+                                realized by the charms of pleasure of the moment, so blinded by desire, that they
+                                cannot
+                                foresee the pain and trouble that are bound to ensue; and equal blame belongs to
+                                those
+                                who fail in their duty through weakness of will, which is the same as saying through
+                                shrinking from toil and pain. These cases are perfectly simple and easy to
+                                distinguish.
+                                In a free hour, when our power of choice is untrammelled and when nothing prevents
+                                our
+                                being able to do what we like best, every pleasure is to be welcomed and every pain
+                                avoided.
+                            </p>
+                            <p>
+                                @Model.Post.Text
+                            </p>
+                            <div class="post-tags-media">
+                                <div class="post-tags popular-tag-widget mb-xl-40">
+                                    <h5 class="tag-title">Kategoriyasi</h5>
+                                    <div class="tags">
+                                        <a href="#">@Model.Post.Tags</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

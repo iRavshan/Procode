@@ -19,16 +19,19 @@ namespace Procode.Controllers
         private readonly ISpeakerRepository speakerRepo;
         private readonly IContentRepository contentRepo;
         private readonly IFeedbackRepository feedbackRepo;
+        private readonly IPostRepository postRepo;
 
         public HomeController(ILogger<HomeController> logger,
                               ISpeakerRepository speakerRepo,
                               IContentRepository contentRepo,
-                              IFeedbackRepository feedbackRepo)
+                              IFeedbackRepository feedbackRepo,
+                              IPostRepository postRepo)
         {
             _logger = logger;
             this.speakerRepo = speakerRepo;
             this.contentRepo = contentRepo;
             this.feedbackRepo = feedbackRepo;
+            this.postRepo = postRepo;
         }
 
         [HttpGet]
@@ -51,7 +54,9 @@ namespace Procode.Controllers
                 PageTitle = "Blog",
                 BannerTitle = "Procode hamjamiyati",
                 Contents = Enumerable.Reverse(await contentRepo.GetAll()),
-                LastContents = await contentRepo.LastContents(3)
+                LastContents = await contentRepo.LastContents(3),
+                Posts = Enumerable.Reverse(await postRepo.GetAll()),
+                LastPosts = await postRepo.LastContents(3)
             };
 
             return View(model);
@@ -65,6 +70,16 @@ namespace Procode.Controllers
                 BannerTitle = (await contentRepo.GetById(Id)).Name,
                 Content = await contentRepo.GetById(Id),
                 LastContents = await contentRepo.LastContents(3)
+            };
+
+            return View(model);
+        }
+
+        public async Task<IActionResult> Post([FromRoute] Guid Id)
+        {
+            PostViewModel model = new PostViewModel
+            {
+                Post = await postRepo.GetById(Id)
             };
 
             return View(model);
@@ -104,28 +119,6 @@ namespace Procode.Controllers
 
 
 
-        }
-
-
-        [HttpPost]
-        public async Task<IActionResult> Contact(ContactViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                Feedback feedback = new Feedback
-                {
-                    Id = Guid.NewGuid(),
-                    Subject = model.Subject,
-                    Text = model.Text
-                };
-
-                await feedbackRepo.Create(feedback);
-            }
-            
-
-
-
-            return View();
         }
 
         [HttpGet]

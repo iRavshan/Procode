@@ -10,7 +10,8 @@ namespace Procode.ViewModels.Home
     {
         public IEnumerable<Content> Contents { get; set; }
         public IEnumerable<Content> LastContents { get; set; }
-
+        public IEnumerable<Post> Posts { get; set; }
+        public IEnumerable<Post> LastPosts { get; set; }
         public string Search { get; set; }
     }
 }

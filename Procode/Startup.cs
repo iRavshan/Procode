@@ -50,6 +50,11 @@ namespace Procode
                 client.BaseAddress = new Uri("https://procodeapi.herokuapp.com/api/");
             });
 
+            services.AddHttpClient<IPostRepository, PostRepository>(client =>
+            {
+                client.BaseAddress = new Uri("https://procodeapi.herokuapp.com/api/");
+            });
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 options.CheckConsentNeeded = context => true;
