@@ -13,5 +13,6 @@ namespace Procode.Data.Interfaces
         Task<Post> GetById(Guid Id);
         Task<Post> LastContent();
         Task<Post[]> LastContents(int count);
+        Task Create(Post post);
     }
 }

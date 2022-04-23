@@ -206,7 +206,7 @@
                                             @{
                                                 foreach (var item in Model.Posts)
                                                 {
-                                                    <div class="single-popular-feed">
+                                                    <div class="single-popular-feed" style="padding-left: 0px;">
                                                         <div class="feed-desc">
                                                             <h6 class="post-title">
                                                                 <a asp-controller="home" asp-action="post" asp-route-Id="@item.Id">@item.Title</a>

@@ -12,5 +12,6 @@ namespace Procode.Data.Requests
         public static readonly string GetById = "post/getbyid?Id=";
         public static readonly string LastContent = "post/lastcontent";
         public static readonly string LastContents = "post/lastcontents?count=";
+        public static readonly string Create = "post/create";
     }
 }

@@ -4,10 +4,12 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Procode.Data.DTO.Requests;
 using Procode.Data.Interfaces;
+using Procode.Domain.Models;
 using Procode.ViewModels.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace Procode.Controllers
@@ -16,19 +18,25 @@ namespace Procode.Controllers
     public class UserController : Controller
     {
         private readonly IUserRepository userRepo;
+        private readonly IPostRepository postRepo;
 
-        public UserController(IUserRepository userRepo)
+        public UserController(IUserRepository userRepo, IPostRepository postRepo)
         {
             this.userRepo = userRepo;
+            this.postRepo = postRepo;
         }
 
         [HttpGet]
-        public IActionResult Settings()
+        public async Task<IActionResult> Settings()
         {
+            Guid Id = new Guid(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+
+            User user = await userRepo.GetById(Id);
+
             SettingsViewModel model = new SettingsViewModel
             {
-                Username = User.Identity.Name,
-                Email = User.Claims.First(claim => claim.Type == "email").Value,
+                Username = user.Username,
+                Email = user.Email
             };
 
             return View(model);
@@ -39,9 +47,38 @@ namespace Procode.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult NewPost()
         {
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> NewPost(Post post)
+        {
+            if (ModelState.IsValid)
+            {
+                Guid Id = new Guid(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+
+                User user = await userRepo.GetById(Id);
+
+                Post exPost = new Post
+                {
+                    Id = Guid.NewGuid(),
+                    Title = post.Title,
+                    ShortDescription = post.ShortDescription,
+                    Tags = post.Tags,
+                    Text = post.Text,
+                    User = user,
+                    CreatedTime = DateTime.Now
+                };
+
+                await postRepo.Create(exPost);
+
+                return RedirectToAction("blog", "home");
+            }
+
+            return View(); 
         }
 
         [HttpPost]

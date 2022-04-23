@@ -20,6 +20,11 @@ namespace Procode.Data
             this.httpClient = httpClient;
         }
 
+        public async Task Create(Post post)
+        {
+            await httpClient.PostAsJsonAsync(httpClient.BaseAddress + PostAPI.Create, post);
+        }
+
         public async Task<IEnumerable<Post>> GetAll()
         {
             var res = await httpClient.GetFromJsonAsync<Post[]>(httpClient.BaseAddress + PostAPI.GetAll);
