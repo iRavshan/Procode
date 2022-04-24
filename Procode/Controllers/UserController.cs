@@ -58,10 +58,6 @@ namespace Procode.Controllers
         {
             if (ModelState.IsValid)
             {
-                Guid Id = new Guid(User.FindFirst(ClaimTypes.NameIdentifier).Value);
-
-                User user = await userRepo.GetById(Id);
-
                 Post exPost = new Post
                 {
                     Id = Guid.NewGuid(),
@@ -69,7 +65,7 @@ namespace Procode.Controllers
                     ShortDescription = post.ShortDescription,
                     Tags = post.Tags,
                     Text = post.Text,
-                    User = user,
+                    AuthorUsername = User.Identity.Name,
                     CreatedTime = DateTime.Now
                 };
 

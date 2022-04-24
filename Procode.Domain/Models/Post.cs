@@ -35,6 +35,9 @@ namespace Procode.Domain.Models
         [Display(Name = "Kategoriya")]
         public string Tags { get; set; }
 
+        [JsonProperty("authorUsername")]
+        public string AuthorUsername { get; set; }
+
         [JsonProperty("user")]
         public User User { get; set; }
 
