@@ -5030,11 +5030,13 @@ ul.scrollable-tabs {
     white-space: nowrap;
     display: flex;
     flex-direction: row;
+    margin-bottom: 36px;
 }
 
 .scrollable-tabs li.nav-item {
     list-style-type: none;
     margin-left: 20px;
+    margin-bottom: 4px;
 }
 
 .scrollable-tabs .nav-item .nav-link {
@@ -5043,7 +5045,6 @@ ul.scrollable-tabs {
     text-align: center;
     padding: 14px;
     text-decoration: none;
-    margin-bottom: 36px;
     border: 3px solid transparent;
 }
 
