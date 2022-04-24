@@ -26,16 +26,22 @@
 <section class="section latest-news-area blog-list">
     <div class="container">
         <div class="row">
-            <nav>
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                    <button class="nav-link ml-0 active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Darslar</button>
-                    <button class="nav-link" id="nav-post-tab" data-bs-toggle="tab" data-bs-target="#nav-post" type="button" role="tab" aria-controls="nav-post" aria-selected="false">Postlar</button>
-                    <button class="nav-link" id="nav-planned-tab" data-bs-toggle="tab" data-bs-target="#nav-planned" type="button" role="tab" aria-controls="nav-planned" aria-selected="false">Rejalashtirilgan</button>
-                    <button class="nav-link" id="nav-live-tab" data-bs-toggle="tab" data-bs-target="#nav-live" type="button" role="tab" aria-controls="nav-live" aria-selected="false">Jonli</button>
-                </div>
-            </nav>
-            <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <ul class="scrollable-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#videos">Darslar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#posts">Postlar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#planned">Rejalashtirilgan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#live">Jonli</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane container active" id="videos">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-8 col-md-7 col-12">
@@ -151,8 +157,9 @@
                             </aside>
                         </div>
                     </div>
+
                 </div>
-                <div class="tab-pane fade" id="nav-post" role="tabpanel" aria-labelledby="nav-post-tab">
+                <div class="tab-pane container fade" id="posts">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-8 col-md-7 col-12">
@@ -249,7 +256,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="nav-planned" role="tabpanel" aria-labelledby="nav-planned-tab">
+                <div class="tab-pane container fade" id="planned">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-8 col-md-7 col-12">
@@ -268,7 +275,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="nav-live" role="tabpanel" aria-labelledby="nav-live-tab">
+                <div class="tab-pane container fade" id="live">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-7 col-12">
+                                <img src="/assets/images/Procode01.png" alt="Alternate Text" class="planned-video-thumbnail">
+                            </div>
+                            <aside class="col-lg-4 col-md-5 col-12">
+                                <div class="sidebar">
+                                    <div class="widget search-widget">
+                                        <h5 class="widget-title"><i class="fas fa-user-circle" style="margin-right: 11px;"></i>Diyorbek Isomov</h5>
+                                        <p class="mb-3">#dasturlash  #frontend</p>
+                                        <h5 class="widget-title"><i class="fas fa-play-circle" style="margin-right: 11px;"></i>Nega aynan Frontend ?</h5>
+                                        <p><i class="fas fa-bell" style="margin-right: 11px;"></i>17 - aprel 20:30</p>
+                                    </div>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

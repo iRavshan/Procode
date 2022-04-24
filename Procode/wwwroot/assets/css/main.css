@@ -5025,6 +5025,25 @@ li.ikkilist {
 
 /*===Tabs===*/
 
+ul.scrollable-tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+}
+
+.scrollable-tabs li.nav-item{
+    list-style-type: none;
+}
+
+.scrollable-tabs .nav-item .nav-link{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
 .nav-tabs {
     border-bottom: 0px solid #dee2e6;
 }
