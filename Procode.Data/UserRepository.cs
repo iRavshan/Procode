@@ -30,9 +30,9 @@ namespace Procode.Data
             await client.PostAsJsonAsync($"{client.BaseAddress}{UserAPI.ChangePassword}", request);
         }
 
-        public async Task Delete(Guid Id)
+        public async Task Delete(string Email)
         {
-           await client.DeleteAsync($"{client.BaseAddress}{Id}");
+           await client.DeleteAsync($"{client.BaseAddress}{Email}");
         }
 
         public async Task<User> GetById(Guid Id)

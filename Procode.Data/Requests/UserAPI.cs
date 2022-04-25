@@ -9,7 +9,7 @@ namespace Procode.Data.Requests
     public class UserAPI
     {
         public static readonly string GetById = "user/getbyid?Id=";
-        public static readonly string Delete = "user/delete?Id=";
+        public static readonly string Delete = "user/delete?Email=";
         public static readonly string Update = "user/update";
         public static readonly string Login = "account/login";
         public static readonly string Register = "account/register";

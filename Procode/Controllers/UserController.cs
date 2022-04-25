@@ -107,6 +107,21 @@ namespace Procode.Controllers
             return View();
         }
 
+        public async Task<IActionResult> DeleteAccount(SettingsViewModel model)
+        {
+            if(model.IdentityName is not null)
+            {
+                if (model.IdentityName.Equals(User.Identity.Name))
+                    return View();
+
+                await userRepo.Delete(User.FindFirst(ClaimTypes.Email).Value.ToString());
+                await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+                return RedirectToAction("index", "home");
+            }
+
+            return View();
+        }
+
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
