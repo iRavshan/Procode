@@ -37,7 +37,6 @@ namespace Procode.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
         public IActionResult Register()
         {
             RegisterViewModel model = new RegisterViewModel
