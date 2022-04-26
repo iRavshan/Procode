@@ -134,18 +134,10 @@
                                     <div class="widget popular-tag-widget">
                                         <h5 class="widget-title">Teglar</h5>
                                         <div class="tags">
-                                            <a href="#">Popular Template</a>
-                                            <a href="#">Design</a>
-                                            <a href="#">UX</a>
-                                            <a href="#">Icon</a>
-                                            <a href="#">Usability</a>
-                                            <a href="#">Tech</a>
-                                            <a href="#">Mouse</a>
-                                            <a href="#">Kit</a>
-                                            <a href="#">Consult</a>
-                                            <a href="#">Business</a>
-                                            <a href="#">Keyboard</a>
-                                            <a href="#">Develop</a>
+                                             @foreach(string item in Model.PostTags)
+                                             {
+                                                <a href="#">@item</a>
+                                             }
                                         </div>
                                     </div>
                                     <div class="widget call-us">
@@ -245,9 +237,18 @@
                                             </li>
                                         </ul>
                                     </div>
+                                    <div class="widget popular-tag-widget">
+                                        <h5 class="widget-title">Teglar</h5>
+                                        <div class="tags">
+                                            @foreach (string item in Model.PostTags)
+                                            {
+                                                <a href="#">@item</a>
+                                            }
+                                        </div>
+                                    </div>
                                     <div class="widget call-us">
                                         <div class="content">
-                                            <h4>Yangiliklar<span>Mahorat darslarimizning keyingi mavzulari haqidagi takliflarni bizga yo'llang</span></h4>
+                                            <h4>Yangiliklar<span>Barcha uchun qiziqarli mavzularda ajoyib postlarni yarating, bilim va tajribangizni hamjamiyatimiz bilan baham ko'ring.</span></h4>
                                         </div>
                                     </div>
                                 </div>

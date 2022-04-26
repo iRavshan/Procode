@@ -1490,6 +1490,7 @@ ol {
     -webkit-box-shadow: 0px 15px 20px 0px rgba(29, 42, 93, 0.1);
     box-shadow: 0px 15px 20px 0px rgba(29, 42, 93, 0.1);
     padding: 5px 12px;
+    border-radius: 0px 0px 4px 4px;
   }
 }
 
@@ -2590,13 +2591,13 @@ ol {
     padding: 0px 90px;
   }
 
-  .section-title span {
-    text-transform: uppercase;
-    color: #473BF0;
-    display: inline-block;
-    margin-bottom: 8px;
-    font-size: 13px;
-  }
+    .section-title span {
+        text-transform: uppercase;
+        color: #0dbfa3;
+        display: inline-block;
+        margin-bottom: 8px;
+        font-size: 13px;
+    }
 
   .section-title h2 {
     font-size: 28px;
@@ -2659,7 +2660,7 @@ ol {
   }
 
   .navbar-brand img {
-    width: 130px;
+    width: 46px;
   }
 
   .navbar-nav .nav-item {
@@ -3293,7 +3294,7 @@ ol {
 /* Mobile Screen */
 @media only screen and (max-width: 768px) {
   .section {
-    padding: 50px 0px;
+    padding: 50px 10px;
   }
 
   .section-title {
@@ -3575,10 +3576,6 @@ ol {
     line-height: 32px;
   }
 
-  .features {
-    padding-top: 10px;
-  }
-
   .features.style2 {
     padding-top: 50px;
   }
@@ -3753,6 +3750,11 @@ ol {
 
   .footer .call-action .inner-content .button .btn {
     font-size: 13px;
+  }
+
+  .footer .call-action .inner-content .button{
+      float: none;
+      margin-top: 1.25rem;
   }
 
   .footer .f-link ul li {

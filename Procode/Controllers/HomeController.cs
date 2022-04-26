@@ -56,7 +56,8 @@ namespace Procode.Controllers
                 Contents = Enumerable.Reverse(await contentRepo.GetAll()),
                 LastContents = await contentRepo.LastContents(3),
                 Posts = Enumerable.Reverse(await postRepo.GetAll()),
-                LastPosts = await postRepo.LastContents(3)
+                LastPosts = await postRepo.LastContents(3),
+                PostTags = Enumerable.Reverse(await postRepo.GetAll()).Select(w => w.Tags).ToList()
             };
 
             return View(model);
