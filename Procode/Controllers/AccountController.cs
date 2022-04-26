@@ -37,6 +37,7 @@ namespace Procode.Controllers
 
         [HttpGet]
         [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         public IActionResult Register()
         {
             RegisterViewModel model = new RegisterViewModel
@@ -56,6 +57,7 @@ namespace Procode.Controllers
 
         [HttpPost]
         [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
@@ -121,6 +123,7 @@ namespace Procode.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
