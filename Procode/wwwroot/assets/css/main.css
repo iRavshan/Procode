@@ -5025,36 +5025,33 @@ li.ikkilist {
 
 /*===Tabs===*/
 
-ul.scrollable-tabs {
-    overflow-x: auto;
-    white-space: nowrap;
-    display: flex;
-    flex-direction: row;
+ul.nav-tabs{
+    border: 0px solid transparent;
+}
+
+ul.nav-tabs li.nav-item {
     margin-bottom: 36px;
+    margin-left: 32px;
 }
 
-.scrollable-tabs li.nav-item {
-    list-style-type: none;
-    margin-left: 20px;
-    margin-bottom: 4px;
+ul.nav-tabs a.nav-link {
+    border-width: 3px;
+    color: black;
+    transition: all 0.2s ease;
 }
 
-.scrollable-tabs .nav-item .nav-link {
-    display: inline-block;
-    color: #495057;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
-    border: 3px solid transparent;
+ul.nav-tabs .nav-link:hover {
+    border-color: transparent;
 }
 
-.scrollable-tabs .nav-item .nav-link.active{
-    color: #0dbfa3;
+ul.nav-tabs .nav-link.active {
+    border-width: 3px;
     font-weight: 500;
+    color: #0dbfa3;
     border-color: transparent transparent #0dbfa3;
 }
 
-.planned-video-thumbnail{
+.planned-video-thumbnail {
     border-radius: 7px;
     width: 100%;
     margin-bottom: 20px;

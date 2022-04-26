@@ -39,7 +39,7 @@ namespace Procode.Controllers
         {
             IndexViewModel model = new IndexViewModel
             {
-                PageTitle = "Bosh sahifa",
+                PageTitle = "Procode.uz - Bepul professional ta'lim",
                 LastContents = await contentRepo.LastContents(3)
             };
 
