@@ -83,9 +83,9 @@
         </div>
         <div class="row">
             <div class="col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-12">
-                <form class="card login-form inner-content" method="post">
+                <form asp-controller="@User.Identity.Name" asp-action="deleteaccount" class="card login-form inner-content" method="post">
                     <div class="card-body">
-                        <div class="title">
+                        <div class="title"> 
                             <h3>Hisobni o'chirish</h3>
                         </div>
                         <div class="input-head">

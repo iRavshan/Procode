@@ -111,8 +111,8 @@ namespace Procode.Controllers
         {
             if(model.IdentityName is not null)
             {
-                if (model.IdentityName.Equals(User.Identity.Name))
-                    return View();
+                if (!model.IdentityName.Equals(User.Identity.Name))
+                    return RedirectToAction("settings");
 
                 await userRepo.Delete(User.FindFirst(ClaimTypes.Email).Value.ToString());
                 await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);

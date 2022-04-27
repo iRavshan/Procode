@@ -32,7 +32,7 @@ namespace Procode.Data
 
         public async Task Delete(string Email)
         {
-           await client.DeleteAsync($"{client.BaseAddress}{Email}");
+           await client.DeleteAsync($"{client.BaseAddress}{UserAPI.Delete}{Email}");
         }
 
         public async Task<User> GetById(Guid Id)

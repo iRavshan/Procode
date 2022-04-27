@@ -6,8 +6,5 @@ using System.Threading.Tasks;
 
 namespace Procode.Data.Enums
 {
-    public enum Categories
-    {
-        
-    }
+
 }

@@ -33,6 +33,7 @@ namespace Procode.Domain.Models
 
         [JsonProperty("tags")]
         [Display(Name = "Kategoriya")]
+        [RegularExpression("^[a-zA-Z]+$", ErrorMessage = "Faqatgina harflarni qo'llash mumkin")]
         public string Tags { get; set; }
 
         [JsonProperty("authorUsername")]
