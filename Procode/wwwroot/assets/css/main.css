@@ -5058,3 +5058,70 @@ ul.nav-tabs .nav-link.active {
     width: 100%;
     margin-bottom: 20px;
 }
+
+/*=====Projects=======*/
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    .services.style3 .single-service {
+    margin: 0;
+    margin-top: 30px;
+}
+
+
+.services.style3 .single-service {
+    position: relative;
+    text-align: left;
+    padding: 50px;
+    -webkit-box-shadow: 0 0 30px rgb(138 138 138 / 23%);
+    box-shadow: 0 0 30px rgb(138 138 138 / 23%);
+    border-radius: 5px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.services.style3 .single-service:hover {
+    -webkit-box-shadow: 0 10px 50px rgb(116 116 116 / 23%);
+    box-shadow: 0 10px 50px rgb(116 116 116 / 23%);
+}
+
+.services.style3 .single-service:hover .serial {
+    -webkit-text-stroke-color: transparent;
+    -webkit-text-fill-color: #0dbfa3;
+}
+
+.services.style3 .single-service::before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 0%;
+    content: "";
+    background-color: #0dbfa3;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.services.style3 .single-service .serial {
+    font-size: 45px;
+    display: block;
+    margin-bottom: 7px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: #0dbfa3;
+    font-weight: 800;
+}
+
+.single-service h3 {
+    line-height: 24px;
+}
+
+.services.style3 .single-service p {
+    font-weight: 400;
+    font-size: 13px;
+    color: #888;
+}
+
+.services.style3 .single-service .button {
+    margin-top: 30px;
+}
